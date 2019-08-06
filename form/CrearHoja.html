@@ -5,16 +5,12 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <!-- <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png"> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
-        name='viewport' />
-
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
@@ -28,9 +24,9 @@
        <div class="main-panel ps-container ps-active-y ">
             <div class="content">
                 <div class="row">
-                    <div class="col-md-1">
+                    <div class="col-md-2">
                     </div>
-                    <div class="col-md-10 ">
+                    <div class="col-md-8  ">
                         <div class="card card-user">
                             <div id="DatosPersonales" class="tabcontent" style="display: initial">
                                 <div class="card-body">
@@ -68,7 +64,7 @@
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label>Numero</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" onkeyup="ValidarNumero(this)">
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
@@ -701,9 +697,10 @@
 
 
 
-            
+
             <script src="assets/js/core/jquery.min.js"></script>
             <script src="assets/js/core/popper.min.js"></script>
+            
             <script src="assets/js/jspdf.min.js"></script>
             <script src="assets/js/core/bootstrap.min.js"></script>
             <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>

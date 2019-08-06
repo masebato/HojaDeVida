@@ -50,3 +50,60 @@ function AgregarDatosIdioma() {
     document.getElementById("tbodyIdioma").appendChild(btn);
 }
 
+
+window.addEventListener("load", function () {
+    //documento.addEventListener("keypress", ValidarNumero, false);
+    //telefono.addEventListener("keypress", ValidarNumero, false);
+});
+
+function ObtenerFecha() {
+    var n, y, m, d;
+    n = new Date();
+    y = n.getFullYear();
+    m = n.getMonth() + 1;
+    d = n.getDate();
+    return d + "/" + m + "/" + y;
+}
+
+function ValidarFecha(dato) {
+    var fecha_hoy = new Date();
+    var fecha_selec = new Date(dato.value);
+    
+    if (fecha_selec.getFullYear() > (fecha_hoy.getFullYear() - 18)) {
+        document.getElementById("" + dato.id).style.borderColor = "#dd4b39";
+        
+    } else {
+        document.getElementById("" + dato.id).style.borderColor = "#d2d6de";
+    }
+}
+
+function validarEmail(dato) {
+    if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(dato.value)) {
+        document.getElementById('correo').style.borderColor = "#d2d6de";
+    } else {
+        document.getElementById('correo').style.borderColor = "#dd4b39";
+    }
+}
+
+function ValidarTexto(dato) {
+    if (dato.value == "") {
+        document.getElementById("" + dato.id).style.borderColor = "#dd4b39";
+    } else {
+        document.getElementById("" + dato.id).style.borderColor = "#d2d6de";
+    }
+}
+function ValidarNumero(dato) {
+
+    var key = window.event ? dato.which : dato.keyCode;
+    if (key < 48 || key > 57) {
+        dato.preventDefault();
+    }
+}
+function ValidarSelector(dato) {
+    if (dato.value == "Seleccionar" || dato.value == "") {
+        document.getElementById("" + dato.id).style.borderColor = "#dd4b39";
+    } else {
+        document.getElementById("" + dato.id).style.borderColor = "#d2d6de";
+    }
+}
+
