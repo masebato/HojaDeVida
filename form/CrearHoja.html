@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags-->
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
@@ -11,24 +11,23 @@
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
-    <!--     Fonts and icons     -->
+
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <!-- CSS Files -->
+
     <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
-    <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="assets/demo/demo.css" rel="stylesheet" />
 
     <style>
         .tab {
             overflow: hidden;
-            border: 1px solid #ccc;
+            /* border: 1px solid #ccc;*/
             background-color: #f1f1f1;
         }
 
-        /* Style the buttons that are used to open the tab content */
+
         .tab button {
             background-color: inherit;
             float: left;
@@ -39,22 +38,29 @@
             transition: 0.3s;
         }
 
-        /* Change background color of buttons on hover */
         .tab button:hover {
             background-color: #ddd;
         }
 
-        /* Create an active/current tablink class */
+
         .tab button.active {
             background-color: #ccc;
         }
 
-        /* Style the tab content */
+
         .tabcontent {
             display: none;
             padding: 6px 12px;
-            border: 1px solid #ccc;
+            /*  border: 1px solid #ccc;*/
             border-top: none;
+        }
+
+        .contorno {
+            border: 1px solid #ccc;
+            border-radius: 16px;
+            padding: 0.01em 16px;
+            padding-top: 8px;
+            margin-top: 10px;
         }
     </style>
 
@@ -78,7 +84,38 @@
             // Show the current tab, and add an "active" class to the button that opened the tab
             document.getElementById(cityName).style.display = "block";
             evt.currentTarget.className += " active";
-        } 
+        }
+
+
+        function AgregarDatosTable() {
+            var _modalidad = document.getElementById("Modalidad");
+            var _semestres = document.getElementById("semestresAprobados").value;
+            var _graduado = document.getElementById("SelectGraduado");
+            var _titulo = document.getElementById("nombretitulo").value;
+            var _fechaGrado = document.getElementById("FechaTerminacion").value;
+            var _tarjeta = document.getElementById("tarjetaProf").value;
+
+            var fila = "<tr><td>" + _modalidad.value + "</td><td>" + _semestres + "</td><td>" + _graduado.value + "</td><td>" + _titulo + "</td><td>" + _fechaGrado + "</td><td>" + _tarjeta + "</td></tr>"
+
+            var btn = document.createElement("TR");
+            btn.innerHTML = fila;
+            document.getElementById("tbodyAcademico").appendChild(btn);
+
+        }
+
+        function AgregarDatosIdioma() {
+            var _idioma = document.getElementById("Idioma").value;
+            var _lee = document.getElementById("lee");
+            var _escribe = document.getElementById("escribe");
+            var _habla = document.getElementById("habla");
+
+            var fila = "<tr><td>" + _idioma + "</td><td>" + _habla.value + "</td><td>" + _lee.value + "</td><td>" + _escribe.value + "</td></tr>"
+
+            var btn = document.createElement("TR");
+            btn.innerHTML = fila;
+            document.getElementById("tbodyIdioma").appendChild(btn);
+        }
+
     </script>
 </head>
 
@@ -92,112 +129,95 @@
                     <div class="col-md-10 ">
                         <div class="card card-user">
                             <div id="DatosPersonales" class="tabcontent" style="display: initial">
-                                <div class="card-header">
-                                    <h2>Datos personales</h2>
-                                </div>
                                 <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-3 pr-1">
-                                            <div class="form-group">
-                                                <label>Primer Apellido</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 pr-1">
-                                            <div class="form-group">
-                                                <label>Segundo Apellido</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5 pr-1">
-                                            <div class="form-group">
-                                                <label>Nombres</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-2">
-                                            <label>Tipo Documento</label>
-                                            <select class="form-control" name="tipo documento">
-                                                <option>C.C</option>
-                                                <option>C.E</option>
-                                                <option>PAS</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <div class="form-group">
-                                                <label>Numero</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <label>Sexo</label>
-                                            <div class="form-group">
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="SexoRadio"
-                                                        id="MasculinoRadio" value="option1" />
-                                                    <label class="form-check-label"
-                                                        for="MasculinoRadio">Masculino</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="SexoRadio"
-                                                        id="FemeninoRadio" value="option2">
-                                                    <label class="form-check-label" for="FemeninoRadio">Femenino</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <label>Nacionalidad</label>
-                                            <div class="form-group">
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio"
-                                                        name="inlineRadioOptions" id="ColombianoRadio" value="option1">
-                                                    <label class="form-check-label"
-                                                        for="ColombianoRadio">Colombiano</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio"
-                                                        name="inlineRadioOptions" id="ExtranjeroRadio" value="option2">
-                                                    <label class="form-check-label"
-                                                        for="ExtranjeroRadio">Extranjero</label>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-md-2">
-                                            <div class="form-group">
-                                                <label>País</label>
-                                                <input class="form-control" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <h7>Datos residencia</h7>
-                                            <div class="form-group">
-                                                <label>Dirección de residencia</label>
-                                                <input type="text" class="form-control">
-
-                                                <label>País</label>
-                                                <input type="text" class="form-control">
-
-                                                <label>Departamento</label>
-                                                <input type="text" class="form-control">
-
-                                                <label>Municipio</label>
-                                                <input type="text" class="form-control">
-
-                                                <label>Correo electronico</label>
-                                                <input type="email" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <h7>Fecha y lugar de nacimiento</h4>
+                                    <div class="contorno">
+                                        <h7>Datos personales</h7>
+                                        <div class="row">
+                                            <div class="col-md-3 pr-1">
                                                 <div class="form-group">
-
-                                                    <label>Fecha de nacimiento</label>
-                                                    <input type="date" class="form-control">
+                                                    <label>Primer Apellido</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 pr-1">
+                                                <div class="form-group">
+                                                    <label>Segundo Apellido</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 pr-1">
+                                                <div class="form-group">
+                                                    <label>Nombres</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <label>Tipo Documento</label>
+                                                <select class="form-control" name="tipo documento">
+                                                    <option>C.C</option>
+                                                    <option>C.E</option>
+                                                    <option>PAS</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label>Numero</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Sexo</label>
+                                                <div class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="SexoRadio"
+                                                            id="MasculinoRadio" value="option1" />
+                                                        <label class="form-check-label"
+                                                            for="MasculinoRadio">Masculino</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="SexoRadio"
+                                                            id="FemeninoRadio" value="option2">
+                                                        <label class="form-check-label"
+                                                            for="FemeninoRadio">Femenino</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Nacionalidad</label>
+                                                <div class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="inlineRadioOptions" id="ColombianoRadio"
+                                                            value="option1">
+                                                        <label class="form-check-label"
+                                                            for="ColombianoRadio">Colombiano</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="inlineRadioOptions" id="ExtranjeroRadio"
+                                                            value="option2">
+                                                        <label class="form-check-label"
+                                                            for="ExtranjeroRadio">Extranjero</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label>País</label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="contorno">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <h7>Datos residencia</h7>
+                                                <div class="form-group">
+                                                    <label>Dirección de residencia</label>
+                                                    <input type="text" class="form-control">
 
                                                     <label>País</label>
                                                     <input type="text" class="form-control">
@@ -207,39 +227,55 @@
 
                                                     <label>Municipio</label>
                                                     <input type="text" class="form-control">
+
+                                                    <label>Correo electronico</label>
+                                                    <input type="email" class="form-control">
                                                 </div>
-                                        </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <h7>Fecha y lugar de nacimiento</h4>
+                                                    <div class="form-group">
 
-                                        <div class="col-md-4">
-                                            <h7>Libreta militar</h7>
-                                            <div class="form-group">
-                                                <br>
+                                                        <label>Fecha de nacimiento</label>
+                                                        <input type="date" class="form-control">
 
-                                                <input class="form-check-input" type="radio" name="LibretaMilitar"
-                                                    id="PrimeraClase" value="option1">
-                                                <label class="form-check-label" for="PrimeraClase">Primera Clase</label>
+                                                        <label>País</label>
+                                                        <input type="text" class="form-control">
 
-                                                <div class="form-group ">
+                                                        <label>Departamento</label>
+                                                        <input type="text" class="form-control">
+
+                                                        <label>Municipio</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <h7>Libreta militar</h7>
+                                                <div class="form-group">
+                                                    <br>
                                                     <input class="form-check-input" type="radio" name="LibretaMilitar"
-                                                        id="SegundaClase" value="option2">
-                                                    <label class="form-check-label" for="SegundaClase">Segunda
+                                                        id="PrimeraClase" value="option1">
+                                                    <label class="form-check-label" for="PrimeraClase">Primera
                                                         Clase</label>
-                                                </div>
-                                                <label>Numero</label>
-                                                <input type="text" class="form-control">
 
-                                                <label>D.M</label>
-                                                <input type="email" class="form-control">
+                                                    <div class="form-group ">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="LibretaMilitar" id="SegundaClase" value="option2">
+                                                        <label class="form-check-label" for="SegundaClase">Segunda
+                                                            Clase</label>
+                                                    </div>
+                                                    <label>Numero</label>
+                                                    <input type="text" class="form-control">
+
+                                                    <label>D.M</label>
+                                                    <input type="email" class="form-control">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div id="FormacionAcademica" class="tabcontent">
-
-                                <div class="card-header">
-
-                                </div>
                                 <div class="card-body">
                                     <div class="accordion" id="accordionExample">
                                         <div class="card">
@@ -252,7 +288,6 @@
                                                     </button>
                                                 </h2>
                                             </div>
-
                                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                                 data-parent="#accordionExample">
                                                 <div class="card-body">
@@ -264,13 +299,13 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card">
+                                        <div class="card ">
                                             <div class="card-header" id="headingTwo">
                                                 <h2 class="mb-0">
                                                     <button class="btn btn-link collapsed" type="button"
                                                         data-toggle="collapse" data-target="#collapseTwo"
                                                         aria-expanded="false" aria-controls="collapseTwo">
-                                                        <i class="icono-document"></i>Formación Academica
+                                                        <i class="icono-document"></i>Formación
                                                     </button>
                                                 </h2>
                                             </div>
@@ -316,13 +351,16 @@
                                                         <div class="col-md-3">
                                                             <div class="form-group">
                                                                 <label>Modalidad Académica</label>
-                                                                <select name="Modalidad" class="form-control" id="">
+                                                                <select name="Modalidad" class="form-control"
+                                                                    id="Modalidad">
                                                                     <option value="TC">Técnica</option>
                                                                     <option value="TL">Tecnológica</option>
-                                                                    <option value="TE">Tecnológia especializada</option>
+                                                                    <option value="TE">Tecnológia especializada
+                                                                    </option>
                                                                     <option value="UN">Universitaria</option>
                                                                     <option value="ES">Especialización</option>
-                                                                    <option value="MG">Maestria o magister</option>
+                                                                    <option value="MG">Maestria o magister
+                                                                    </option>
                                                                     <option value="DOC">Doctorado o PHD</option>
                                                                 </select>
                                                             </div>
@@ -330,13 +368,15 @@
                                                         <div class="col-md-1">
                                                             <div class="form-group">
                                                                 <label>Semestres</label>
-                                                                <input type="text" class="form-control">
+                                                                <input type="text" class="form-control"
+                                                                    id="semestresAprobados">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-1">
                                                             <div class="form-group">
                                                                 <label>Graduado</label>
-                                                                <select name="Graduado" class="form-control" id="">
+                                                                <select name="Graduado" class="form-control"
+                                                                    id="SelectGraduado">
                                                                     <option value="Si">SI</option>
                                                                     <option value="No">NO</option>
                                                                 </select>
@@ -344,57 +384,396 @@
                                                         </div>
                                                         <div class="col-md-3">
                                                             <div class="form-group">
-                                                                <label>Nombre de los estudios o titulo obtenido</label>
-                                                                <input type="text" class="form-control">
+                                                                <label>Nombre de los estudios o titulo
+                                                                    obtenido</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="nombretitulo">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <div class="form-group">
                                                                 <label>Terminacion</label>
-                                                                <input type="date" class="form-control">
+                                                                <input type="date" class="form-control"
+                                                                    id="FechaTerminacion">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <div class="form-group">
                                                                 <label>tarjeta profesional </label>
-                                                                <input type="text" class="form-control">
+                                                                <input type="text" class="form-control"
+                                                                    id="tarjetaProf">
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-2">
-                                                            <button class="btn btn-info">Agregar</button>
+                                                            <button class="btn btn-info"
+                                                                onclick="AgregarDatosTable()">Agregar</button>
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-md-10">
-                                                            <table></table>
+                                                        <div class="col-md-12">
+                                                            <table class="table table-responsive-md"
+                                                                id="tableAcademico">
+                                                                <thead class="text-primary">
+                                                                    <th>MODALIDAD ACADÉMICA</th>
+                                                                    <th>No. SEMESTRES APROBADOS</th>
+                                                                    <th>GRADUADO</th>
+                                                                    <th>NOMBRE DE LOS ESTUDIOS O TITULO
+                                                                        OBTENIDO</th>
+                                                                    <th>FECHA TERMINACION</th>
+                                                                    <th>TARJETA PROFESIONAL</th>
+                                                                </thead>
+                                                                <tbody id="tbodyAcademico">
+                                                                </tbody>
+                                                            </table>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
                                         <div class="card">
                                             <div class="card-header" id="headingThree">
                                                 <h2 class="mb-0">
                                                     <button class="btn btn-link collapsed" type="button"
-                                                        data-toggle="collapse" data-target="#collapseThree"
-                                                        aria-expanded="false" aria-controls="collapseThree">
-                                                        <i class="icono-bookmarkEmpty"></i> Experiencia Laboral
+                                                        data-toggle="collapse" data-target="#collapseIdioma"
+                                                        aria-expanded="false" aria-controls="collapseIdioma">
+                                                        <i class="icono-bookmarkEmpty"></i> Idiomas
                                                     </button>
                                                 </h2>
                                             </div>
-                                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                            <div id="collapseIdioma" class="collapse" aria-labelledby="headingThree"
                                                 data-parent="#accordionExample">
                                                 <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <label>Idioma</label>
+                                                                <input type="text" class="form-control" id="Idioma">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label>Lo habla</label>
+                                                                <select name="lo Habla" id="habla" class="form-control">
+                                                                    <option value="R">Regular</option>
+                                                                    <option value="B">Bien</option>
+                                                                    <option value="MB">Muy bien</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label>Lo lee</label>
+                                                                <select name="lo lee" id="lee" class="form-control">
+                                                                    <option value="R">Regular</option>
+                                                                    <option value="B">Bien</option>
+                                                                    <option value="MB">Muy bien</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group">
+                                                                <label>Lo escribe</label>
+                                                                <select name="lo escibe" id="escribe"
+                                                                    class="form-control">
+                                                                    <option value="R">Regular</option>
+                                                                    <option value="B">Bien</option>
+                                                                    <option value="MB">Muy bien</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <table class="table table-responsive-md">
+                                                            <thead class="text-primary">
+                                                                <th>Idioma</th>
+                                                                <th>Lo habla</th>
+                                                                <th>Lo lee</th>
+                                                                <th>Lo escribe</th>
+                                                            </thead>
+                                                            <tbody id="tbodyIdioma">
 
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-2">
+                                                            <button type="button" class="btn btn-info"
+                                                                onclick=" AgregarDatosIdioma()">Agregar</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card card-stats">
+                                                    <div class="card-header" id="headingThree">
+                                                        <h2 class="mb-0">
+                                                            <button class="btn btn-link collapsed" type="button"
+                                                                data-toggle="collapse" data-target="#collapseThree"
+                                                                aria-expanded="false" aria-controls="collapseThree">
+                                                                <i class="icono-bookmarkEmpty"></i> Laboral
+                                                            </button>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="collapseThree" class="collapse"
+                                                        aria-labelledby="headingThree" data-parent="#accordionExample">
+                                                        <div class="card-body">
+                                                            <div class="contorno">
+                                                                <h7>Empleo actual o contrato vigente</h7>
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label>Empresa o entidad</label>
+                                                                            <input type="text" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                        <div class="form-group">
+                                                                            <label>Sector</label>
+                                                                            <select class="form-control">
+                                                                                <option>Publica</option>
+                                                                                <option>Privada</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                        <div class="form-group">
+                                                                            <label>País</label>
+                                                                            <input type="text" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                        <div class="form-group">
+                                                                            <label>Departamento</label>
+                                                                            <input class="form-control" type="text">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                        <div class="form-group">
+                                                                            <label>Municipio</label>
+                                                                            <input class="form-control" type="text">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label>Correo electrónico entidad</label>
+                                                                            <input type="email" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label>Fecha ingreso</label>
+                                                                            <input type="date" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label>Fecha de retiro</label>
+                                                                            <input type="date" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label>cargo o contrato actual</label>
+                                                                            <input type="text" class=form-control>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label>Dependencia</label>
+                                                                            <input class="form-control" type="text">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label>Direccion</label>
+                                                                            <input type="text" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="contorno">
+                                                                <h7>Empleo o contrato Anterior</h7>
+
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label>Empresa o entidad</label>
+                                                                            <input type="text" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                        <div class="form-group">
+                                                                            <label>Sector</label>
+                                                                            <select class="form-control">
+                                                                                <option>Publica</option>
+                                                                                <option>Privada</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                        <div class="form-group">
+                                                                            <label>País</label>
+                                                                            <input type="text" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                        <div class="form-group">
+                                                                            <label>Departamento</label>
+                                                                            <input class="form-control" type="text">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                        <div class="form-group">
+                                                                            <label>Municipio</label>
+                                                                            <input class="form-control" type="text">
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label>Correo electrónico entidad</label>
+                                                                            <input type="email" class="form-control">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label>Fecha ingreso</label>
+                                                                            <input type="date" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label>Fecha de retiro</label>
+                                                                            <input type="date" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label>cargo o contrato actual</label>
+                                                                            <input type="text" class=form-control>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label>Dependencia</label>
+                                                                            <input class="form-control" type="text">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label>Direccion</label>
+                                                                            <input type="text" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card card-stats">
+                                                    <div class="card-header" id="headingThree">
+                                                        <h2 class="mb-0">
+                                                            <button class="btn btn-link collapsed" type="button"
+                                                                data-toggle="collapse" data-target="#Tiempo"
+                                                                aria-expanded="false" aria-controls="Tiempo">
+                                                                <i class="icono-bookmarkEmpty"></i> Tiempo Experiencia
+                                                            </button>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="Tiempo" class="collapse" aria-labelledby="headingThree"
+                                                        data-parent="#accordionExample">
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <table class="table table-responsive-md">
+                                                                    <thead>
+                                                                        <th>Ocupación</th>
+                                                                        <th>Años</th>
+                                                                        <th>Meses</th>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <label>Servidor Publico</label>
+                                                                            </td>
+                                                                            <td>
+                                                                                <input type="number" min=0
+                                                                                    class="form-control">
+                                                                            </td>
+                                                                            <td>
+                                                                                <input type="number" min=0 max=11
+                                                                                    class="form-control">
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <label>Empleado sector privado</label>
+                                                                            </td>
+                                                                            <td>
+                                                                                <input type="number" min=0
+                                                                                    class="form-control">
+                                                                            </td>
+                                                                            <td>
+                                                                                <input type="number" min=0 max=11
+                                                                                    class="form-control">
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <label>Trabajador independiente</label>
+                                                                            </td>
+                                                                            <td>
+                                                                                <input type="number" min=0
+                                                                                    class="form-control">
+                                                                            </td>
+                                                                            <td>
+                                                                                <input type="number" min=0 max=11
+                                                                                    class="form-control">
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <label>Total tiempo Experiencia</label>
+                                                                            </td>
+                                                                            <td>
+                                                                                <label></label>
+                                                                            </td>
+                                                                            <td>
+                                                                                <label></label>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="card-footer">
                                 <div class="row justify-content-between">
                                     <div class="col-4">
@@ -406,28 +785,26 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-1">
+                            <div class="col-md-1">
 
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <script src="assets/js/core/jquery.min.js"></script>
-    <script src="assets/js/core/popper.min.js"></script>
-    <script src="assets/js/core/bootstrap.min.js"></script>
-    <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-    <!--  Google Maps Plugin    -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-    <!-- Chart JS -->
-    <script src="assets/js/plugins/chartjs.min.js"></script>
-    <!--  Notifications Plugin    -->
-    <script src="assets/js/plugins/bootstrap-notify.js"></script>
-    <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
-    <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+            <script src="assets/js/core/jquery.min.js"></script>
+            <script src="assets/js/core/popper.min.js"></script>
+            <script src="assets/js/core/bootstrap.min.js"></script>
+            <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+            <!--  Google Maps Plugin    -->
+            <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+            <!-- Chart JS -->
+            <script src="assets/js/plugins/chartjs.min.js"></script>
+            <!--  Notifications Plugin    -->
+            <script src="assets/js/plugins/bootstrap-notify.js"></script>
+            <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+            <script src="assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+            <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 

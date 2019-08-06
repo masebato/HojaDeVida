@@ -1785,8 +1785,9 @@ fieldset[disabled] .btn-link.active {
 .form-control {
   background-color: #FFFFFF;
   border: 1px solid #DDDDDD;
-  border-radius: 4px;
+  border-radius: 6px;
   color: #66615b;
+
   line-height: normal;
   font-size: 14px;
   -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
@@ -5021,7 +5022,7 @@ License - nucleoapp.com/license/
   position: relative;
   float: right;
   width: calc(100% - 0px);
-   background-image: url("../../cta-background.jpg");
+   background-image: url("../../cta-background.jpg");   
    background-size: 100%;
    background-repeat: no-repeat;
   -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
@@ -5034,7 +5035,7 @@ License - nucleoapp.com/license/
 .main-panel>.content {
   padding: 0 30px 30px;
   min-height: calc(100vh - 123px);
-  margin-top: 93px;
+  margin-top: 20px;
 }
 
 .main-panel>.navbar {
