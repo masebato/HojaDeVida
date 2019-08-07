@@ -1,4 +1,11 @@
+window.addEventListener("load", function() {
+    numero.addEventListener("keypress", ValidarNumero, false);
+ 
 
+  });
+
+
+//#region Crear Collapse 
 function openCity(evt, cityName) {
     // Declare all variables
     var i, tabcontent, tablinks;
@@ -20,7 +27,7 @@ function openCity(evt, cityName) {
     evt.currentTarget.className += " active";
 }
 
-
+//#region Funciones para operaciones con tablas
 function AgregarDatosTable() {
     var _modalidad = document.getElementById("Modalidad");
     var _semestres = document.getElementById("semestresAprobados").value;
@@ -29,12 +36,18 @@ function AgregarDatosTable() {
     var _fechaGrado = document.getElementById("FechaTerminacion").value;
     var _tarjeta = document.getElementById("tarjetaProf").value;
 
-    var fila = "<tr><td>" + _modalidad.value + "</td><td>" + _semestres + "</td><td>" + _graduado.value + "</td><td>" + _titulo + "</td><td>" + _fechaGrado + "</td><td>" + _tarjeta + "</td></tr>"
+    var fila = "<tr><td>" + _modalidad.value + "</td><td>" + _semestres + "</td><td>" + _graduado.value + "</td><td>" + _titulo + "</td><td>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><a style='margin-left: 2px;' type='button' class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a></tr>"
 
     var btn = document.createElement("TR");
     btn.innerHTML = fila;
     document.getElementById("tbodyAcademico").appendChild(btn);
 
+}
+function EliminarFila(){
+    $(document).on('click','.btn-danger', function(event){
+        event.preventDefault();
+        $(this).closest('tr').remove();
+    });
 }
 
 function AgregarDatosIdioma() {
@@ -51,11 +64,12 @@ function AgregarDatosIdioma() {
 }
 
 
-window.addEventListener("load", function () {
-    //documento.addEventListener("keypress", ValidarNumero, false);
+//window.addEventListener("load", function () {
+  //  documento.addEventListener("keypress", ValidarNumero, false);
     //telefono.addEventListener("keypress", ValidarNumero, false);
-});
+//});
 
+//#region Validaciones
 function ObtenerFecha() {
     var n, y, m, d;
     n = new Date();
@@ -106,4 +120,20 @@ function ValidarSelector(dato) {
         document.getElementById("" + dato.id).style.borderColor = "#d2d6de";
     }
 }
+
+function validarRadio(dato){
+    if (dato.value!='checked') {
+        document.getElementById("" + dato.id).style.borderColor = "#d2d6de";
+    }
+    else{
+
+    }
+}
+
+
+//#region Cargar Departamentos y municipios 
+
+
+
+
 
