@@ -12,7 +12,7 @@ function CrearPDF(){
     doc.setFontSize(40);
     doc.text(40,20,"prueba");
     doc.addImage(imgData1, 'JPG', 10,40,180,180);
-    
+    console.log(imgData1);
     
 }
 
