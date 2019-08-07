@@ -26,23 +26,23 @@ var getImageFromUrl = function(url, callback) {
 // a string, we create the pdf without delay.
 var createPDF = function(imgData) {
     var doc = new jsPDF();
-
-
+    doc.setFontSize(40);
+   // doc.text(40, 20, "Prueba");
     // This is a modified addImage example which requires jsPDF 1.0+
     // You can check the former one at examples/js/basic.js
 
-    doc.addImage(imgData, 'JPEG', 10, 10, 50, 50, 'img'); // Cache the image using the alias 'monkey'
-    doc.addImage('img', 70, 10, 100, 120); // use the cached 'monkey' image, JPEG is optional regardless
+   // doc.addImage(imgData, 'JPEG', 10, 10, 50, 50, 'img'); // Cache the image using the alias 'monkey'
+    //doc.addImage('img', 70, 10, 100, 120); // use the cached 'monkey' image, JPEG is optional regardless
     // As you can guess, using the cached image reduces the generated PDF size by 50%!
 
     // Rotate Image - new feature as of 2014-09-20
     doc.addImage({
         imageData : imgData,
-        angle     : -20,
-        x         : 10,
-        y         : 78,
-        w         : 45,
-        h         : 58
+        angle     : 360,
+        x         : 20,
+        y         : 0,
+        w         : 200,
+        h         : 200
     });
 
     // Output as Data URI
