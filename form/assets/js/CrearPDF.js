@@ -15,7 +15,7 @@ var getImageFromUrl = function(url, callback) {
         alert('Cannot load image: "'+url+'"');
     };
     img.onload = function() {
-        callback(img);
+        createPDF(img);
     };
     img.src = url;
 }
@@ -47,4 +47,5 @@ var createPDF = function(imgData) {
 
     // Output as Data URI
     doc.output('datauri');
+    doc.save('prueba.pdf');
 }
