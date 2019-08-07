@@ -27,6 +27,10 @@ function openCity(evt, cityName) {
     evt.currentTarget.className += " active";
 }
 
+//#endregion
+
+
+
 //#region Funciones para operaciones con tablas
 function AgregarDatosTable() {
     var _modalidad = document.getElementById("Modalidad");
@@ -62,6 +66,9 @@ function AgregarDatosIdioma() {
     btn.innerHTML = fila;
     document.getElementById("tbodyIdioma").appendChild(btn);
 }
+
+//#endregion
+
 
 
 //window.addEventListener("load", function () {
@@ -129,9 +136,24 @@ function validarRadio(dato){
 
     }
 }
+//#endregion
 
 
 //#region Cargar Departamentos y municipios 
+
+
+
+//#endregion
+
+
+
+
+
+
+
+
+
+
 
 
 

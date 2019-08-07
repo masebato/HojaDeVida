@@ -19,12 +19,12 @@
     <link href="assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
     <link href="assets/demo/demo.css" rel="stylesheet" />
     <link href="assets/css/main.css" rel="stylesheet" />
-       
+
 </head>
 
 <body background="/form/cta-background.jpg">
     <div class="wrapper-full-page">
-       <div class="main-panel ps-container ps-active-y ">
+        <div class="main-panel ps-container ps-active-y ">
             <div class="content">
                 <div class="row">
                     <div class="col-md-2">
@@ -39,27 +39,31 @@
                                             <div class="col-md-3 pr-1">
                                                 <div class="form-group">
                                                     <label>Primer Apellido</label>
-                                                    <input type="text" class="form-control" id="PrimerApellido" required onkeyup="ValidarTexto(this)">
+                                                    <input type="text" class="form-control" id="PrimerApellido" required
+                                                        onkeyup="ValidarTexto(this)">
                                                 </div>
                                             </div>
                                             <div class="col-md-3 pr-1">
                                                 <div class="form-group">
                                                     <label>Segundo Apellido</label>
-                                                    <input type="text" class="form-control" id="SegundoApellido" required onkeyup="ValidarTexto(this)">
+                                                    <input type="text" class="form-control" id="SegundoApellido"
+                                                        required onkeyup="ValidarTexto(this)">
                                                 </div>
                                             </div>
                                             <div class="col-md-5 pr-1">
                                                 <div class="form-group">
                                                     <label>Nombres</label>
-                                                    <input type="text" class="form-control" id="Nombres" required onkeyup="ValidarTexto(this)">
+                                                    <input type="text" class="form-control" id="Nombres" required
+                                                        onkeyup="ValidarTexto(this)">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <label>Tipo Documento</label>
-                                                <select class="form-control" name="TipoDocumento" id="TipoDocumento" onclick="ValidarSelector(this)">
-                                                    <option  selected value="">Seleccione</option>
+                                                <select class="form-control" name="TipoDocumento" id="TipoDocumento"
+                                                    onclick="ValidarSelector(this)">
+                                                    <option selected value="">Seleccione</option>
                                                     <option value="C.C">C.C</option>
                                                     <option value="C.E">C.E</option>
                                                     <option value="PAS">PAS</option>
@@ -68,7 +72,8 @@
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label>Numero</label>
-                                                    <input type="text" class="form-control" name="numero" id="numero"onkeypress="ValidarNumero(this); required">
+                                                    <input type="text" class="form-control" name="numero" id="numero"
+                                                        onkeypress="ValidarNumero(this); required">
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
@@ -110,7 +115,8 @@
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label>País</label>
-                                                    <input class="form-control" type="text" id="PaisCiudadania"  onkeyup="ValidarTexto(this)">
+                                                    <input class="form-control" type="text" id="PaisCiudadania"
+                                                        onkeyup="ValidarTexto(this)">
                                                 </div>
                                             </div>
                                         </div>
@@ -121,10 +127,12 @@
                                                 <h7>Datos residencia</h7>
                                                 <div class="form-group">
                                                     <label>Dirección de residencia</label>
-                                                    <input type="text" class="form-control" id="DireccionResidencia" required>
+                                                    <input type="text" class="form-control" id="DireccionResidencia"
+                                                        required>
 
                                                     <label>País</label>
-                                                    <input type="text" class="form-control" id="PaisResidencia" required onkeyup="ValidarTexto(this)">
+                                                    <input type="text" class="form-control" id="PaisResidencia" required
+                                                        onkeyup="ValidarTexto(this)">
 
                                                     <label>Departamento</label>
                                                     <input type="text" class="form-control" id="Departamento">
@@ -323,7 +331,7 @@
                                                                     <th>MODALIDAD ACADÉMICA</th>
                                                                     <th>No. SEMESTRES APROBADOS</th>
                                                                     <th>GRADUADO</th>
-                                                                    <th>NOMBRE DE LOS ESTUDIOS O TITULOS                                                                        OBTENIDO</th>
+                                                                    <th>NOMBRE DE LOS ESTUDIOS O TITULOS OBTENIDO</th>
                                                                     <th>FECHA TERMINACION</th>
                                                                     <th>TARJETA PROFESIONAL</th>
                                                                     <th>ACCION</th>
@@ -681,7 +689,8 @@
                             <div class="card-footer">
                                 <div class="row justify-content-between">
                                     <div class="col-4">
-                                        <button class="btn " style="visibility: hidden" onclick="openCity(event, 'DatosPersonales')">Atras</button>
+                                        <button class="btn " style="visibility: hidden"
+                                            onclick="openCity(event, 'DatosPersonales')">Atras</button>
                                     </div>
                                     <div class="col-2">
                                         <button class="btn btn-success"
@@ -690,7 +699,7 @@
                                 </div>
                             </div>
                             <div class="col-md-1">
-
+                                <button class="btn" onclick="CrearPDF()"></button>
                             </div>
                         </div>
                     </div>
@@ -700,10 +709,13 @@
             <script src="assets/js/core/popper.min.js"></script>
             <script src="assets/js/core/bootstrap.min.js"></script>
             <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-            
+
             <!-- Chart JS -->
+            <script src="assets/js/jspdf.min.js"></script>
             <script src="assets/js/plugins/chartjs.min.js"></script>
             <script src="assets/js/main.js"></script>
+            <script src="assets/js/CrearPDF.js"></script>
+
             <!--  Notifications Plugin    -->
             <script src="assets/js/plugins/bootstrap-notify.js"></script>
             <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
