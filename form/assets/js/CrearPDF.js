@@ -27,6 +27,7 @@ var getImageFromUrl = function(url, callback) {
 var createPDF = function(imgData) {
     var doc = new jsPDF();
 
+
     // This is a modified addImage example which requires jsPDF 1.0+
     // You can check the former one at examples/js/basic.js
 
@@ -47,7 +48,3 @@ var createPDF = function(imgData) {
     // Output as Data URI
     doc.output('datauri');
 }
-
-
-
-//#endregion
