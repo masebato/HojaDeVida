@@ -1,50 +1,34 @@
 
 //#region Generar PDF
+const doc = new jsPDF();
+var getImageFromUrl = async function () {
 
+    var url = ['assets/js/0001.jpg', 'assets/js/0002.jpg', 'assets/js/0003.jpg'];
+   
 
+    url.forEach(async function (elements) {
+        var img = new Image();
 
-// Because of security restrictions, getImageFromUrl will
-// not load images from other domains.  Chrome has added
-// security restrictions that prevent it from loading images
-// when running local files.  Run with: chromium --allow-file-access-from-files --allow-file-access
-// to temporarily get around this issue.
-var getImageFromUrl = function (url, callback) {
-    var img = new Image();
+        img.onError = function () {
+            alert('Cannot load image: "' + elements + '"');
+        };
+        $(img).on('load', function () {
 
-    img.onError = function () {
-        alert('Cannot load image: "' + url + '"');
-    };
-    img.onload = function () {
-        createPDF(img);
-    };
-    img.src = url;
-}
+            doc.addImage({
+                imageData: img,
+                angle: 360,
+                x: -8,
+                y: 0,
+                w: 220,
+                h: 300
+            });
 
-// Since images are loaded asyncronously, we must wait to create
-// the pdf until we actually have the image.
-// If we already had the jpeg image binary data loaded into
-// a string, we create the pdf without delay.
-var createPDF = function (imgData) {
-    var doc = new jsPDF();
-    doc.setFontSize(40);
-    // doc.text(40, 20, "Prueba");
-    // This is a modified addImage example which requires jsPDF 1.0+
-    // You can check the former one at examples/js/basic.js
+            doc.addPage();
+            doc.output('datauri');
 
-    // doc.addImage(imgData, 'JPEG', 10, 10, 50, 50, 'img'); // Cache the image using the alias 'monkey'
-    //doc.addImage('img', 70, 10, 100, 120); // use the cached 'monkey' image, JPEG is optional regardless
-    // As you can guess, using the cached image reduces the generated PDF size by 50%!
-
-    // Rotate Image - new feature as of 2014-09-20
-    doc.addImage({
-        imageData: imgData,
-        angle: 360,
-        x: -8,
-        y: 0,
-        w: 220,
-        h: 300
+        });
+        img.src = elements;
     });
-
     //Datos Personales 
     doc.setFontSize(14);
     doc.setFont("Arial")
@@ -84,42 +68,10 @@ var createPDF = function (imgData) {
     doc.text(107, 114.6, "Pais Corres");
     doc.text(162, 114.6, "Depto corres");
     doc.text(118, 121, "Municipio corres");
-    
-//--------------------------------------------------------------------------------------------------
+
     // Output as Data URI
     doc.output('datauri');
     doc.save('prueba.pdf');
-}
-var getImageFromUrl = async function () {
-   
-    var url = ['assets/js/0001.jpg', 'assets/js/0002.jpg', 'assets/js/0003.jpg'];
-     var doc = new jsPDF();
-
-    url.forEach(async function (elements) {
-        var img = new Image();
-        
-        img.onError = function () {
-            alert('Cannot load image: "' + elements + '"');
-        };              
-        $(img).on('load', function() {
-          
-            doc.addImage({
-                imageData: img,
-                angle: 360,
-                x: -8,
-                y: 0,
-                w: 220,
-                h: 300
-            });
-
-            doc.addPage();
-            doc.output('datauri');
-
-          });
-          img.src = elements;      
-    });
-
-    
 
 };
 
