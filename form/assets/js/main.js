@@ -1,4 +1,11 @@
+window.addEventListener("load", function () {
+    numero.addEventListener("keypress", ValidarNumero, false);
 
+
+});
+
+
+//#region Crear Collapse 
 function openCity(evt, cityName) {
     // Declare all variables
     var i, tabcontent, tablinks;
@@ -20,7 +27,11 @@ function openCity(evt, cityName) {
     evt.currentTarget.className += " active";
 }
 
+//#endregion
 
+
+
+//#region Funciones para operaciones con tablas
 function AgregarDatosTable() {
     var _modalidad = document.getElementById("Modalidad");
     var _semestres = document.getElementById("semestresAprobados").value;
@@ -35,7 +46,7 @@ function AgregarDatosTable() {
     if (nColumnas > 0) {
         for (var i = 1; i < nColumnas; i++) {
             mod = tabla.rows[i].cells[1].innerText;
-            console.log("YD "+mod);
+            console.log("YD " + mod);
             if (mod == _modalidad.value) {
                 verificar = true;
 
@@ -48,28 +59,28 @@ function AgregarDatosTable() {
             btn.innerHTML = fila;
             document.getElementById("tbodyAcademico").appendChild(btn);
         }
-    }else{
+    } else {
         var fila = "<tr><td>" + _modalidad.value + "</td><td>" + _semestres + "</td><td>" + _graduado.value + "</td><td>" + _titulo + "</td><td>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a></tr>"
 
-            var btn = document.createElement("TR");
-            btn.innerHTML = fila;
-            document.getElementById("tbodyAcademico").appendChild(btn);
+        var btn = document.createElement("TR");
+        btn.innerHTML = fila;
+        document.getElementById("tbodyAcademico").appendChild(btn);
     }
 
+    var fila = "<tr><td>" + _modalidad.value + "</td><td>" + _semestres + "</td><td>" + _graduado.value + "</td><td>" + _titulo + "</td><td>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><a style='margin-left: 2px;' type='button' class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a></tr>"
 
 
 }
-function EliminarFila() {
 
-    $(document).on('click', '.btn-outline-danger', function (event) {
+
+function EliminarFila() {
+    $(document).on('click', '.btn-danger', function (event) {
         event.preventDefault();
         $(this).closest('tr').remove();
     });
-
-
-
-
 }
+
+
 function AgregarDatosIdioma() {
     var _idioma = document.getElementById("Idioma").value;
     var _lee = document.getElementById("lee");
@@ -83,12 +94,16 @@ function AgregarDatosIdioma() {
     document.getElementById("tbodyIdioma").appendChild(btn);
 }
 
+//#endregion
 
-window.addEventListener("load", function () {
-    //documento.addEventListener("keypress", ValidarNumero, false);
-    //telefono.addEventListener("keypress", ValidarNumero, false);
-});
 
+
+//window.addEventListener("load", function () {
+//  documento.addEventListener("keypress", ValidarNumero, false);
+//telefono.addEventListener("keypress", ValidarNumero, false);
+//});
+
+//#region Validaciones
 function ObtenerFecha() {
     var n, y, m, d;
     n = new Date();
@@ -139,4 +154,35 @@ function ValidarSelector(dato) {
         document.getElementById("" + dato.id).style.borderColor = "#d2d6de";
     }
 }
+
+function validarRadio(dato) {
+    if (dato.value != 'checked') {
+        document.getElementById("" + dato.id).style.borderColor = "#d2d6de";
+    }
+    else {
+
+    }
+}
+//#endregion
+
+
+//#region Cargar Departamentos y municipios 
+
+
+
+//#endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

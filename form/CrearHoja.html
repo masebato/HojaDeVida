@@ -14,7 +14,6 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
@@ -28,9 +27,9 @@
         <div class="main-panel ps-container ps-active-y ">
             <div class="content">
                 <div class="row">
-                    <div class="col-md-1">
+                    <div class="col-md-2">
                     </div>
-                    <div class="col-md-10 ">
+                    <div class="col-md-8 ">
                         <div class="card card-user">
                             <div id="DatosPersonales" class="tabcontent" style="display: initial">
                                 <div class="card-body">
@@ -40,35 +39,41 @@
                                             <div class="col-md-3 pr-1">
                                                 <div class="form-group">
                                                     <label>Primer Apellido</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="PrimerApellido" required
+                                                        onkeyup="ValidarTexto(this)">
                                                 </div>
                                             </div>
                                             <div class="col-md-3 pr-1">
                                                 <div class="form-group">
                                                     <label>Segundo Apellido</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="SegundoApellido"
+                                                        required onkeyup="ValidarTexto(this)">
                                                 </div>
                                             </div>
                                             <div class="col-md-5 pr-1">
                                                 <div class="form-group">
                                                     <label>Nombres</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="Nombres" required
+                                                        onkeyup="ValidarTexto(this)">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-2">
+                                            <div class="col-md-3">
                                                 <label>Tipo Documento</label>
-                                                <select class="form-control" name="tipo documento">
-                                                    <option>C.C</option>
-                                                    <option>C.E</option>
-                                                    <option>PAS</option>
+                                                <select class="form-control" name="TipoDocumento" id="TipoDocumento"
+                                                    onclick="ValidarSelector(this)">
+                                                    <option selected value="">Seleccione</option>
+                                                    <option value="C.C">C.C</option>
+                                                    <option value="C.E">C.E</option>
+                                                    <option value="PAS">PAS</option>
                                                 </select>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label>Numero</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="numero" id="numero"
+                                                        onkeypress="ValidarNumero(this); required">
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
@@ -110,7 +115,8 @@
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label>País</label>
-                                                    <input class="form-control" type="text">
+                                                    <input class="form-control" type="text" id="PaisCiudadania"
+                                                        onkeyup="ValidarTexto(this)">
                                                 </div>
                                             </div>
                                         </div>
@@ -121,13 +127,15 @@
                                                 <h7>Datos residencia</h7>
                                                 <div class="form-group">
                                                     <label>Dirección de residencia</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="DireccionResidencia"
+                                                        required>
 
                                                     <label>País</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="PaisResidencia" required
+                                                        onkeyup="ValidarTexto(this)">
 
                                                     <label>Departamento</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="Departamento">
 
                                                     <label>Municipio</label>
                                                     <input type="text" class="form-control">
@@ -323,11 +331,11 @@
                                                                     <th>MODALIDAD ACADÉMICA</th>
                                                                     <th>No. SEMESTRES APROBADOS</th>
                                                                     <th>GRADUADO</th>
-                                                                    <th>NOMBRE DE LOS ESTUDIOS O TITULO
-                                                                        OBTENIDO</th>
+                                                                    <th>NOMBRE DE LOS ESTUDIOS O TITULOS OBTENIDO</th>
                                                                     <th>FECHA TERMINACION</th>
                                                                     <th>TARJETA PROFESIONAL</th>
                                                                     <th>ACCIÓN</th>
+
                                                                 </thead>
                                                                 <tbody id="tbodyAcademico">
                                                                 </tbody>
@@ -682,10 +690,13 @@
                             <div class="card-footer">
                                 <div class="row justify-content-between">
                                     <div class="col-4">
+
                                         <div class="form-group">
                                             <button class="btn " style="visibility: hidden"
                                                 onclick="openCity(event, 'DatosPersonales')">Atras</button>
                                         </div>
+
+
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
@@ -696,7 +707,7 @@
                                 </div>
                             </div>
                             <div class="col-md-1">
-
+                                <button class="btn" onclick="getImageFromUrl()"></button>
                             </div>
                         </div>
                     </div>
@@ -708,15 +719,18 @@
             <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
 
             <!-- Chart JS -->
+            <script src="assets/js/jspdf.min.js"></script>
             <script src="assets/js/plugins/chartjs.min.js"></script>
             <script src="assets/js/main.js"></script>
+            <script src="assets/js/CrearPDF.js"></script>
+
             <!--  Notifications Plugin    -->
             <script src="assets/js/plugins/bootstrap-notify.js"></script>
             <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
             <script src="assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
             <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 
 </html>
 <!-- end document-->
