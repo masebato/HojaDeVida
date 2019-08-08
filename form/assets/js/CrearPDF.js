@@ -1,18 +1,42 @@
 
 //#region Generar PDF
-const doc = new jsPDF();
+var doc = new jsPDF();
 var getImageFromUrl = async function () {
 
     var url = ['assets/js/0001.jpg', 'assets/js/0002.jpg', 'assets/js/0003.jpg'];
-   
 
-    url.forEach(async function (elements) {
-        var img = new Image();
+    /*
+        url.forEach(async function (elements) {
+            var img = new Image();
+    
+            img.onError = function () {
+                alert('Cannot load image: "' + elements + '"');
+            };
+            $(img).on('load', function () {
+                console.log("dii ")
+                doc.addImage({
+                    imageData: img,
+                    angle: 360,
+                    x: -8,
+                    y: 0,
+                    w: 220,
+                    h: 300
+                });
+    
+                doc.addPage();
+                doc.output('datauri');
+    
+            });
+            img.src = elements;
+        });*/
+    var img;
+    for (var i = 0; i < url.length; i++) {
+        img = new Image();
 
         img.onError = function () {
-            alert('Cannot load image: "' + elements + '"');
+            alert('Cannot load image: "' + img + '"');
         };
-        $(img).on('load', function () {
+        img.onload = function () {
 
             doc.addImage({
                 imageData: img,
@@ -22,14 +46,18 @@ var getImageFromUrl = async function () {
                 w: 220,
                 h: 300
             });
+            doc.save('prueba.pdf');
+            // doc.addPage();
+            // doc.output('datauri');
 
-            doc.addPage();
-            doc.output('datauri');
+        };
+        img.crossOrigin = "";
+        img.src = url[i];
+        console.log(url[i]);
+    }
 
-        });
-        img.src = elements;
-    });
     //Datos Personales 
+    /*
     doc.setFontSize(14);
     doc.setFont("Arial")
     doc.text(15, 72.8, "primer apellido");
@@ -68,10 +96,115 @@ var getImageFromUrl = async function () {
     doc.text(107, 114.6, "Pais Corres");
     doc.text(162, 114.6, "Depto corres");
     doc.text(118, 121, "Municipio corres");
-
+*/
     // Output as Data URI
-    doc.output('datauri');
-    doc.save('prueba.pdf');
+    //doc.output('datauri');
+
 
 };
+
+async function crear() {
+    var url = ['assets/js/0001.jpg', 'assets/js/0002.jpg', 'assets/js/0003.jpg'];
+    var doc = new jsPDF();
+
+    for (var i = 0; i < url.length; i++) {
+        var img = new Image();
+        await $(img).on('load', function () {
+
+            doc.addImage(this, 'JPG', -8, 0, 220, 300);
+            doc.addPage();
+            //doc.save("prueba.pdf");
+            //doc.addPage();
+        });
+
+
+        img.crossOrigin = "";
+        img.src = url[i];
+        console.log(i);
+    }
+    doc.save("prueba.pdf");
+    //doc.save("prueba.pdf");
+}
+var doc;
+async function crear1() {
+    doc = new jsPDF();
+    //var url1 = 'assets/js/0001.jpg';
+    var url2 = 'assets/js/0002.jpg'
+    var url3 = 'assets/js/0003.jpg'
+    var img = new Image();
+    /*await $(img).on('load', function () {
+
+        doc.addImage(this, 'JPG', -8, 0, 220, 300);
+        doc.addPage();
+        //doc.save("prueba.pdf");
+        //doc.addPage();
+    });
+    img.crossOrigin = "";
+    img.src = url1;
+    var img2 = new Image();
+    await $(img2).on('load', function () {
+     console.log("jairo perra")
+        doc.addImage(this, 'JPG', -8, 0, 220, 300);
+        doc.addPage();
+        //doc.save("prueba.pdf");
+        //doc.addPage();
+    });
+    img2.crossOrigin = "";
+    img2.src = url2;
+    var img3 = new Image();
+    await $(img3).on('load', function () {
+
+        doc.addImage(this, 'JPG', -8, 0, 220, 300);
+        
+        doc.save("prueba.pdf");
+        //doc.addPage();
+    });
+    img3.crossOrigin = "";
+    img3.src = url3;
+    */
+
+    var hoja1= await Hoja1();
+    var hoja2 = await Hoja2();
+    var hoja3 = await Hoja3();
+
+}
+function Hoja1() {
+    var url1 = 'assets/js/0001.jpg';
+    var img = new Image();
+    $(img).on('load', function () {
+        console.log(1);
+        doc.addImage(this, 'JPG', -8, 0, 220, 300);
+        doc.addPage();
+        //doc.save("prueba.pdf");
+        //doc.addPage();
+    });
+    img.crossOrigin = "";
+    img.src = url1;
+}
+function Hoja2() {
+    var url2 = 'assets/js/0002.jpg';
+    var img = new Image();
+    $(img).on('load', function () {
+        console.log(2);
+        doc.addImage(this, 'JPG', -8, 0, 220, 300);
+        doc.addPage();
+        //doc.save("prueba.pdf");
+        //doc.addPage();
+    });
+    img.crossOrigin = "";
+    img.src = url2;
+}
+function Hoja3() {
+    var url3 = 'assets/js/0002.jpg';
+    var img = new Image();
+    $(img).on('load', function () {
+        console.log(3);
+        doc.addImage(this, 'JPG', -8, 0, 220, 300);
+        doc.output('datauri');
+        //doc.save("prueba.pdf");
+        //doc.addPage();
+    });
+    img.crossOrigin = "";
+    img.src = url3;
+}
 
