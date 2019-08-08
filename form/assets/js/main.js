@@ -28,15 +28,48 @@ function AgregarDatosTable() {
     var _titulo = document.getElementById("nombretitulo").value;
     var _fechaGrado = document.getElementById("FechaTerminacion").value;
     var _tarjeta = document.getElementById("tarjetaProf").value;
+    var tabla = document.getElementById('tableAcademico');
+    var mod;
+    var verificar = false;
+    var nColumnas = $("#tableAcademico >tbody >tr").length;
+    if (nColumnas > 0) {
+        for (var i = 1; i < nColumnas; i++) {
+            mod = tabla.rows[i].cells[1].innerText;
+            console.log("YD "+mod);
+            if (mod == _modalidad.value) {
+                verificar = true;
 
-    var fila = "<tr><td>" + _modalidad.value + "</td><td>" + _semestres + "</td><td>" + _graduado.value + "</td><td>" + _titulo + "</td><td>" + _fechaGrado + "</td><td>" + _tarjeta + "</td></tr>"
+            }
+        }
+        if (!verificar) {
+            var fila = "<tr><td>" + _modalidad.value + "</td><td>" + _semestres + "</td><td>" + _graduado.value + "</td><td>" + _titulo + "</td><td>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a></tr>"
 
-    var btn = document.createElement("TR");
-    btn.innerHTML = fila;
-    document.getElementById("tbodyAcademico").appendChild(btn);
+            var btn = document.createElement("TR");
+            btn.innerHTML = fila;
+            document.getElementById("tbodyAcademico").appendChild(btn);
+        }
+    }else{
+        var fila = "<tr><td>" + _modalidad.value + "</td><td>" + _semestres + "</td><td>" + _graduado.value + "</td><td>" + _titulo + "</td><td>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a></tr>"
+
+            var btn = document.createElement("TR");
+            btn.innerHTML = fila;
+            document.getElementById("tbodyAcademico").appendChild(btn);
+    }
+
+
 
 }
+function EliminarFila() {
 
+    $(document).on('click', '.btn-outline-danger', function (event) {
+        event.preventDefault();
+        $(this).closest('tr').remove();
+    });
+
+
+
+
+}
 function AgregarDatosIdioma() {
     var _idioma = document.getElementById("Idioma").value;
     var _lee = document.getElementById("lee");
@@ -68,10 +101,10 @@ function ObtenerFecha() {
 function ValidarFecha(dato) {
     var fecha_hoy = new Date();
     var fecha_selec = new Date(dato.value);
-    
+
     if (fecha_selec.getFullYear() > (fecha_hoy.getFullYear() - 18)) {
         document.getElementById("" + dato.id).style.borderColor = "#dd4b39";
-        
+
     } else {
         document.getElementById("" + dato.id).style.borderColor = "#d2d6de";
     }

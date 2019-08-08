@@ -20,12 +20,12 @@
     <link href="assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
     <link href="assets/demo/demo.css" rel="stylesheet" />
     <link href="assets/css/main.css" rel="stylesheet" />
-       
+
 </head>
 
 <body background="/form/cta-background.jpg">
     <div class="wrapper-full-page">
-       <div class="main-panel ps-container ps-active-y ">
+        <div class="main-panel ps-container ps-active-y ">
             <div class="content">
                 <div class="row">
                     <div class="col-md-1">
@@ -327,6 +327,7 @@
                                                                         OBTENIDO</th>
                                                                     <th>FECHA TERMINACION</th>
                                                                     <th>TARJETA PROFESIONAL</th>
+                                                                    <th>ACCIÓN</th>
                                                                 </thead>
                                                                 <tbody id="tbodyAcademico">
                                                                 </tbody>
@@ -681,11 +682,16 @@
                             <div class="card-footer">
                                 <div class="row justify-content-between">
                                     <div class="col-4">
-                                        <button class="btn " style="visibility: hidden" onclick="openCity(event, 'DatosPersonales')">Atras</button>
+                                        <div class="form-group">
+                                            <button class="btn " style="visibility: hidden"
+                                                onclick="openCity(event, 'DatosPersonales')">Atras</button>
+                                        </div>
                                     </div>
-                                    <div class="col-2">
-                                        <button class="btn btn-success"
-                                            onclick="openCity(event, 'FormacionAcademica')">Siguiente</button>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <button class="btn btn-success"
+                                                onclick="openCity(event, 'FormacionAcademica')">Siguiente</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -700,7 +706,7 @@
             <script src="assets/js/core/popper.min.js"></script>
             <script src="assets/js/core/bootstrap.min.js"></script>
             <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-            
+
             <!-- Chart JS -->
             <script src="assets/js/plugins/chartjs.min.js"></script>
             <script src="assets/js/main.js"></script>
