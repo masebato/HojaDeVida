@@ -183,10 +183,10 @@ function Hoja1() {
     img.crossOrigin = "";
     img.src = url1;
 }
-function Hoja2() {
+async function Hoja2() {
     var url2 = 'assets/js/0002.jpg';
     var img = new Image();
-    $(img).on('load', function () {
+    await $(img).on('load', function () {
         console.log(2);
         doc.addImage(this, 'JPG', -8, 0, 220, 300);
         doc.addPage();
@@ -197,13 +197,13 @@ function Hoja2() {
     img.src = url2;
 }
 function Hoja3() {
-    var url3 = 'assets/js/0002.jpg';
+    var url3 = 'assets/js/0003.jpg';
     var img = new Image();
     $(img).on('load', function () {
         console.log(3);
         doc.addImage(this, 'JPG', -8, 0, 220, 300);
-        doc.output('datauri');
-        //doc.save("prueba.pdf");
+        //doc.output('datauri');
+        doc.save("prueba.pdf");
         //doc.addPage();
     });
     img.crossOrigin = "";
