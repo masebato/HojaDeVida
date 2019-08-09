@@ -131,9 +131,9 @@ var doc;
 async function crear1() {
     doc = new jsPDF();
     //var url1 = 'assets/js/0001.jpg';
-    var url2 = 'assets/js/0002.jpg'
-    var url3 = 'assets/js/0003.jpg'
-    var img = new Image();
+    // var url2 = 'assets/js/0002.jpg'
+    //var url3 = 'assets/js/0003.jpg'
+    //var img = new Image();
     /*await $(img).on('load', function () {
 
         doc.addImage(this, 'JPG', -8, 0, 220, 300);
@@ -165,7 +165,7 @@ async function crear1() {
     img3.src = url3;
     */
 
-    var hoja1= await Hoja1();
+    var hoja1 = await Hoja1();
     var hoja2 = await Hoja2();
     var hoja3 = await Hoja3();
 
@@ -183,10 +183,10 @@ function Hoja1() {
     img.crossOrigin = "";
     img.src = url1;
 }
-async function Hoja2() {
+function Hoja2() {
     var url2 = 'assets/js/0002.jpg';
     var img = new Image();
-    await $(img).on('load', function () {
+    $(img).on('load', function () {
         console.log(2);
         doc.addImage(this, 'JPG', -8, 0, 220, 300);
         doc.addPage();
@@ -196,17 +196,20 @@ async function Hoja2() {
     img.crossOrigin = "";
     img.src = url2;
 }
-function Hoja3() {
+async function Hoja3() {
     var url3 = 'assets/js/0003.jpg';
     var img = new Image();
-    $(img).on('load', function () {
-        console.log(3);
-        doc.addImage(this, 'JPG', -8, 0, 220, 300);
-        //doc.output('datauri');
-        doc.save("prueba.pdf");
-        //doc.addPage();
-    });
-    img.crossOrigin = "";
-    img.src = url3;
+    setTimeout(() => {
+         $(img).on('load', function () {
+            console.log(3);
+            doc.addImage(this, 'JPG', -8, 0, 220, 300);
+            //doc.output('datauri');
+            doc.save("prueba.pdf");
+            //doc.addPage();
+        });
+        img.crossOrigin = "";
+        img.src = url3;
+    }, 2000);
+
 }
 
