@@ -31,6 +31,7 @@
                     </div>
                     <div class="col-md-8 ">
                         <div class="card card-user">
+                           
                             <div id="DatosPersonales" class="tabcontent" style="display: initial">
                                 <div class="card-body">
                                     <div class="contorno">
@@ -40,21 +41,20 @@
                                                 <div class="form-group">
                                                     <label>Primer Apellido</label>
                                                     <input type="text" class="form-control" id="PrimerApellido" required
-                                                        onkeyup="ValidarTexto(this)">
+                                                        onkeyup="ValidarTexto(this)" placeholder="Ej. Ramirez">
                                                 </div>
                                             </div>
                                             <div class="col-md-3 pr-1">
                                                 <div class="form-group">
                                                     <label>Segundo Apellido</label>
-                                                    <input type="text" class="form-control" id="SegundoApellido"
-                                                        required onkeyup="ValidarTexto(this)">
+                                                    <input type="text" class="form-control" id="SegundoApellido" placeholder="Ej. Suarez" >
                                                 </div>
                                             </div>
                                             <div class="col-md-5 pr-1">
                                                 <div class="form-group">
                                                     <label>Nombres</label>
                                                     <input type="text" class="form-control" id="Nombres" required
-                                                        onkeyup="ValidarTexto(this)">
+                                                        onkeyup="ValidarTexto(this)" placeholder="Ej. Pedro Antonio">
                                                 </div>
                                             </div>
                                         </div>
@@ -72,8 +72,7 @@
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label>Numero</label>
-                                                    <input type="text" class="form-control" name="numero" id="numero"
-                                                        onkeypress="ValidarNumero(this); required">
+                                                    <input type="text" class="form-control" name="numero" id="numero">
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
@@ -131,14 +130,13 @@
                                                         required>
 
                                                     <label>País</label>
-                                                    <input type="text" class="form-control" id="PaisResidencia" required
-                                                        onkeyup="ValidarTexto(this)">
+                                                    <input type="text" class="form-control" id="PaisResidencia" value="Colombia" disabled>
 
                                                     <label>Departamento</label>
-                                                    <input type="text" class="form-control" id="Departamento">
+                                                    <select name="Departamento" id="Departamento" class="form-control"></select>
 
                                                     <label>Municipio</label>
-                                                    <input type="text" class="form-control">
+                                                    <select name="Municipios" id="Municipios" class="form-control"></select>
 
                                                     <label>Correo electronico</label>
                                                     <input type="email" class="form-control">
@@ -152,13 +150,13 @@
                                                         <input type="date" class="form-control">
 
                                                         <label>País</label>
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" Placeholder="Ej. Colombia" required   onkeyup="ValidarTexto(this)">
 
                                                         <label>Departamento</label>
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control"required   onkeyup="ValidarTexto(this)" >
 
                                                         <label>Municipio</label>
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" required   onkeyup="ValidarTexto(this)">
                                                     </div>
                                             </div>
                                             <div class="col-md-4">
@@ -230,7 +228,7 @@
                                                         <div class="col-md-3">
                                                             <div class="form-group">
                                                                 <label>Educación básica</label>
-                                                                <select name="EduBasica" class="form-control" id="">
+                                                                <select name="EduBasica" class="form-control" id="" required>
                                                                     <option>1o</option>
                                                                     <option>2o</option>
                                                                     <option>3o</option>
@@ -248,13 +246,13 @@
                                                         <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label>Titulo obtenido</label>
-                                                                <input type="text" class="form-control">
+                                                                <input type="text" class="form-control" required   onkeyup="ValidarTexto(this)">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label>Fecha de grado</label>
-                                                                <input type="date" class="form-control">
+                                                                <input type="date" class="form-control" required>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -264,7 +262,7 @@
                                                             <div class="form-group">
                                                                 <label>Modalidad Académica</label>
                                                                 <select name="Modalidad" class="form-control"
-                                                                    id="Modalidad">
+                                                                    id="Modalidad" required>
                                                                     <option value="TC">Técnica</option>
                                                                     <option value="TL">Tecnológica</option>
                                                                     <option value="TE">Tecnológia especializada
@@ -280,15 +278,14 @@
                                                         <div class="col-md-1">
                                                             <div class="form-group">
                                                                 <label>Semestres</label>
-                                                                <input type="text" class="form-control"
-                                                                    id="semestresAprobados">
+                                                                <input type="text" class="form-control" id="semestresAprobados" onkeypress="ValidarNumero(this); required">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-1">
                                                             <div class="form-group">
                                                                 <label>Graduado</label>
                                                                 <select name="Graduado" class="form-control"
-                                                                    id="SelectGraduado">
+                                                                    id="SelectGraduado" required>
                                                                     <option value="Si">SI</option>
                                                                     <option value="No">NO</option>
                                                                 </select>
@@ -299,21 +296,21 @@
                                                                 <label>Nombre de los estudios o titulo
                                                                     obtenido</label>
                                                                 <input type="text" class="form-control"
-                                                                    id="nombretitulo">
+                                                                    id="nombretitulo" required>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <div class="form-group">
                                                                 <label>Terminacion</label>
                                                                 <input type="date" class="form-control"
-                                                                    id="FechaTerminacion">
+                                                                    id="FechaTerminacion" required>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <div class="form-group">
                                                                 <label>tarjeta profesional </label>
                                                                 <input type="text" class="form-control"
-                                                                    id="tarjetaProf">
+                                                                    id="tarjetaProf" required>
                                                             </div>
                                                         </div>
                                                     </div>

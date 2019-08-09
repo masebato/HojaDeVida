@@ -50,6 +50,7 @@ var getImageFromUrl = async function () {
             // doc.addPage();
             // doc.output('datauri');
 
+
         };
         img.crossOrigin = "";
         img.src = url[i];
@@ -99,6 +100,7 @@ var getImageFromUrl = async function () {
 */
     // Output as Data URI
     //doc.output('datauri');
+
 
 
 };

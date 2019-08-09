@@ -30,7 +30,6 @@ function openCity(evt, cityName) {
 //#endregion
 
 
-
 //#region Funciones para operaciones con tablas
 function AgregarDatosTable() {
     var _modalidad = document.getElementById("Modalidad");
@@ -69,7 +68,6 @@ function AgregarDatosTable() {
 
     var fila = "<tr><td>" + _modalidad.value + "</td><td>" + _semestres + "</td><td>" + _graduado.value + "</td><td>" + _titulo + "</td><td>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><a style='margin-left: 2px;' type='button' class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a></tr>"
 
-
 }
 
 
@@ -95,8 +93,6 @@ function AgregarDatosIdioma() {
 }
 
 //#endregion
-
-
 
 //window.addEventListener("load", function () {
 //  documento.addEventListener("keypress", ValidarNumero, false);
@@ -167,8 +163,47 @@ function validarRadio(dato) {
 
 
 //#region Cargar Departamentos y municipios 
+var JSONFinal;
+$(document).ready(function init() {
+    loadJSON(function (response) {
+        // Parse JSON string into object
+        JSONFinal = JSON.parse(response);
+        var $select = $('#Departamento');
+        //alert(options);
+        $.each(JSONFinal, function (id, name) {
+            $select.append('<option value=' + name.id + '>' + name.departamento + '</option>');
+        });
+    });
 
+    $('#Departamento').change(
+        function CargarMunicipios() {
+            $('#Municipios').empty();
+            var $select = $('#Municipios');
+            var valor = $('#Departamento').val();
+            $.each(JSONFinal, function (id, name) {
+                if (name.id == valor) {
+                    $.each(name.ciudades, function (id, city) {
+                        $select.append('<option >' + city + '</option>');
+                    })
+                }
+            });
+        }
+    );
+});
 
+function loadJSON(callback) {
+
+    var xobj = new XMLHttpRequest();
+
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'assets/js/colombia.json', true); // Reemplaza colombia-json.json con el nombre que le hayas puesto
+    xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+            callback(xobj.responseText);
+        }
+    };
+    xobj.send(null);
+}
 
 //#endregion
 
