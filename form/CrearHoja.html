@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+
 <html lang="es">
 
 <head>
@@ -8,10 +9,8 @@
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
-
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
@@ -23,6 +22,7 @@
 </head>
 
 <body background="/form/cta-background.jpg">
+    <form id="" method="POST"> 
     <div class="wrapper-full-page">
         <div class="main-panel ps-container ps-active-y ">
             <div class="content">
@@ -30,9 +30,8 @@
                     <div class="col-md-2">
                     </div>
                     <div class="col-md-8 ">
-                        <div class="card card-user">
-                           
-                            <div id="DatosPersonales" class="tabcontent" style="display: initial">
+                        <div class="card card-user">                           
+                            <div id="DatosPersonales" class="tabcontent" style="display: initial">                             
                                 <div class="card-body">
                                     <div class="contorno">
                                         <h7>Datos personales</h7>
@@ -165,14 +164,12 @@
                                                     <br>
                                                     <input class="form-check-input" type="radio" name="LibretaMilitar"
                                                         id="PrimeraClase" value="option1">
-                                                    <label class="form-check-label" for="PrimeraClase">Primera
-                                                        Clase</label>
+                                                    <label class="form-check-label" for="PrimeraClase">Primera Clase</label>
 
                                                     <div class="form-group ">
                                                         <input class="form-check-input" type="radio"
                                                             name="LibretaMilitar" id="SegundaClase" value="option2">
-                                                        <label class="form-check-label" for="SegundaClase">Segunda
-                                                            Clase</label>
+                                                        <label class="form-check-label" for="SegundaClase">Segunda Clase</label>
                                                     </div>
                                                     <label>Numero</label>
                                                     <input type="text" class="form-control">
@@ -183,7 +180,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>                           
                             </div>
                             <div id="FormacionAcademica" class="tabcontent">
                                 <div class="card-body">
@@ -215,7 +212,7 @@
                                                     <button class="btn btn-link collapsed" type="button"
                                                         data-toggle="collapse" data-target="#collapseTwo"
                                                         aria-expanded="false" aria-controls="collapseTwo">
-                                                        <i class="icono-document"></i>Formación
+                                                        <i class="icono-document"></i> Formación
                                                     </button>
                                                 </h2>
                                             </div>
@@ -332,7 +329,6 @@
                                                                     <th>FECHA TERMINACION</th>
                                                                     <th>TARJETA PROFESIONAL</th>
                                                                     <th>ACCIÓN</th>
-
                                                                 </thead>
                                                                 <tbody id="tbodyAcademico">
                                                                 </tbody>
@@ -710,6 +706,7 @@
                     </div>
                 </div>
             </div>
+        </form> 
             <script src="assets/js/core/jquery.min.js"></script>
             <script src="assets/js/core/popper.min.js"></script>
             <script src="assets/js/core/bootstrap.min.js"></script>
