@@ -176,7 +176,7 @@ function Hoja1() {
     $(img).on('load', function () {
         console.log(1);
         doc.addImage(this, 'JPG', -8, 0, 220, 300);
-        doc.setFontSize(14);
+        doc.setFontSize(12);
         doc.setFont("Arial")
         doc.text(15, 72.8, "primer apellido");
         doc.text(74, 72.8, "segundo apellido");
@@ -185,19 +185,19 @@ function Hoja1() {
         doc.text(22, 82, "x");//C.C
         doc.text(33, 82, "x");//C.E
         doc.text(45, 82, "x");//Pass
-        doc.setFontSize(14);
+        doc.setFontSize(12);
         doc.text(58, 82.8, "Identificacion");
         doc.setFontSize(10);
         doc.text(106.2, 82, "x");//F
         doc.text(115, 82, "x");//M
         doc.text(130.5, 82, "x");//COL
         doc.text(156.5, 82, "x");//EXTRA
-        doc.setFontSize(14);
+        doc.setFontSize(12);
         doc.text(163, 82.8, "Pais");
         doc.setFontSize(10);
         doc.text(44.6, 94, "x");
         doc.text(86.3, 94, "x");
-        doc.setFontSize(14);
+        doc.setFontSize(12);
         doc.text(114, 94, "Numero");
         doc.text(171, 94, "D.M");
         doc.text(41.2, 108, "07");//Dia
@@ -205,7 +205,7 @@ function Hoja1() {
         doc.text(77.4, 108, "2019");//Año
         doc.setFontSize(12);
         doc.text(98, 107.8, "Dir Correspondencia");
-        doc.setFontSize(14);
+        doc.setFontSize(12);
         //fecha de nacimiento ylugar
         doc.text(34, 114.6, "Pais nacimiento");
         doc.text(34, 121, "Depto Naci");
@@ -213,7 +213,17 @@ function Hoja1() {
         //direccion de correspondencia
         doc.text(107, 114.6, "Pais Corres");
         doc.text(162, 114.6, "Depto corres");
-        doc.text(118, 121, "Municipio corres");
+        doc.text(117, 121, "Municipio corres");
+        doc.text(117, 128, "Telefono");
+        doc.text(162, 128, "Email");
+         //feducacion basica y media 
+         doc.text(130, 167.5, "Titulo obtenido");
+         doc.setFontSize(12);
+         doc.text(29, 179, "X"); //primaria 1
+         doc.text(34, 179, "X"); //primaria 2
+         doc.text(39, 179, "X"); //primaria 3
+         doc.text(44, 179, "X"); //primaria 4
+         doc.text(49, 179, "X"); //primaria 4
         doc.addPage();
         //doc.save("prueba.pdf");
         //doc.addPage();
