@@ -1,9 +1,22 @@
 window.addEventListener("load", function () {
     numero.addEventListener("keypress", ValidarNumero, false);
-
-
+    
 });
 
+var flag=true;
+$('#btnBack').click( function(){
+    $('#btnBack').css('display','none');
+    flag=true;
+});
+
+
+$('#btnNext').click(()=>{   
+        if (flag) {      
+            openCity(event, 'FormacionAcademica'); // Method for view the new page of blocks
+            $('#btnBack').css('display','block'); 
+            flag=false; // this flag is used for show the button "btnBack"
+        }               
+});
 
 //#region Crear Collapse 
 function openCity(evt, cityName) {
@@ -25,12 +38,14 @@ function openCity(evt, cityName) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
+          
 }
+
+
 
 //#endregion
 
-
-//#region Funciones para operaciones con tablas
+//#region functions for operations with tables
 function AgregarDatosTable() {
     var _modalidad = document.getElementById("Modalidad");
     var _semestres = document.getElementById("semestresAprobados").value;
@@ -99,7 +114,7 @@ function AgregarDatosIdioma() {
 //telefono.addEventListener("keypress", ValidarNumero, false);
 //});
 
-//#region Validaciones
+//#region validations
 function ObtenerFecha() {
     var n, y, m, d;
     n = new Date();
@@ -133,7 +148,7 @@ function ValidarTexto(dato) {
     if (dato.value == "") {
         document.getElementById("" + dato.id).style.borderColor = "#dd4b39";
     } else {
-        document.getElementById("" + dato.id).style.borderColor = "#d2d6de";
+        //document.getElementById("" + dato.id).style.borderColor = "#d2d6de";
     }
 }
 function ValidarNumero(dato) {
@@ -159,10 +174,31 @@ function validarRadio(dato) {
 
     }
 }
+
+// notificaciones 
+
+ function showNotification(from, align) {
+    color = 'danger';
+
+    $.notify({
+      icon: "nc-icon nc-bell-55",
+      message: "Por favor llene los campos requeridos para poder avanzar."
+
+    }, {
+      type: color,
+      timer: 8000,
+      placement: {
+        from: from,
+        align: align
+      }
+    });
+  }
+
+
+
 //#endregion
 
-
-//#region Cargar Departamentos y municipios 
+//#region load Departamentos  and municipios 
 var JSONFinal;
 $(document).ready(function init() {
     loadJSON(function (response) {

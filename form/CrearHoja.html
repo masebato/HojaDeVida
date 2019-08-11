@@ -1,4 +1,5 @@
 
+<!DOCTYPE html>
 
 <html lang="es">
 
@@ -22,7 +23,7 @@
 </head>
 
 <body background="/form/cta-background.jpg">
-    <form id="" method="POST"> 
+    <form id="DatosPersonalesForm" method="POST"> 
     <div class="wrapper-full-page">
         <div class="main-panel ps-container ps-active-y ">
             <div class="content">
@@ -39,29 +40,28 @@
                                             <div class="col-md-3 pr-1">
                                                 <div class="form-group">
                                                     <label>Primer Apellido</label>
-                                                    <input type="text" class="form-control" id="PrimerApellido" required
-                                                        onkeyup="ValidarTexto(this)" placeholder="Ej. Ramirez">
+                                                    <input type="text" class="form-control" id="PrimerApellido" required pattern="[A-Za-z]+"
+                                                         placeholder="Ej. Ramirez">
                                                 </div>
                                             </div>
                                             <div class="col-md-3 pr-1">
                                                 <div class="form-group">
                                                     <label>Segundo Apellido</label>
-                                                    <input type="text" class="form-control" id="SegundoApellido" placeholder="Ej. Suarez" >
+                                                    <input type="text" class="form-control" id="SegundoApellido" placeholder="Ej. Suarez"  pattern="[A-Za-z]*">
                                                 </div>
                                             </div>
                                             <div class="col-md-5 pr-1">
                                                 <div class="form-group">
                                                     <label>Nombres</label>
                                                     <input type="text" class="form-control" id="Nombres" required
-                                                        onkeyup="ValidarTexto(this)" placeholder="Ej. Pedro Antonio">
+                                                         placeholder="Ej. Pedro Antonio" pattern="[A-Za-z]+">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <label>Tipo Documento</label>
-                                                <select class="form-control" name="TipoDocumento" id="TipoDocumento"
-                                                    onclick="ValidarSelector(this)">
+                                                <select class="form-control"  id="TipoDocumento"    required                                                >
                                                     <option selected value="">Seleccione</option>
                                                     <option value="C.C">C.C</option>
                                                     <option value="C.E">C.E</option>
@@ -71,7 +71,7 @@
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label>Numero</label>
-                                                    <input type="text" class="form-control" name="numero" id="numero">
+                                                    <input type="text" class="form-control"  id="numero" required pattern="[1-9]+">
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
@@ -113,8 +113,8 @@
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label>País</label>
-                                                    <input class="form-control" type="text" id="PaisCiudadania"
-                                                        onkeyup="ValidarTexto(this)">
+                                                    <input class="form-control" type="text" id="PaisCiudadania" pattern="[A-Za-z]*+"
+                                                        >
                                                 </div>
                                             </div>
                                         </div>
@@ -132,13 +132,13 @@
                                                     <input type="text" class="form-control" id="PaisResidencia" value="Colombia" disabled>
 
                                                     <label>Departamento</label>
-                                                    <select name="Departamento" id="Departamento" class="form-control"></select>
+                                                    <select name="Departamento" id="Departamento" class="form-control" ></select>
 
                                                     <label>Municipio</label>
                                                     <select name="Municipios" id="Municipios" class="form-control"></select>
 
                                                     <label>Correo electronico</label>
-                                                    <input type="email" class="form-control">
+                                                    <input type="email" id="CorreoElectronico" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
@@ -149,13 +149,13 @@
                                                         <input type="date" class="form-control">
 
                                                         <label>País</label>
-                                                        <input type="text" class="form-control" Placeholder="Ej. Colombia" required   onkeyup="ValidarTexto(this)">
+                                                        <input type="text" class="form-control" Placeholder="Ej. Colombia" id="PaisNacimiento" required  >
 
                                                         <label>Departamento</label>
-                                                        <input type="text" class="form-control"required   onkeyup="ValidarTexto(this)" >
+                                                        <input type="text" class="form-control"required id="DepartamentoNacimiento" pattern="[A-Za-z]+"  >
 
                                                         <label>Municipio</label>
-                                                        <input type="text" class="form-control" required   onkeyup="ValidarTexto(this)">
+                                                        <input type="text" class="form-control" required id="MunicipioNacimiento" pattern="[A-Za-z]+" >
                                                     </div>
                                             </div>
                                             <div class="col-md-4">
@@ -172,16 +172,17 @@
                                                         <label class="form-check-label" for="SegundaClase">Segunda Clase</label>
                                                     </div>
                                                     <label>Numero</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" pattern="[1-9]*+">
 
                                                     <label>D.M</label>
-                                                    <input type="email" class="form-control">
+                                                    <input type="email" class="form-control" pattern="[1-9]*+">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>                           
                             </div>
+                        </form> 
                             <div id="FormacionAcademica" class="tabcontent">
                                 <div class="card-body">
                                     <div class="accordion" id="accordionExample">
@@ -243,7 +244,7 @@
                                                         <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label>Titulo obtenido</label>
-                                                                <input type="text" class="form-control" required   onkeyup="ValidarTexto(this)">
+                                                                <input type="text" class="form-control" required  >
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
@@ -275,7 +276,7 @@
                                                         <div class="col-md-1">
                                                             <div class="form-group">
                                                                 <label>Semestres</label>
-                                                                <input type="text" class="form-control" id="semestresAprobados" onkeypress="ValidarNumero(this); required">
+                                                                <input type="text" class="form-control" id="semestresAprobados"  required>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-1">
@@ -683,30 +684,26 @@
                             <div class="card-footer">
                                 <div class="row justify-content-between">
                                     <div class="col-4">
-
                                         <div class="form-group">
-                                            <button class="btn " style="visibility: hidden"
+                                            <button class="btn " id="btnBack" style="display: none"
                                                 onclick="openCity(event, 'DatosPersonales')">Atras</button>
                                         </div>
-
-
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <button class="btn btn-success"
-                                                onclick="openCity(event, 'FormacionAcademica')">Siguiente</button>
+                                            <input id="btnNext" type="submit" value="siguiente" class="btn btn-success">
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-1">
-                                <button class="btn" onclick="crear1()"></button>
-                            </div>
+                            </div>                        
                         </div>
+                    </div>
+                    <div class="col-md-2">
+                               
                     </div>
                 </div>
             </div>
-        </form> 
+        
             <script src="assets/js/core/jquery.min.js"></script>
             <script src="assets/js/core/popper.min.js"></script>
             <script src="assets/js/core/bootstrap.min.js"></script>
