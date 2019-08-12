@@ -1,24 +1,66 @@
 window.addEventListener("load", function () {
     numero.addEventListener("keypress", ValidarNumero, false);
-    
+
 });
 
-var flag=true;
-$('#btnBack').click( function(){
-    $('#btnBack').css('display','none');
-    flag=true;
+/**
+    * 
+    * @param {Number} flag this variable is used for hidden or show the button "next"
+    */
+
+var flag = true;
+$('#btnBack').click(function () {
+    $('#btnBack').css('display', 'none');
+    flag = true;// this flag is used for show the button "btnBack"
 });
 
 
-$('#btnNext').click(()=>{   
-        if (flag) {      
-            openCity(event, 'FormacionAcademica'); // Method for view the new page of blocks
-            $('#btnBack').css('display','block'); 
-            flag=false; // this flag is used for show the button "btnBack"
-        }               
+$('#btnNext').click(() => {
+    if (flag) {
+        openCity(event, 'FormacionAcademica'); // Method for view the new page of blocks
+        $('#btnBack').css('display', 'block');
+        flag = false; // this flag is used for show the button "btnBack"
+    }
 });
 
-//#region Crear Collapse 
+
+$(document).ready(function() {
+    //Siempre que salgamos de un campo de texto, se chequeará esta función
+    $("#DatosPersonalesForm input").keyup(function() {
+        var form = $(this).parents("#DatosPersonales");
+        var check = checkCampos(form);
+        if(check) {
+            $("#btnNext").prop("disabled", false);
+        }
+        else {
+            $("#btnNext").prop("disabled", true);
+        }
+    });
+});
+
+function checkCampos(obj) {
+    var camposRellenados = true;
+    obj.find("input").each(function() {
+    var $this = $(this);
+        if( $this.val().length <= 0 ) {
+            camposRellenados = false;
+            return false;
+        }
+    });
+    if(camposRellenados == false) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+
+
+
+
+
+//#region make Collapse 
 function openCity(evt, cityName) {
     // Declare all variables
     var i, tabcontent, tablinks;
@@ -38,7 +80,7 @@ function openCity(evt, cityName) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
-          
+
 }
 
 
@@ -177,22 +219,22 @@ function validarRadio(dato) {
 
 // notificaciones 
 
- function showNotification(from, align) {
+function showNotification(from, align) {
     color = 'danger';
 
     $.notify({
-      icon: "nc-icon nc-bell-55",
-      message: "Por favor llene los campos requeridos para poder avanzar."
+        icon: "nc-icon nc-bell-55",
+        message: "Por favor llene los campos requeridos para poder avanzar."
 
     }, {
-      type: color,
-      timer: 8000,
-      placement: {
-        from: from,
-        align: align
-      }
-    });
-  }
+            type: color,
+            timer: 8000,
+            placement: {
+                from: from,
+                align: align
+            }
+        });
+}
 
 
 
