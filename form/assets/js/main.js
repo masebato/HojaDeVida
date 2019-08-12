@@ -26,42 +26,16 @@ $('#btnNext').click(() => {
 
 $(document).ready(function() {
     //Siempre que salgamos de un campo de texto, se chequeará esta función
-    $("#DatosPersonalesForm input").keyup(function() {
-       // var form = $(this).parents("#DatosPersonales");
+    $("#DatosPersonalesForm input").keyup(function() {      
         var check = checkCampos();
         if(check) {
             $("#btnNext").prop("disabled", false);
         }
         else {
-            $("#btnNext").prop("disabled", true);
+         //   $("#btnNext").prop("disabled", true);
         }
     });
 });
-
-function checkCampos() {
-
-    var components = ["#PrimerApellido","#Nombres","#TipoDocumento","#numero","#DireccionResidencia","#PaisResidencia","#Departamento",
-    "#Municipios","#CorreoElectronico","#fechaNacimiento","#DepartamentoNacimiento","#MunicipioNacimiento"];
-    var camposRellenados = true;
-    $.each(components, function(i, val) {
-    var $this = val;
-        if( $($this).val().length <= 0 || $($this).val()=="" ) {
-            camposRellenados = false;
-            return false;
-        }
-    });
-    if(camposRellenados == false) {
-        return false;
-    }
-    else {
-        return true;
-    }
-}
-
-
-
-
-
 
 //#region make Collapse 
 function openCity(evt, cityName) {
@@ -217,6 +191,26 @@ function validarRadio(dato) {
     }
     else {
 
+    }
+}
+
+function checkCampos() {
+
+    var components = ["#PrimerApellido","#Nombres","#TipoDocumento","#numero","#DireccionResidencia","#PaisResidencia","#Departamento",
+    "#Municipios","#CorreoElectronico","#fechaNacimiento","#DepartamentoNacimiento","#MunicipioNacimiento"]; // this is inputs id
+    var camposRellenados = true;
+    $.each(components, function(i, val) {
+    var $this = val;
+        if( $($this).val().length <= 0 || $($this).val()=="" ) { // this validate the inputs, that not be empty
+            camposRellenados = false;
+            return false;
+        }
+    });
+    if(camposRellenados == false) {
+        return false;
+    }
+    else {
+        return true;
     }
 }
 
