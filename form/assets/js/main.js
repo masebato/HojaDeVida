@@ -27,8 +27,8 @@ $('#btnNext').click(() => {
 $(document).ready(function() {
     //Siempre que salgamos de un campo de texto, se chequeará esta función
     $("#DatosPersonalesForm input").keyup(function() {
-        var form = $(this).parents("#DatosPersonales");
-        var check = checkCampos(form);
+       // var form = $(this).parents("#DatosPersonales");
+        var check = checkCampos();
         if(check) {
             $("#btnNext").prop("disabled", false);
         }
@@ -38,11 +38,14 @@ $(document).ready(function() {
     });
 });
 
-function checkCampos(obj) {
+function checkCampos() {
+
+    var components = ["#PrimerApellido","#Nombres","#TipoDocumento","#numero","#DireccionResidencia","#PaisResidencia","#Departamento",
+    "#Municipios","#CorreoElectronico","#fechaNacimiento","#DepartamentoNacimiento","#MunicipioNacimiento"];
     var camposRellenados = true;
-    obj.find("input").each(function() {
-    var $this = $(this);
-        if( $this.val().length <= 0 ) {
+    $.each(components, function(i, val) {
+    var $this = val;
+        if( $($this).val().length <= 0 || $($this).val()=="" ) {
             camposRellenados = false;
             return false;
         }
