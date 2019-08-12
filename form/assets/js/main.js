@@ -23,20 +23,6 @@ $('#btnNext').click(() => {
     }
 });
 
-
-$(document).ready(function() {
-    //Siempre que salgamos de un campo de texto, se chequeará esta función
-    $("#DatosPersonalesForm input").keyup(function() {      
-        var check = checkCampos();
-        if(check) {
-            $("#btnNext").prop("disabled", false);
-        }
-        else {
-         //   $("#btnNext").prop("disabled", true);
-        }
-    });
-});
-
 //#region make Collapse 
 function openCity(evt, cityName) {
     // Declare all variables
@@ -194,10 +180,9 @@ function validarRadio(dato) {
     }
 }
 
-function checkCampos() {
+function checkCampos(components) {
 
-    var components = ["#PrimerApellido","#Nombres","#TipoDocumento","#numero","#DireccionResidencia","#PaisResidencia","#Departamento",
-    "#Municipios","#CorreoElectronico","#fechaNacimiento","#DepartamentoNacimiento","#MunicipioNacimiento"]; // this is inputs id
+    
     var camposRellenados = true;
     $.each(components, function(i, val) {
     var $this = val;
@@ -213,6 +198,50 @@ function checkCampos() {
         return true;
     }
 }
+
+
+
+$(document).ready(function() {
+    //Siempre que salgamos de un campo de texto, se chequeará esta función
+    $("#DatosPersonalesForm input").keyup(function() {     
+        var components = ["#PrimerApellido","#Nombres","#TipoDocumento","#numero","#DireccionResidencia","#PaisResidencia","#Departamento",
+         "#Municipios","#CorreoElectronico","#fechaNacimiento","#DepartamentoNacimiento","#MunicipioNacimiento"]; // this is inputs id 
+        var check = checkCampos(components);
+        if(check) {
+            $("#btnNext").prop("disabled", false);
+        }
+        else {
+         //   $("#btnNext").prop("disabled", true);
+        }
+    });
+
+    $("#formacionDiv input").keyup(function() {     
+        var components = ["#SelectEducacion","#tituloObtenido","#Modalidad","#semestresAprobados","#SelectGraduado","#nombretitulo"]; // this is inputs id 
+        var check = checkCampos(components);
+        if(check) {
+            $("#btnAdd").prop("disabled", false);
+        }
+        else {
+
+           $("#btnAdd").prop("disabled", true);
+        }
+    });
+
+    $("#collapseIdioma input").keyup(function() {     
+        var components = ["#Idioma","#habla","#lee","#escribe"]; // this is inputs id 
+        var check = checkCampos(components);
+        if(check) {
+            $("#AddIdioma").prop("disabled", false);
+        }
+        else {
+
+           $("#AddIdioma").prop("disabled", true);
+        }
+    });
+    
+});
+
+
 
 // notificaciones 
 

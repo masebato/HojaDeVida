@@ -19,13 +19,14 @@
     <link href="assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
     <link href="assets/demo/demo.css" rel="stylesheet" />
     <link href="assets/css/main.css" rel="stylesheet" />
+  
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-5804496081140821",
-              enable_page_level_ads: true
-         });
-    </script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-3264204221323420",
+    enable_page_level_ads: true
+  });
+</script>
        
 
 </head>
@@ -229,13 +230,13 @@
                                             <div class="card-header" id="headingTwo">
                                                 <h2 class="mb-0">
                                                     <button class="btn btn-link collapsed" type="button"
-                                                        data-toggle="collapse" data-target="#collapseTwo"
-                                                        aria-expanded="false" aria-controls="collapseTwo">
+                                                        data-toggle="collapse" data-target="#formacionDiv"
+                                                        aria-expanded="false" aria-controls="formacionDiv">
                                                         <i class="icono-document"></i> Formación
                                                     </button>
                                                 </h2>
                                             </div>
-                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                            <div id="formacionDiv" class="collapse" aria-labelledby="headingTwo"
                                                 data-parent="#accordionExample">
                                                 <div class="card-body">
                                                     <h4>Educacián básica y media</h4>
@@ -262,13 +263,13 @@
                                                         <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label>Titulo obtenido</label>
-                                                                <input type="text" class="form-control" required  >
+                                                                <input type="text" class="form-control" required id="tituloObtenido" >
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label>Fecha de grado</label>
-                                                                <input type="date" class="form-control" required>
+                                                                <input type="date" class="form-control" id="FechaGrado" required>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -320,20 +321,20 @@
                                                             <div class="form-group">
                                                                 <label>Fecha Terminacion</label>
                                                                 <input type="date" class="form-control"
-                                                                    id="FechaTerminacion" required>
+                                                                    id="FechaTerminacion">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label>N° tarjeta profesional </label>
                                                                 <input type="text" class="form-control" placeholder="Tarjeta prof"
-                                                                    id="tarjetaProf" required>
+                                                                    id="tarjetaProf" >
                                                             </div>
                                                         </div>
                                                    
                                                         
                                                         <div class="col-2">
-                                                            <button class="btn btn-info"
+                                                            <button class="btn btn-info" id="btnAdd" disabled="true"
                                                                 onclick="AgregarDatosTable()">Agregar</button>
                                                         </div>
                                                     </div>
@@ -429,7 +430,7 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-2">
-                                                            <button type="button" class="btn btn-info"
+                                                            <button type="button" class="btn btn-info" id="AddIdioma" disabled="true"
                                                                 onclick=" AgregarDatosIdioma()">Agregar</button>
                                                         </div>
                                                     </div>
@@ -710,7 +711,7 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="form-group">
-                                            <input id="btnNext"  type="submit" value="siguiente" class="btn btn-success">
+                                            <input id="btnNext"  type="submit" value="siguiente" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">
                                         </div>
                                     </div>
                                 </div>
@@ -727,8 +728,33 @@
                    <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
                    </script>
+
+
+
+                    </div>
+
+                    
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h6>Seleccione el formato que desea</h6>
+                      </div>
+                      <div class="modal-body">
+
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-success">Aceptar </button>
+                      </div>
+                    </div>
                     </div>
                 </div>
+                </div>
+
+
+
+
+
             </div>
         
             <script src="assets/js/core/jquery.min.js"></script>
