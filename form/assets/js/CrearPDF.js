@@ -216,14 +216,14 @@ function Hoja1() {
         doc.text(117, 121, "Municipio corres");
         doc.text(117, 128, "Telefono");
         doc.text(162, 128, "Email");
-         //feducacion basica y media 
-         doc.text(130, 167.5, "Titulo obtenido");
-         doc.setFontSize(12);
-         doc.text(29, 179, "X"); //primaria 1
-         doc.text(34, 179, "X"); //primaria 2
-         doc.text(39, 179, "X"); //primaria 3
-         doc.text(44, 179, "X"); //primaria 4
-         doc.text(49, 179, "X"); //primaria 4
+        //feducacion basica y media 
+        doc.text(130, 167.5, "Titulo obtenido");
+        doc.setFontSize(12);
+        doc.text(29, 179, "X"); //primaria 1
+        doc.text(34, 179, "X"); //primaria 2
+        doc.text(39, 179, "X"); //primaria 3
+        doc.text(44, 179, "X"); //primaria 4
+        doc.text(49, 179, "X"); //primaria 4
         doc.addPage();
         //doc.save("prueba.pdf");
         //doc.addPage();
@@ -231,7 +231,7 @@ function Hoja1() {
     img.crossOrigin = "";
     img.src = url1;
 }
-function Hoja2() {
+async function Hoja2() {
     var url2 = 'assets/img/0002.jpg';
     var img = new Image();
     $(img).on('load', function () {
@@ -248,7 +248,7 @@ async function Hoja3() {
     var url3 = 'assets/img/0003.jpg';
     var img = new Image();
     setTimeout(() => {
-         $(img).on('load', function () {
+        $(img).on('load', function () {
             console.log(3);
             doc.addImage(this, 'JPG', -8, 0, 220, 300);
             //doc.output('datauri');
