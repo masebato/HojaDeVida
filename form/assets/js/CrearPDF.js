@@ -171,7 +171,7 @@ async function crear1() {
 
 }
 function Hoja1() {
-    var url1 = 'assets/js/0001.jpg';
+    var url1 = 'assets/img/0001.jpg';
     var img = new Image();
     $(img).on('load', function () {
         console.log(1);
@@ -232,7 +232,7 @@ function Hoja1() {
     img.src = url1;
 }
 function Hoja2() {
-    var url2 = 'assets/js/0002.jpg';
+    var url2 = 'assets/img/0002.jpg';
     var img = new Image();
     $(img).on('load', function () {
         console.log(2);
@@ -245,7 +245,7 @@ function Hoja2() {
     img.src = url2;
 }
 async function Hoja3() {
-    var url3 = 'assets/js/0003.jpg';
+    var url3 = 'assets/img/0003.jpg';
     var img = new Image();
     setTimeout(() => {
          $(img).on('load', function () {

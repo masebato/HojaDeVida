@@ -261,6 +261,27 @@ $(document).ready(function() {
     });
     
     $("#TiempoDIV input").keyup(()=>{
+        var $AñosSP = $('#AñosSP').val();
+        var $MesesSP = $('#MesesSP').val();
+        var $AñosESP = $('#AñoESP').val();
+        var $MesesESP = $('#MesESP').val();
+        var $AñoTI = $('#AñoTI').val();
+        var $MesTI = $('#MesTI').val();
+        var TotalAños;
+        var TotalMeses;
+
+
+        TotalAños= parseInt($AñosSP)+parseInt($AñosESP)+parseInt($AñoTI);
+        TotalMeses = parseInt($MesTI)+parseInt($MesesESP)+parseInt($MesesSP);
+
+        while (TotalMeses>=12) {
+            TotalMeses = parseInt(TotalMeses) - 12;
+            TotalAños++;
+        }
+        console.log("Años "+TotalAños+" Meses-"+TotalMeses);
+
+        $('#totalAÑOS').val() =TotalAños;
+        $('#totalMESES').val() =TotalMeses;
         
     });
 });
