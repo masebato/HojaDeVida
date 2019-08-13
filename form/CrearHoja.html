@@ -211,10 +211,12 @@
                                     </div>
                                 </div>
     </form>
-    <div id="FormacionAcademica" class="tabcontent">
-        <div class="card-body">
+
+    <div id="FormacionAcademica" class="tabcontent">      
+            <div class="row" id="PerfilDIV">
+                <div class="col-md-12">                          
             <div class="accordion" id="accordionExample">
-                <div class="card">
+                <div class="card card-stats" >
                     <div class="card-header" id="headingOne">
                         <h2 class="mb-0">
                             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
@@ -233,138 +235,145 @@
                         </div>
                     </div>
                 </div>
-                <div class="card ">
-                    <div class="card-header" id="headingTwo">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                data-target="#formacionDiv" aria-expanded="false" aria-controls="formacionDiv">
-                                <i class="icono-document"></i> Formación
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="formacionDiv" class="collapse" aria-labelledby="headingTwo"
-                        data-parent="#accordionExample">
-                        <div class="card-body">
-                            <h4>Educacián básica y media</h4>
-                            <div class="row">
 
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>Educación básica</label>
-                                        <select name="EduBasica" class="form-control" id="SelectEducacion" required>
-                                            <option>1o</option>
-                                            <option>2o</option>
-                                            <option>3o</option>
-                                            <option>4o</option>
-                                            <option>5o</option>
-                                            <option>6o</option>
-                                            <option>7o</option>
-                                            <option>8o</option>
-                                            <option>9o</option>
-                                            <option>10</option>
-                                            <option>11</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Titulo obtenido</label>
-                                        <input type="text" class="form-control" required id="tituloObtenido">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Fecha de grado</label>
-                                        <input type="date" class="form-control" id="FechaGrado" required>
-                                    </div>
-                                </div>
+            </div>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-md-12">
+                    <div class="card card-stats " id="FormacionDIV">
+                            <div class="card-header" id="headingTwo">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#formacionDiv" aria-expanded="false" aria-controls="formacionDiv">
+                                        <i class="icono-document"></i> Formación
+                                    </button>
+                                </h2>
                             </div>
-                            <h4>Educación superior</h4>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>Modalidad </label>
-                                        <select name="Modalidad" class="form-control" id="Modalidad" required>
-                                            <option value="TC">Técnica</option>
-                                            <option value="TL">Tecnológica</option>
-                                            <option value="TE">Tecnológia especializada
-                                            </option>
-                                            <option value="UN">Universitaria</option>
-                                            <option value="ES">Especialización</option>
-                                            <option value="MG">Maestria o magister
-                                            </option>
-                                            <option value="DOC">Doctorado o PHD</option>
-                                        </select>
+                            <div id="formacionDiv" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <h4>Educacián básica y media</h4>
+                                    <div class="row">
+        
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Educación básica</label>
+                                                <select name="EduBasica" class="form-control" id="SelectEducacion" required>
+                                                    <option>1o</option>
+                                                    <option>2o</option>
+                                                    <option>3o</option>
+                                                    <option>4o</option>
+                                                    <option>5o</option>
+                                                    <option>6o</option>
+                                                    <option>7o</option>
+                                                    <option>8o</option>
+                                                    <option>9o</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Titulo obtenido</label>
+                                                <input type="text" class="form-control" required id="tituloObtenido">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Fecha de grado</label>
+                                                <input type="date" class="form-control" id="FechaGrado" required>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-1">
-                                    <div class="form-group">
-                                        <label>Semestres</label>
-                                        <input type="text" class="form-control" id="semestresAprobados" required>
+                                    <h4>Educación superior</h4>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Modalidad </label>
+                                                <select name="Modalidad" class="form-control" id="Modalidad" required>
+                                                    <option value="TC">Técnica</option>
+                                                    <option value="TL">Tecnológica</option>
+                                                    <option value="TE">Tecnológia especializada
+                                                    </option>
+                                                    <option value="UN">Universitaria</option>
+                                                    <option value="ES">Especialización</option>
+                                                    <option value="MG">Maestria o magister
+                                                    </option>
+                                                    <option value="DOC">Doctorado o PHD</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <div class="form-group">
+                                                <label>Semestres</label>
+                                                <input type="text" class="form-control" id="semestresAprobados" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>Graduado</label>
+                                                <select name="Graduado" class="form-control" id="SelectGraduado" required>
+                                                    <option value="Si">SI</option>
+                                                    <option value="No">NO</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Nombre de los estudios o titulo obtenido </label>
+                                                <input type="text" class="form-control" id="nombretitulo" required>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-group">
-                                        <label>Graduado</label>
-                                        <select name="Graduado" class="form-control" id="SelectGraduado" required>
-                                            <option value="Si">SI</option>
-                                            <option value="No">NO</option>
-                                        </select>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Fecha Terminacion</label>
+                                                <input type="date" class="form-control" id="FechaTerminacion">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>N° tarjeta profesional </label>
+                                                <input type="text" class="form-control" placeholder="Tarjeta prof"
+                                                    id="tarjetaProf">
+                                            </div>
+                                        </div>
+        
+        
+                                        <div class="col-2">
+                                            <button class="btn btn-info" id="btnAdd" disabled="true"
+                                                onclick="AgregarDatosTable()">Agregar</button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-5">
-                                    <div class="form-group">
-                                        <label>Nombre de los estudios o titulo obtenido </label>
-                                        <input type="text" class="form-control" id="nombretitulo" required>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table table-responsive-md" id="tableAcademico">
+                                                <thead>
+                                                    <th>MODALIDAD ACADÉMICA</th>
+                                                    <th>No. SEMESTRES APROBADOS</th>
+                                                    <th>GRADUADO</th>
+                                                    <th>NOMBRE DE LOS ESTUDIOS O TITULOS OBTENIDO</th>
+                                                    <th>FECHA TERMINACION</th>
+                                                    <th>TARJETA PROFESIONAL</th>
+                                                    <th>ACCIÓN</th>
+                                                </thead>
+                                                <tbody id="tbodyAcademico">
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Fecha Terminacion</label>
-                                        <input type="date" class="form-control" id="FechaTerminacion">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>N° tarjeta profesional </label>
-                                        <input type="text" class="form-control" placeholder="Tarjeta prof"
-                                            id="tarjetaProf">
-                                    </div>
-                                </div>
-
-
-                                <div class="col-2">
-                                    <button class="btn btn-info" id="btnAdd" disabled="true"
-                                        onclick="AgregarDatosTable()">Agregar</button>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <table class="table table-responsive-md" id="tableAcademico">
-                                        <thead>
-                                            <th>MODALIDAD ACADÉMICA</th>
-                                            <th>No. SEMESTRES APROBADOS</th>
-                                            <th>GRADUADO</th>
-                                            <th>NOMBRE DE LOS ESTUDIOS O TITULOS OBTENIDO</th>
-                                            <th>FECHA TERMINACION</th>
-                                            <th>TARJETA PROFESIONAL</th>
-                                            <th>ACCIÓN</th>
-                                        </thead>
-                                        <tbody id="tbodyAcademico">
-                                        </tbody>
-                                    </table>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
             </div>
         </div>
+                                         
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card card-stats">
                     <div class="card-header" id="headingThree">
                         <h2 class="mb-0">
                             <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
@@ -566,7 +575,6 @@
                                                     <input class="form-control" type="text">
                                                 </div>
                                             </div>
-
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4">
@@ -616,7 +624,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row" id="TiempoDIV" >
                     <div class="col-md-12">
                         <div class="card card-stats">
                             <div class="card-header" id="headingThree">
@@ -643,10 +651,10 @@
                                                         <label>Servidor Publico</label>
                                                     </td>
                                                     <td>
-                                                        <input type="number" min=0 class="form-control">
+                                                        <input type="number" id="AñosSP" min=0 class="form-control">
                                                     </td>
                                                     <td>
-                                                        <input type="number" min=0 max=11 class="form-control">
+                                                        <input type="number" id="MesesSP " min=0 max=11 class="form-control">
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -654,10 +662,10 @@
                                                         <label>Empleado sector privado</label>
                                                     </td>
                                                     <td>
-                                                        <input type="number" min=0 class="form-control">
+                                                        <input type="number" id="AñoESP" min=0 class="form-control">
                                                     </td>
                                                     <td>
-                                                        <input type="number" min=0 max=11 class="form-control">
+                                                        <input type="number" id="MesESP" min=0 max=11 class="form-control">
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -665,10 +673,10 @@
                                                         <label>Trabajador independiente</label>
                                                     </td>
                                                     <td>
-                                                        <input type="number" min=0 class="form-control">
+                                                        <input type="number" id="AñoTI" min=0 class="form-control">
                                                     </td>
                                                     <td>
-                                                        <input type="number" min=0 max=11 class="form-control">
+                                                        <input type="number" id="MesTI" min=0 max=11 class="form-control">
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -691,7 +699,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row" id="ReferenciasDIV">
                     <div class="col-md-12">
                         <div class="card card-stats">
                             <div class="card-header" id="headingThree">
@@ -838,18 +846,18 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <button class="btn" id="Formato1">Seleccionar</button>
+                            <button class="btn" id="Formato1" onclick="FiltrerCollapse(this)">Seleccionar</button>
                         </div>
                         <div class="col-md-4">
-                            <button class="btn" id="Form">Seleccionar</button>
+                            <button class="btn" id="Formato2"onclick="FiltrerCollapse(this)" >Seleccionar</button>
                         </div>
                         <div class="col-md-4">
-                            <button class="btn">Seleccionar</button>
+                            <button class="btn" id="Formato3" onclick="FiltrerCollapse(this)" >Seleccionar</button>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-danger" onclick="$('#myModal').modal('hide');">Cancelar </button>
+                    <button class="btn btn-danger" onclick="$('#myModal').modal('hide'); $('#btnBack').click()">Cancelar </button>
                 </div>
             </div>
         </div>

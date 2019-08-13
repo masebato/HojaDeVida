@@ -17,8 +17,7 @@ $('#btnBack').click(function () {
 
 $('#btnNext').click(() => {
     if (flag) {
-        $('#myModal').modal("show");// with this i can show the modal
-        openCity(event, 'FormacionAcademica'); // Method for view the new page of blocks
+        $('#myModal').modal("show");// with this i can show the modal       
         $('#btnBack').css('display', 'block');
         flag = false; // this flag is used for show the button "btnBack"
     }
@@ -129,7 +128,6 @@ function ObtenerFecha() {
     d = n.getDate();
     return d + "/" + m + "/" + y;
 }
-
 function ValidarFecha(dato) {
     var fecha_hoy = new Date();
     var fecha_selec = new Date(dato.value);
@@ -141,7 +139,6 @@ function ValidarFecha(dato) {
         document.getElementById("" + dato.id).style.borderColor = "#d2d6de";
     }
 }
-
 function validarEmail(dato) {
     if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(dato.value)) {
         document.getElementById('correo').style.borderColor = "#d2d6de";
@@ -149,7 +146,6 @@ function validarEmail(dato) {
         document.getElementById('correo').style.borderColor = "#dd4b39";
     }
 }
-
 function ValidarTexto(dato) {
     if (dato.value == "") {
         document.getElementById("" + dato.id).style.borderColor = "#dd4b39";
@@ -171,7 +167,6 @@ function ValidarSelector(dato) {
         document.getElementById("" + dato.id).style.borderColor = "#d2d6de";
     }
 }
-
 function validarRadio(dato) {
     if (dato.value != 'checked') {
         document.getElementById("" + dato.id).style.borderColor = "#d2d6de";
@@ -180,10 +175,7 @@ function validarRadio(dato) {
 
     }
 }
-
-function checkCampos(components) {
-
-    
+function checkCampos(components) {    
     var camposRellenados = true;
     $.each(components, function(i, val) {
     var $this = val;
@@ -201,9 +193,38 @@ function checkCampos(components) {
 }
 
 
+// with this method we can filtrer the blocks of collapses
+function FiltrerCollapse(obj){
+    openCity(event, 'FormacionAcademica'); // Method for view the new page of blocks
+    var Formato1=["#PerfilDIV","#ReferenciasDIV"];
+    var Formato2=["#TiempoDIV"]
+    var Formato3 =["#TiempoDIV"];
+    var $id =obj.id;
+    if ($id=="Formato1") {
+        $.each(Formato1, function(i, val){
+            $(val).css("display","none");
+        });
+        $('#myModal').modal('hide');
+    }  
 
+    if ($id=="Formato2") {
+        $.each(Formato2, function(i, val){
+            $(val).css("display","none");
+        });
+        $('#myModal').modal('hide');
+    }
+    if ($id=="Formato3") {
+        $.each(Formato3, function(i, val){
+            $(val).css("display","none");
+        });
+        $('#myModal').modal('hide');
+    }
+}
+
+
+//#region validations for each one of the collapses
 $(document).ready(function() {
-    //Siempre que salgamos de un campo de texto, se chequeará esta función
+    
     $("#DatosPersonalesForm input").keyup(function() {     
         var components = ["#PrimerApellido","#Nombres","#TipoDocumento","#numero","#DireccionResidencia","#PaisResidencia","#Departamento",
          "#Municipios","#CorreoElectronico","#fechaNacimiento","#DepartamentoNacimiento","#MunicipioNacimiento"]; // this is inputs id 
@@ -212,7 +233,7 @@ $(document).ready(function() {
             $("#btnNext").prop("disabled", false);
         }
         else {
-         //   $("#btnNext").prop("disabled", true);
+         //   $("#btnNext").prop("disabled", true); 
         }
     });
 
@@ -235,16 +256,17 @@ $(document).ready(function() {
             $("#AddIdioma").prop("disabled", false);
         }
         else {
-
            $("#AddIdioma").prop("disabled", true);
         }
     });
     
+    $("#TiempoDIV input").keyup(()=>{
+        
+    });
 });
+//#endregion
 
-
-
-// notificaciones 
+//#region  notificaciones 
 
 function showNotification(from, align) {
     color = 'danger';
@@ -262,7 +284,7 @@ function showNotification(from, align) {
             }
         });
 }
-
+//#endregion
 
 
 //#endregion
