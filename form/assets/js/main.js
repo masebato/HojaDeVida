@@ -10,13 +10,14 @@ window.addEventListener("load", function () {
 
 var flag = true;
 $('#btnBack').click(function () {
-    $('#btnBack').css('display', 'none');
+    $('#btnBack').css('display', 'none'); // this method is for hiden the btn
     flag = true;// this flag is used for show the button "btnBack"
 });
 
 
 $('#btnNext').click(() => {
     if (flag) {
+        $('#myModal').modal("show");// with this i can show the modal
         openCity(event, 'FormacionAcademica'); // Method for view the new page of blocks
         $('#btnBack').css('display', 'block');
         flag = false; // this flag is used for show the button "btnBack"
