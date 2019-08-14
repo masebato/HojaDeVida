@@ -200,9 +200,9 @@ function Hoja1() {
         doc.setFontSize(12);
         doc.text(114, 94, "Numero");
         doc.text(171, 94, "D.M");
-        doc.text(41.2, 108, "07"); //Dia
-        doc.text(59, 108, "08"); //Mes
-        doc.text(77.4, 108, "2019"); //Año
+        doc.text(41.2, 108, "0 7"); //Dia
+        doc.text(59, 108, "0 8"); //Mes
+        doc.text(77.4, 108, "2 0 1 9"); //Año
         doc.setFontSize(12);
         doc.text(98, 107.8, "Dir Correspondencia");
         doc.setFontSize(12);
@@ -231,8 +231,8 @@ function Hoja1() {
         doc.text(77, 179, "X"); //secundaria  9
         doc.text(83, 179, "X"); //secundaria  10
         doc.text(89, 179, "X"); //secundaria  11
-        doc.text(118, 179, "09"); //fecha de grado mes
-        doc.text(140, 179, "2019"); //fecha de grado año
+        doc.text(118, 179, "0 9"); //fecha de grado mes
+        doc.text(140, 179, "2 0 1 9"); //fecha de grado año
 
         // educacion superior - pregrado y postgrado
         var cc = 224;
@@ -245,7 +245,7 @@ function Hoja1() {
             doc.text(66, cc, "X"); //graduado no 
             doc.text(75, cc, "nombre del titulo"); // nombre del titulo obtenido  
             doc.text(145, cc, "08"); // terminacion mes 
-            doc.text(154, cc, "2019"); // terminacion año 
+            doc.text(154, cc, "2  0  1  9"); // terminacion año 
             doc.text(173, cc, "tarjeta"); // no de tarjeta profesional  
             cc = cc + 6.5;
         }
@@ -304,7 +304,7 @@ async function Hoja2() {
         var b = 101;
         var c = 114;
         var d = 125;
-        for (var i = 0; i <= 4; i++) {
+        for (var i = 0; i <= 3; i++) {
             doc.setFontSize(12);
             doc.text(15, a, "Empresa o Entidad");
             doc.text(115, a, "X"); // publica
@@ -314,18 +314,21 @@ async function Hoja2() {
             doc.text(80, b, "Municipio"); //municipio
             doc.text(143, b, "Correo electreonico"); //correo electreonico
             doc.text(15, c, "Telefono"); //telefono
-            doc.text(86, c, "13"); //fecha ingreso dia
-            doc.text(104, c, "08"); //fecha ingreso mes 
-            doc.text(122, c, "2019"); //fecha ingreso año
-            doc.text(146, c, "13"); //fecha reito dia
-            doc.text(164, c, "08"); //fecha retiro mes 
-            doc.text(182, c, "2019"); //fecha retiro año
+            doc.text(85.5, c, "1 3"); //fecha ingreso dia
+            doc.text(103.5, c, "0 8"); //fecha ingreso mes 
+            doc.text(121, c, "2 0 1 9"); //fecha ingreso año
+            doc.text(145.5, c, "1 3"); //fecha reito dia
+            doc.text(163.5, c, "0 8"); //fecha retiro mes 
+            doc.text(181, c, "2 0 1 9"); //fecha retiro año
             doc.text(15, d, "Cargo"); //cargo o contrato actual 
             doc.text(80, d, "Dependencia"); //dependencia
             doc.text(139, d, "Direccion"); //direccion 
+            if (i == 2) {
+                c = c + 49.5;
+            } else { c = c + 49; }
             a = a + 50;
             b = b + 50;
-            c = c + 49.5;
+
             d = d + 49;
         }
 
@@ -349,9 +352,22 @@ async function Hoja3() {
 
             console.log(3);
             doc.addImage(this, 'JPG', -8, 0, 220, 300);
+            // .......... Tiempo total de Experiencia ..........
+            doc.text(130, 75, "10"); // servicios publicos años
+            doc.text(153, 75, "120"); // servicios publicos mes
+            doc.text(130, 85, "10"); //empleado del sector privado años 
+            doc.text(153, 85, "120"); //empleado del sector privado meses
+            doc.text(130, 95, "10"); //trabajador independiente años
+            doc.text(153, 95, "120"); //trabajador independiente meses
+            doc.text(130, 105, "10"); //total timepo experiencia años
+            doc.text(153, 105, "120"); //total timepo experiencia meses
+            // ..........Firma del servicio publico o contratista..........
+
+
+            doc.addPage();
             //doc.output('datauri');
             doc.save("prueba.pdf");
-            //doc.addPage();
+
         });
         img.crossOrigin = "";
         img.src = url3;
