@@ -17,6 +17,8 @@ $('#btnBack').click(function () {
 
 $('#btnNext').click(() => {
     if (flag) {
+        $('#DatosPersonalesForm').submit(false);
+       
         $('#myModal').modal("show");// with this i can show the modal       
         $('#btnBack').css('display', 'block');
         flag = false; // this flag is used for show the button "btnBack"
@@ -68,7 +70,6 @@ function AgregarDatosTable() {
             console.log("YD " + mod);
             if (mod == _modalidad.value) {
                 verificar = true;
-
             }
         }
         if (!verificar) {
@@ -90,14 +91,12 @@ function AgregarDatosTable() {
 
 }
 
-
 function EliminarFila() {
     $(document).on('click', '.btn-danger', function (event) {
         event.preventDefault();
         $(this).closest('tr').remove();
     });
 }
-
 
 function AgregarDatosIdioma() {
     var _idioma = document.getElementById("Idioma").value;
@@ -290,10 +289,6 @@ $(document).ready(function () {
         }
     });
 });
-
-
-
-
 
 //#endregion
 
