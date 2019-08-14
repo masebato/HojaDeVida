@@ -38,7 +38,7 @@
                 <div class="content">
                     <div class="row">
                         <div class="col-md-2">
-                           
+
                             <!-- anuncio2 -->
                             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5804496081140821"
                                 data-ad-slot="5984986553" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -213,165 +213,163 @@
                                 </div>
     </form>
 
-    <div id="FormacionAcademica" class="tabcontent">      
-            <div class="row" id="PerfilDIV">
-                <div class="col-md-12">                          
-            <div class="accordion" id="accordionExample">
-                <div class="card card-stats" >
-                    <div class="card-header" id="headingOne">
+    <div id="FormacionAcademica" class="tabcontent">
+        <div class="row" id="PerfilDIV">
+            <div class="col-md-12">
+                <div class="accordion" id="accordionExample">
+                    <div class="card card-stats">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="icono-user"></i> Perfil
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="comment">Descripción:</label>
+                                    <textarea class="form-control" rows="10" id="Descripcion"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-stats " id="FormacionDIV">
+                    <div class="card-header" id="headingTwo">
                         <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                                aria-expanded="true" aria-controls="collapseOne">
-                                <i class="icono-user"></i> Perfil
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#formacionDiv" aria-expanded="false" aria-controls="formacionDiv">
+                                <i class="icono-document"></i> Formación
                             </button>
                         </h2>
                     </div>
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                    <div id="formacionDiv" class="collapse" aria-labelledby="headingTwo"
                         data-parent="#accordionExample">
                         <div class="card-body">
-                            <div class="form-group">
-                                <label for="comment">Descripción:</label>
-                                <textarea class="form-control" rows="10" id="Descripcion"></textarea>
+                            <h4>Educacián básica y media</h4>
+                            <div class="row">
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Educación básica</label>
+                                        <select name="EduBasica" class="form-control" id="SelectEducacion" required>
+                                            <option>1o</option>
+                                            <option>2o</option>
+                                            <option>3o</option>
+                                            <option>4o</option>
+                                            <option>5o</option>
+                                            <option>6o</option>
+                                            <option>7o</option>
+                                            <option>8o</option>
+                                            <option>9o</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Titulo obtenido</label>
+                                        <input type="text" class="form-control" required id="tituloObtenido">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Fecha de grado</label>
+                                        <input type="date" class="form-control" id="FechaGrado" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Educación superior</h4>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Modalidad </label>
+                                        <select name="Modalidad" class="form-control" id="Modalidad" required>
+                                            <option value="TC">Técnica</option>
+                                            <option value="TL">Tecnológica</option>
+                                            <option value="TE">Tecnológia especializada
+                                            </option>
+                                            <option value="UN">Universitaria</option>
+                                            <option value="ES">Especialización</option>
+                                            <option value="MG">Maestria o magister
+                                            </option>
+                                            <option value="DOC">Doctorado o PHD</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="form-group">
+                                        <label>Semestres</label>
+                                        <input type="text" class="form-control" id="semestresAprobados" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>Graduado</label>
+                                        <select name="Graduado" class="form-control" id="SelectGraduado" required>
+                                            <option value="Si">SI</option>
+                                            <option value="No">NO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Nombre de los estudios o titulo obtenido </label>
+                                        <input type="text" class="form-control" id="nombretitulo" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Fecha Terminacion</label>
+                                        <input type="date" class="form-control" id="FechaTerminacion">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>N° tarjeta profesional </label>
+                                        <input type="text" class="form-control" placeholder="Tarjeta prof"
+                                            id="tarjetaProf">
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <button class="btn btn-info" id="btnAdd" disabled="true"
+                                        onclick="AgregarDatosTable()">Agregar</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table-bordered table-responsive-md" id="tableAcademico">
+                                        <thead>
+                                            <th>MODALIDAD ACADÉMICA</th>
+                                            <th>No. SEMESTRES APROBADOS</th>
+                                            <th>GRADUADO</th>
+                                            <th>NOMBRE DE LOS ESTUDIOS O TITULOS OBTENIDO</th>
+                                            <th>FECHA TERMINACION</th>
+                                            <th>TARJETA PROFESIONAL</th>
+                                            <th>ACCIÓN</th>
+                                        </thead>
+                                        <tbody id="tbodyAcademico">
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-            </div>
-        </div>
-    </div>
-        <div class="row">
-            <div class="col-md-12">
-                    <div class="card card-stats " id="FormacionDIV">
-                            <div class="card-header" id="headingTwo">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                        data-target="#formacionDiv" aria-expanded="false" aria-controls="formacionDiv">
-                                        <i class="icono-document"></i> Formación
-                                    </button>
-                                </h2>
-                            </div>
-                            <div id="formacionDiv" class="collapse" aria-labelledby="headingTwo"
-                                data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <h4>Educacián básica y media</h4>
-                                    <div class="row">
-        
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label>Educación básica</label>
-                                                <select name="EduBasica" class="form-control" id="SelectEducacion" required>
-                                                    <option>1o</option>
-                                                    <option>2o</option>
-                                                    <option>3o</option>
-                                                    <option>4o</option>
-                                                    <option>5o</option>
-                                                    <option>6o</option>
-                                                    <option>7o</option>
-                                                    <option>8o</option>
-                                                    <option>9o</option>
-                                                    <option>10</option>
-                                                    <option>11</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Titulo obtenido</label>
-                                                <input type="text" class="form-control" required id="tituloObtenido">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Fecha de grado</label>
-                                                <input type="date" class="form-control" id="FechaGrado" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <h4>Educación superior</h4>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label>Modalidad </label>
-                                                <select name="Modalidad" class="form-control" id="Modalidad" required>
-                                                    <option value="TC">Técnica</option>
-                                                    <option value="TL">Tecnológica</option>
-                                                    <option value="TE">Tecnológia especializada
-                                                    </option>
-                                                    <option value="UN">Universitaria</option>
-                                                    <option value="ES">Especialización</option>
-                                                    <option value="MG">Maestria o magister
-                                                    </option>
-                                                    <option value="DOC">Doctorado o PHD</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-1">
-                                            <div class="form-group">
-                                                <label>Semestres</label>
-                                                <input type="text" class="form-control" id="semestresAprobados" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <div class="form-group">
-                                                <label>Graduado</label>
-                                                <select name="Graduado" class="form-control" id="SelectGraduado" required>
-                                                    <option value="Si">SI</option>
-                                                    <option value="No">NO</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label>Nombre de los estudios o titulo obtenido </label>
-                                                <input type="text" class="form-control" id="nombretitulo" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Fecha Terminacion</label>
-                                                <input type="date" class="form-control" id="FechaTerminacion">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>N° tarjeta profesional </label>
-                                                <input type="text" class="form-control" placeholder="Tarjeta prof"
-                                                    id="tarjetaProf">
-                                            </div>
-                                        </div>
-        
-        
-                                        <div class="col-2">
-                                            <button class="btn btn-info" id="btnAdd" disabled="true"
-                                                onclick="AgregarDatosTable()">Agregar</button>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <table class="table table-responsive-md" id="tableAcademico">
-                                                <thead>
-                                                    <th>MODALIDAD ACADÉMICA</th>
-                                                    <th>No. SEMESTRES APROBADOS</th>
-                                                    <th>GRADUADO</th>
-                                                    <th>NOMBRE DE LOS ESTUDIOS O TITULOS OBTENIDO</th>
-                                                    <th>FECHA TERMINACION</th>
-                                                    <th>TARJETA PROFESIONAL</th>
-                                                    <th>ACCIÓN</th>
-                                                </thead>
-                                                <tbody id="tbodyAcademico">
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-            </div>
-        </div>
-                                         
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-stats">
@@ -424,13 +422,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <table class="table table-responsive-md">
+                            <div class="bd">
+                                <table class=" table-bordered table-responsive-lg">
                                     <thead>
-                                        <th>Idioma</th>
-                                        <th>Lo habla</th>
-                                        <th>Lo lee</th>
-                                        <th>Lo escribe</th>
+                                        <tr>
+                                            <th class="col">Idioma</th>
+                                            <th class="col">Lo habla</th>
+                                            <th class="col">Lo lee</th>
+                                            <th class="col">Lo escribe</th>
+                                        </tr>
                                     </thead>
                                     <tbody id="tbodyIdioma">
 
@@ -625,7 +625,7 @@
                     </div>
                 </div>
 
-                <div class="row" id="TiempoDIV" >
+                <div class="row" id="TiempoDIV">
                     <div class="col-md-12">
                         <div class="card card-stats">
                             <div class="card-header" id="headingThree">
@@ -639,12 +639,12 @@
                             <div id="Tiempo" class="collapse" aria-labelledby="headingThree"
                                 data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <div class="row">
-                                        <table class="table table-responsive-md">
+                                    <div class="bd">
+                                        <table class="table-bordered table-responsive-lg">
                                             <thead>
-                                                <th>Ocupación</th>
-                                                <th>Años</th>
-                                                <th>Meses</th>
+                                                <th class="col">Ocupación</th>
+                                                <th class="col">Años</th>
+                                                <th class="col">Meses</th>
                                             </thead>
                                             <tbody>
                                                 <tr>
@@ -652,10 +652,12 @@
                                                         <label>Servidor Publico</label>
                                                     </td>
                                                     <td>
-                                                        <input type="number" id="AñosSP" min=0 class="form-control">
+                                                        <input type="number" id="AñosSP" min=0 class="form-control"
+                                                            pattern="[1-9]*{1,3}">
                                                     </td>
                                                     <td>
-                                                        <input type="number" id="MesesSP" min=0 max=11 class="form-control">
+                                                        <input type="number" id="MesesSP" min=0 max=11
+                                                            class="form-control" pattern="[1-9]*{1,3}">
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -663,10 +665,12 @@
                                                         <label>Empleado sector privado</label>
                                                     </td>
                                                     <td>
-                                                        <input type="number" id="AñoESP" min=0 class="form-control">
+                                                        <input type="number" id="AñoESP" min=0 class="form-control"
+                                                            pattern="[1-9]*{1,3}">
                                                     </td>
                                                     <td>
-                                                        <input type="number" id="MesESP" min=0 max=11 class="form-control">
+                                                        <input type="number" id="MesESP" min=0 max=11
+                                                            class="form-control" pattern="[1-9]*{1,3}">
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -674,10 +678,12 @@
                                                         <label>Trabajador independiente</label>
                                                     </td>
                                                     <td>
-                                                        <input type="number" id="AñoTI" min=0 class="form-control">
+                                                        <input type="number" id="AñoTI" min=0 class="form-control"
+                                                            pattern="[1-9]*{1,3}">
                                                     </td>
                                                     <td>
-                                                        <input type="number" id="MesTI" min=0 max=11 class="form-control">
+                                                        <input type="number" id="MesTI" min=0 max=11
+                                                            class="form-control" pattern="[1-9]*{1,3}">
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -722,27 +728,27 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
     <div class="card-footer">
-        <div class="row justify-content-between">
-            <div class="col-4">
-                    <button class="btn" onclick="crear1()"></button>
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn" onclick="crear1()"></button>
                 <div class="form-group">
                     <button class="btn " id="btnBack" style="display: none"
                         onclick="openCity(event, 'DatosPersonales')">Atras</button>
                 </div>
             </div>
-            <div class="col-3">
+
+            <div class="col-md-4 offset-md-4">
                 <div class="form-group">
                     <input id="btnNext" type="submit" value="siguiente" class="btn btn-success">
                 </div>
             </div>
         </div>
     </div>
+
     </div>
     </div>
     <div class="col-md-2">
@@ -752,7 +758,6 @@
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
     </div>
-
     <div id="myModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
         aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -763,103 +768,100 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-4">
-                            <div id="Img1" class="carousel slide" data-ride="carousel">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#Img1" data-slide-to="0" class="active"></li>
-                                    <li data-target="#Img1" data-slide-to="1"></li>
-                                    <li data-target="#Img1" data-slide-to="2"></li>
-                                </ol>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="assets/img/0001.jpg" class="d-block w-100" alt="">
+                            <div class="form-group">
+                                <div id="Img1" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#Img1" data-slide-to="0" class="active"></li>
+                                        <li data-target="#Img1" data-slide-to="1"></li>
+                                        <li data-target="#Img1" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="assets/img/0001.jpg" class="d-block w-100" alt="">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="assets/img/0002.jpg" class="d-block w-100" alt="">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="assets/img/0003.jpg" class="d-block w-100" alt="">
+                                        </div>
                                     </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/img/0002.jpg" class="d-block w-100" alt="">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/img/0003.jpg" class="d-block w-100" alt="">
-                                    </div>
+                                    <a class="carousel-control-prev" href="#Img1" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"
+                                            style="background-color: black"></span>
+                                        <span class="sr-only">Anterior</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#Img1" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"
+                                            style="background-color: black"></span>
+                                        <span class="sr-only">Siguiente</span>
+                                    </a>
                                 </div>
-                                <a class="carousel-control-prev" href="#Img1" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"
-                                        style="background-color: black"></span>
-                                    <span class="sr-only">Anterior</span>
-                                </a>
-                                <a class="carousel-control-next" href="#Img1" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"
-                                        style="background-color: black"></span>
-                                    <span class="sr-only">Siguiente</span>
-                                </a>
+                                <button class="btn" id="Formato1" onclick="FiltrerCollapse(this)">Seleccionar</button>
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div id="Img2" class="carousel slide" data-ride="carousel">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#Img2" data-slide-to="0" class="active"></li>
-                                    <li data-target="#Img2" data-slide-to="1"></li>
-                                    <li data-target="#Img2" data-slide-to="2"></li>
-                                </ol>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="assets/img/hoja3-1.jpg" class="d-block w-100" alt="...">
+                            <div class="form-group">
+                                <div id="Img2" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#Img2" data-slide-to="0" class="active"></li>
+                                        <li data-target="#Img2" data-slide-to="1"></li>
+                                        <li data-target="#Img2" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="assets/img/hoja3-1.jpg" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="assets/img/hoja3-2.jpg" class="d-block w-100" alt="...">
+                                        </div>
                                     </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/img/hoja3-2.jpg" class="d-block w-100" alt="...">
-                                    </div>
+                                    <a class="carousel-control-prev" href="#Img2" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"
+                                            style="background-color: black"></span>
+                                        <span class="sr-only">Anterior</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#Img2" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"
+                                            style="background-color: black"></span>
+                                        <span class="sr-only">Siguiente</span>
+                                    </a>
                                 </div>
-                                <a class="carousel-control-prev" href="#Img2" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"
-                                        style="background-color: black"></span>
-                                    <span class="sr-only">Anterior</span>
-                                </a>
-                                <a class="carousel-control-next" href="#Img2" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"
-                                        style="background-color: black"></span>
-                                    <span class="sr-only">Siguiente</span>
-                                </a>
+                                <button class="btn" id="Formato2" onclick="FiltrerCollapse(this)">Seleccionar</button>
                             </div>
-
                         </div>
                         <div class="col-md-4">
-                            <div id="Img3" class="carousel slide" data-ride="carousel">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#Img3" data-slide-to="0" class="active"></li>
-                                    <li data-target="#Img3" data-slide-to="1"></li>
-                                    <li data-target="#Img3" data-slide-to="2"></li>
-                                </ol>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="assets/img/hoja2.jpg" class="d-block w-100" alt="...">
+                            <div class="form-group">
+                                <div id="Img3" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#Img3" data-slide-to="0" class="active"></li>
+                                        <li data-target="#Img3" data-slide-to="1"></li>
+                                        <li data-target="#Img3" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="assets/img/hoja2.jpg" class="d-block w-100" alt="...">
+                                        </div>
                                     </div>
+                                    <a class="carousel-control-prev" href="#Img3" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"
+                                            style="background-color: black"></span>
+                                        <span class="sr-only">Anterior</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#Img3" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"
+                                            style="background-color: black"></span>
+                                        <span class="sr-only">Siguiente</span>
+                                    </a>
                                 </div>
-                                <a class="carousel-control-prev" href="#Img3" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"
-                                        style="background-color: black"></span>
-                                    <span class="sr-only">Anterior</span>
-                                </a>
-                                <a class="carousel-control-next" href="#Img3" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"
-                                        style="background-color: black"></span>
-                                    <span class="sr-only">Siguiente</span>
-                                </a>
+                                <button class="btn" id="Formato3" onclick="FiltrerCollapse(this)">Seleccionar</button>
                             </div>
-
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <button class="btn" id="Formato1" onclick="FiltrerCollapse(this)">Seleccionar</button>
-                        </div>
-                        <div class="col-md-4">
-                            <button class="btn" id="Formato2"onclick="FiltrerCollapse(this)" >Seleccionar</button>
-                        </div>
-                        <div class="col-md-4">
-                            <button class="btn" id="Formato3" onclick="FiltrerCollapse(this)" >Seleccionar</button>
-                        </div>
-                    </div>
+                    </div>                   
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-danger" onclick="$('#myModal').modal('hide'); $('#btnBack').click()">Cancelar </button>
+                    <button class="btn btn-danger" onclick="$('#myModal').modal('hide'); $('#btnBack').click()">Cancelar
+                    </button>
                 </div>
             </div>
         </div>
