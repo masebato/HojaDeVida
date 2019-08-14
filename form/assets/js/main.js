@@ -110,6 +110,7 @@ function AgregarDatosIdioma() {
     var btn = document.createElement("TR");
     btn.innerHTML = fila;
     document.getElementById("tbodyIdioma").appendChild(btn);
+    $('#Idioma').val("");
 }
 
 //#endregion
@@ -175,16 +176,16 @@ function validarRadio(dato) {
 
     }
 }
-function checkCampos(components) {    
+function checkCampos(components) {
     var camposRellenados = true;
-    $.each(components, function(i, val) {
-    var $this = val;
-        if( $($this).val().length <= 0 || $($this).val()=="" ) { // this validate the inputs, that not be empty
+    $.each(components, function (i, val) {
+        var $this = val;
+        if ($($this).val().length <= 0 || $($this).val() == "") { // this validate the inputs, that not be empty
             camposRellenados = false;
             return false;
         }
     });
-    if(camposRellenados == false) {
+    if (camposRellenados == false) {
         return false;
     }
     else {
@@ -194,28 +195,28 @@ function checkCampos(components) {
 
 
 // with this method we can filtrer the blocks of collapses
-function FiltrerCollapse(obj){
+function FiltrerCollapse(obj) {
     openCity(event, 'FormacionAcademica'); // Method for view the new page of blocks
-    var Formato1=["#PerfilDIV","#ReferenciasDIV"];
-    var Formato2=["#TiempoDIV"]
-    var Formato3 =["#TiempoDIV"];
-    var $id =obj.id;
-    if ($id=="Formato1") {
-        $.each(Formato1, function(i, val){
-            $(val).css("display","none");
-        });
-        $('#myModal').modal('hide');
-    }  
-
-    if ($id=="Formato2") {
-        $.each(Formato2, function(i, val){
-            $(val).css("display","none");
+    var Formato1 = ["#PerfilDIV", "#ReferenciasDIV"];
+    var Formato2 = ["#TiempoDIV"]
+    var Formato3 = ["#TiempoDIV"];
+    var $id = obj.id;
+    if ($id == "Formato1") {
+        $.each(Formato1, function (i, val) {
+            $(val).css("display", "none");
         });
         $('#myModal').modal('hide');
     }
-    if ($id=="Formato3") {
-        $.each(Formato3, function(i, val){
-            $(val).css("display","none");
+
+    if ($id == "Formato2") {
+        $.each(Formato2, function (i, val) {
+            $(val).css("display", "none");
+        });
+        $('#myModal').modal('hide');
+    }
+    if ($id == "Formato3") {
+        $.each(Formato3, function (i, val) {
+            $(val).css("display", "none");
         });
         $('#myModal').modal('hide');
     }
@@ -223,44 +224,49 @@ function FiltrerCollapse(obj){
 
 
 //#region validations for each one of the collapses
-$(document).ready(function() {
-    
-    $("#DatosPersonalesForm input").keyup(function() {     
-        var components = ["#PrimerApellido","#Nombres","#TipoDocumento","#numero","#DireccionResidencia","#PaisResidencia","#Departamento",
-         "#Municipios","#CorreoElectronico","#fechaNacimiento","#DepartamentoNacimiento","#MunicipioNacimiento"]; // this is inputs id 
+$(document).ready(function () {
+
+    $("#DatosPersonalesForm input").keyup(function () {
+        var components = ["#PrimerApellido", "#Nombres", "#TipoDocumento", "#numero", "#DireccionResidencia", "#PaisResidencia", "#Departamento",
+            "#Municipios", "#CorreoElectronico", "#fechaNacimiento", "#DepartamentoNacimiento", "#MunicipioNacimiento"]; // this is inputs id 
         var check = checkCampos(components);
-        if(check) {
+        if (check) {
             $("#btnNext").prop("disabled", false);
         }
         else {
-         //   $("#btnNext").prop("disabled", true); 
+            //   $("#btnNext").prop("disabled", true); 
         }
     });
 
-    $("#formacionDiv input").keyup(function() {     
-        var components = ["#SelectEducacion","#tituloObtenido","#Modalidad","#semestresAprobados","#SelectGraduado","#nombretitulo"]; // this is inputs id 
+    $("#formacionDiv input").keyup(function () {
+        var components = ["#SelectEducacion", "#tituloObtenido", "#Modalidad", "#semestresAprobados", "#SelectGraduado", "#nombretitulo"]; // this is inputs id 
         var check = checkCampos(components);
-        if(check) {
+        if (check) {
             $("#btnAdd").prop("disabled", false);
         }
         else {
-
-           $("#btnAdd").prop("disabled", true);
+            $("#btnAdd").prop("disabled", true);
         }
     });
 
-    $("#collapseIdioma input").keyup(function() {     
-        var components = ["#Idioma","#habla","#lee","#escribe"]; // this is inputs id 
+    $("#collapseIdioma input").keyup(function () {
+        var components = ["#Idioma", "#habla", "#lee", "#escribe"]; // this is inputs id 
         var check = checkCampos(components);
-        if(check) {
-            $("#AddIdioma").prop("disabled", false);
+        var nfilas = $("#tbodyIdioma tr").length;       
+        if (nfilas <= 1) {
+            if (check) {
+                $("#AddIdioma").prop("disabled", false);               
+            } else {
+                $("#AddIdioma").prop("disabled", true);
+            }
+        } else {
+            $("#AddIdioma").prop("disabled", true);
         }
-        else {
-           $("#AddIdioma").prop("disabled", true);
-        }
+     
     });
-    
-    $("#TiempoDIV input").keyup(()=>{
+
+    // this methos is a sum for the block of "Experience " 
+    $("#TiempoDIV input").keyup(() => {
         var $AñosSP = $('#AñosSP').val();
         var $MesesSP = $('#MesesSP').val();
         var $AñosESP = $('#AñoESP').val();
@@ -269,22 +275,26 @@ $(document).ready(function() {
         var $MesTI = $('#MesTI').val();
         var TotalAños;
         var TotalMeses;
-
-
-        TotalAños= parseInt($AñosSP)+parseInt($AñosESP)+parseInt($AñoTI);
-        TotalMeses = parseInt($MesTI)+parseInt($MesesESP)+parseInt($MesesSP);
-
-        while (TotalMeses>=12) {
+        TotalAños = parseInt($AñosSP) + parseInt($AñosESP) + parseInt($AñoTI);
+        TotalMeses = parseInt($MesTI) + parseInt($MesesESP) + parseInt($MesesSP);
+        while (TotalMeses >= 12) {
             TotalMeses = parseInt(TotalMeses) - 12;
             TotalAños++;
+        }       
+        if (!isNaN(TotalAños) && !isNaN(TotalMeses)) {
+            $('#totalAÑOS').text(TotalAños);
+            $('#totalMESES').text(TotalMeses);
+        } else {
+            $('#totalAÑOS').text("");
+            $('#totalMESES').text("");
         }
-        console.log("Años "+TotalAños+" Meses-"+TotalMeses);
-
-        $('#totalAÑOS').val() =TotalAños;
-        $('#totalMESES').val() =TotalMeses;
-        
     });
 });
+
+
+
+
+
 //#endregion
 
 //#region  notificaciones 
