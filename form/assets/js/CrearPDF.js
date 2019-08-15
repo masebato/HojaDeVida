@@ -173,10 +173,6 @@ async function Hoja2() {
             d = d + 49;
         }
 
-
-
-
-
         doc.addPage();
         //doc.save("prueba.pdf");
         //doc.addPage();
@@ -203,8 +199,6 @@ async function Hoja3() {
             doc.text(130, 105, "10"); //total timepo experiencia años
             doc.text(153, 105, "120"); //total timepo experiencia meses
             // ..........Firma del servicio publico o contratista..........
-
-
             doc.addPage();
             //doc.output('datauri');
             doc.save("prueba.pdf");

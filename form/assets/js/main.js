@@ -14,11 +14,244 @@ $('#btnBack').click(function () {
     flag = true;// this flag is used for show the button "btnBack"
 });
 
+var idBloque=1;
+$('#AgregarReferencia').click(() => {
+    parseInt(idBloque);
+    $('#bodyReferencias').append(
+        $("<div>", {
+            'class': 'contorno'
+        }).append(
+            $('<div>', {
+                'class': 'row'
+            }).append(
+                $('<div>', {
+                    'class': 'col-md-5'
+                }).append(
+                    $('<div>', {
+                        'class': 'form-group'
+                    }).append(
+                        $('<label>', {
+                            'text': 'Nombre Y Apellido'
+                        }
+                        ),
+                        $('<input>', {
+                            'type':'text',
+                            'class':'form-control',
+                            'id':'NombreReferencia'+idBloque
+                        })
+                    )
+                ),
+                $('<div>', {
+                    'class': 'col-md-4'
+                }).append(
+                    $('<div>', {
+                        'class': 'form-group'
+                    }).append(
+                        $('<label>', {
+                            'text': 'Empresa'
+                        }
+                        ),
+                        $('<input>', {
+                            'type':'text',
+                            'class':'form-control',
+                            'id':'EmpresaReferencia'+idBloque
+                        })
+                    )
+                ),
+                $('<div>', {
+                    'class': 'col-md-3'
+                }).append(
+                    $('<div>', {
+                        'class': 'form-group'
+                    }).append(
+                        $('<label>', {
+                            'text': 'Cargo'
+                        }
+                        ),
+                        $('<input>', {
+                            'type':'text',
+                            'class':'form-control',
+                            'id':'CargoReferencia'+idBloque
+                        })
+                    )
+                )
+            ),
+            $('<div>', {
+                'class': 'row'
+            }).append(
+                $('<div>', {
+                    'class': 'col-md-4'
+                }).append(
+                    $('<div>', {
+                        'class': 'form-group'
+                    }).append(
+                        $('<label>', {
+                            'text': 'Direccion'
+                        }
+                        ),
+                        $('<input>', {
+                            'type':'text',
+                            'class':'form-control',
+                            'id':'DireccionReferencia'+idBloque
+                        })
+                    )
+                ),
+                $('<div>', {
+                    'class': 'col-md-3'
+                }).append(
+                    $('<div>', {
+                        'class': 'form-group'
+                    }).append(
+                        $('<label>', {
+                            'text': 'Telefono'
+                        }
+                        ),
+                        $('<input>', {
+                            'type':'text',
+                            'class':'form-control',
+                            'id':'TelefonoReferencia'+idBloque
+                        })
+                    )
+                ),
+                $('<div>', {
+                    'class': 'col-md-4'
+                }).append(
+                    $('<div>', {
+                        'class': 'form-group'
+                    }).append(
+                        $('<label>', {
+                            'text': 'Email'
+                        }
+                        ),
+                        $('<input>', {
+                            'type':'email',
+                            'class':'form-control',
+                            'id':'EmailReferencia'+idBloque
+                        })
+                    )
+                )
+            )          
+    )            
+
+    )
+    idBloque++;
+});
+
+
+$('#AgregarTrabajo').click(()=>{
+
+    $('#bodyLaboral').append(
+        $('<div>',{'class':'contorno'}
+        ).append(
+        $('<div>',{'class':'row'}   
+        ).append(
+        $('<div>',{ 'class':'col-md-4'}
+        ).append(
+        $('<div>',{'class':'form-group'}
+        ).append(
+        $('<label>',{'text':'Empresa o entidad'}),
+        $('<input>',{'type':'text','class':'form-control','id':'empresa'+id2})
+        )
+        ),
+
+        $('<div>',{ 'class':'col-md-2'}
+        ).append(
+        $('<div>',{'class':'form-group'}
+        ).append(
+        $('<label>',{'text':'Sector'}),
+        $('<select>',{'class':'form-control','id':'sector'+id2}).append($('<option>',{'text':'Publica'},$('<option>',{'text':'Privada'})))
+        )
+        ),
+
+        $('<div>',{ 'class':'col-md-2'}
+        ).append(
+        $('<div>',{'class':'form-group'}
+        ).append(
+        $('<label>',{'text':'Pais'}),
+        $('<input>',{'type':'text','class':'form-control','id':'PaisEmpresa'+id2})
+        )
+        ),
+
+        $('<div>',{ 'class':'col-md-2'}
+        ).append(
+        $('<div>',{'class':'form-group'}
+        ).append(
+        $('<label>',{'text':'Departamento'}),
+        $('<input>',{'type':'text','class':'form-control','id':'DepartamentoEmpresa'+id2})
+        )
+        ),
+
+        
+        $('<div>',{ 'class':'col-md-2'}
+        ).append(
+        $('<div>',{'class':'form-group'}
+        ).append(
+        $('<label>',{'text':'Municipio'}),
+        $('<input>',{'type':'text','class':'form-control','id':'MunicipioEmpresa'+id2})
+        )
+        )
+
+        ),
+
+        $('<div>',{'class':'row'}   
+        ).append(
+        $('<div>',{ 'class':'col-md-4'}
+        ).append(
+        $('<div>',{'class':'form-group'}
+        ).append(
+        $('<label>',{'text':'Empresa o entidad'}),
+        $('<input>',{'type':'text','class':'form-control','id':'empresa'+id2})
+        )
+        ),
+
+        $('<div>',{ 'class':'col-md-2'}
+        ).append(
+        $('<div>',{'class':'form-group'}
+        ).append(
+        $('<label>',{'text':'Sector'}),
+        $('<select>',{'class':'form-control','id':'sector'+id2}).append($('<option>',{'text':'Publica'},$('<option>',{'text':'Privada'})))
+        )
+        ),
+
+        $('<div>',{ 'class':'col-md-2'}
+        ).append(
+        $('<div>',{'class':'form-group'}
+        ).append(
+        $('<label>',{'text':'Pais'}),
+        $('<input>',{'type':'text','class':'form-control','id':'PaisEmpresa'+id2})
+        )
+        ),
+
+        $('<div>',{ 'class':'col-md-2'}
+        ).append(
+        $('<div>',{'class':'form-group'}
+        ).append(
+        $('<label>',{'text':'Departamento'}),
+        $('<input>',{'type':'text','class':'form-control','id':'DepartamentoEmpresa'+id2})
+        )
+        ),
+
+        
+        $('<div>',{ 'class':'col-md-2'}
+        ).append(
+        $('<div>',{'class':'form-group'}
+        ).append(
+        $('<label>',{'text':'Municipio'}),
+        $('<input>',{'type':'text','class':'form-control','id':'MunicipioEmpresa'+id2})
+        )
+        )
+
+        )
+
+    )
+
+});
+
+
 
 $('#btnNext').click(() => {
     if (flag) {
-        $('#DatosPersonalesForm').submit(false);
-       
+        $('#DatosPersonalesForm').submit(false);       
         $('#myModal').modal("show");// with this i can show the modal       
         $('#btnBack').css('display', 'block');
         flag = false; // this flag is used for show the button "btnBack"
