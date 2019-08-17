@@ -1,26 +1,26 @@
-window.addEventListener("load", function () {
+window.addEventListener("load", function() {
     numero.addEventListener("keypress", ValidarNumero, false);
 
 });
 
 /**
-    * 
-    * @param {Number} flag this variable is used for hidden or show the button "next"
-    * @param {Number} idBloque this variable is used for generate inputs at block 'Trabajo'
-    * @param {Number} id2 this variable is used for generate inputs at block 'Referencias'
-    */
+ * 
+ * @param {Number} flag this variable is used for hidden or show the button "next"
+ * @param {Number} idBloque this variable is used for generate inputs at block 'Trabajo'
+ * @param {Number} id2 this variable is used for generate inputs at block 'Referencias'
+ */
 
 var flag = true;
-$('#btnBack').click(function () {
+$('#btnBack').click(function() {
     $('#btnBack').css('display', 'none'); // this method is for hiden the btn
     $('#btnBack').css('display', 'block');
     $('#btnSubmit').css('display', 'none');
     $('#btnNext').css('display', 'block');
-    flag = true;// this flag is used for show the button "btnBack"
+    flag = true; // this flag is used for show the button "btnBack"
 });
 
 //generate blocks of inputs, for seccion "Referencias"
-var idBloque=1;
+var idBloque = 1;
 $('#AgregarReferencia').click(() => {
     parseInt(idBloque);
     $('#bodyReferencias').append(
@@ -38,13 +38,12 @@ $('#AgregarReferencia').click(() => {
                     }).append(
                         $('<label>', {
                             'text': 'Nombre Y Apellido'
-                        }
-                        ),
+                        }),
                         $('<input>', {
-                            'type':'text',
-                            'class':'form-control',
-                            'id':'NombreReferencia'+idBloque,
-                            'name':'NombreReferencia'+idBloque
+                            'type': 'text',
+                            'class': 'form-control',
+                            'id': 'NombreReferencia' + idBloque,
+                            'name': 'NombreReferencia' + idBloque
                         })
                     )
                 ),
@@ -56,13 +55,12 @@ $('#AgregarReferencia').click(() => {
                     }).append(
                         $('<label>', {
                             'text': 'Empresa'
-                        }
-                        ),
+                        }),
                         $('<input>', {
-                            'type':'text',
-                            'class':'form-control',
-                            'id':'EmpresaReferencia'+idBloque,
-                            'name':'EmpresaReferencia'+idBloque
+                            'type': 'text',
+                            'class': 'form-control',
+                            'id': 'EmpresaReferencia' + idBloque,
+                            'name': 'EmpresaReferencia' + idBloque
                         })
                     )
                 ),
@@ -74,13 +72,12 @@ $('#AgregarReferencia').click(() => {
                     }).append(
                         $('<label>', {
                             'text': 'Cargo'
-                        }
-                        ),
+                        }),
                         $('<input>', {
-                            'type':'text',
-                            'class':'form-control',
-                            'id':'CargoReferencia'+idBloque,
-                            'name':'CargoReferencia'+idBloque
+                            'type': 'text',
+                            'class': 'form-control',
+                            'id': 'CargoReferencia' + idBloque,
+                            'name': 'CargoReferencia' + idBloque
                         })
                     )
                 )
@@ -96,13 +93,12 @@ $('#AgregarReferencia').click(() => {
                     }).append(
                         $('<label>', {
                             'text': 'Direccion'
-                        }
-                        ),
+                        }),
                         $('<input>', {
-                            'type':'text',
-                            'class':'form-control',
-                            'id':'DireccionReferencia'+idBloque,
-                            'name':'DireccionReferencia'+idBloque
+                            'type': 'text',
+                            'class': 'form-control',
+                            'id': 'DireccionReferencia' + idBloque,
+                            'name': 'DireccionReferencia' + idBloque
                         })
                     )
                 ),
@@ -114,13 +110,12 @@ $('#AgregarReferencia').click(() => {
                     }).append(
                         $('<label>', {
                             'text': 'Telefono'
-                        }
-                        ),
+                        }),
                         $('<input>', {
-                            'type':'text',
-                            'class':'form-control',
-                            'id':'TelefonoReferencia'+idBloque,
-                            'name':'TelefonoReferencia'+idBloque
+                            'type': 'text',
+                            'class': 'form-control',
+                            'id': 'TelefonoReferencia' + idBloque,
+                            'name': 'TelefonoReferencia' + idBloque
                         })
                     )
                 ),
@@ -132,169 +127,142 @@ $('#AgregarReferencia').click(() => {
                     }).append(
                         $('<label>', {
                             'text': 'Email'
-                        }
-                        ),
+                        }),
                         $('<input>', {
-                            'type':'email',
-                            'class':'form-control',
-                            'id':'EmailReferencia'+idBloque,
-                            'name':'EmailReferencia'+idBloque
+                            'type': 'email',
+                            'class': 'form-control',
+                            'id': 'EmailReferencia' + idBloque,
+                            'name': 'EmailReferencia' + idBloque
                         })
                     )
                 )
-            )          
-    )            
+            )
+        )
 
     )
     idBloque++;
 
-    if (idBloque>=4) {
-        $('#AgregarReferencia').css('display','none');
+    if (idBloque >= 4) {
+        $('#AgregarReferencia').css('display', 'none');
     }
 });
 
 //generate blocks of inputs, for seccion "Laboral"
-var id2=2;
-$('#AgregarTrabajo').click(()=>{
+var id2 = 2;
+$('#AgregarTrabajo').click(() => {
 
     $('#bodyLaboral').append(
-        $('<div>',{'class':'contorno'}
-        ).append(
-        $('<div>',{'class':'row'}   
-        ).append(
-        $('<div>',{ 'class':'col-md-4'}
-        ).append(
-        $('<div>',{'class':'form-group'}
-        ).append(
-        $('<label>',{'text':'Empresa o entidad'}),
-        $('<input>',{'type':'text','class':'form-control','id':'empresa'+id2,'name':'empresa'+id2 })
-        )
-        ),
+        $('<div>', { 'class': 'contorno' }).append(
+            $('<div>', { 'class': 'row' }).append(
+                $('<div>', { 'class': 'col-md-4' }).append(
+                    $('<div>', { 'class': 'form-group' }).append(
+                        $('<label>', { 'text': 'Empresa o entidad' }),
+                        $('<input>', { 'type': 'text', 'class': 'form-control', 'id': 'empresa' + id2, 'name': 'empresa' + id2 })
+                    )
+                ),
 
-        $('<div>',{ 'class':'col-md-2'}
-        ).append(
-        $('<div>',{'class':'form-group'}
-        ).append(
-        $('<label>',{'text':'Sector'}),
-        $('<select>',{'class':'form-control','id':'sector'+id2,'name':'sector'+id2}).append($('<option>',{'text':'Publica'}),$('<option>',{'text':'Privada'}))
-        )
-        ),
+                $('<div>', { 'class': 'col-md-2' }).append(
+                    $('<div>', { 'class': 'form-group' }).append(
+                        $('<label>', { 'text': 'Sector' }),
+                        $('<select>', { 'class': 'form-control', 'id': 'sector' + id2, 'name': 'sector' + id2 }).append($('<option>', { 'text': 'Publica' }), $('<option>', { 'text': 'Privada' }))
+                    )
+                ),
 
-        $('<div>',{ 'class':'col-md-2'}
-        ).append(
-        $('<div>',{'class':'form-group'}
-        ).append(
-        $('<label>',{'text':'Pais'}),
-        $('<input>',{'type':'text','class':'form-control','id':'PaisEmpresa'+id2,'name':'PaisEmpresa'+id2 })
-        )
-        ),
+                $('<div>', { 'class': 'col-md-2' }).append(
+                    $('<div>', { 'class': 'form-group' }).append(
+                        $('<label>', { 'text': 'Pais' }),
+                        $('<input>', { 'type': 'text', 'class': 'form-control', 'id': 'PaisEmpresa' + id2, 'name': 'PaisEmpresa' + id2 })
+                    )
+                ),
 
-        $('<div>',{ 'class':'col-md-2'}
-        ).append(
-        $('<div>',{'class':'form-group'}
-        ).append(
-        $('<label>',{'text':'Departamento'}),
-        $('<input>',{'type':'text','class':'form-control','id':'DepartamentoEmpresa'+id2,'name':'DepartamentoEmpresa'+id2})
-        )
-        ),
+                $('<div>', { 'class': 'col-md-2' }).append(
+                    $('<div>', { 'class': 'form-group' }).append(
+                        $('<label>', { 'text': 'Departamento' }),
+                        $('<input>', { 'type': 'text', 'class': 'form-control', 'id': 'DepartamentoEmpresa' + id2, 'name': 'DepartamentoEmpresa' + id2 })
+                    )
+                ),
 
-        
-        $('<div>',{ 'class':'col-md-2'}
-        ).append(
-        $('<div>',{'class':'form-group'}
-        ).append(
-        $('<label>',{'text':'Municipio'}),
-        $('<input>',{'type':'text','class':'form-control','id':'MunicipioEmpresa'+id2,'name':'MunicipioEmpresa'+id2})
-        )
-        )
 
-        ),
+                $('<div>', { 'class': 'col-md-2' }).append(
+                    $('<div>', { 'class': 'form-group' }).append(
+                        $('<label>', { 'text': 'Municipio' }),
+                        $('<input>', { 'type': 'text', 'class': 'form-control', 'id': 'MunicipioEmpresa' + id2, 'name': 'MunicipioEmpresa' + id2 })
+                    )
+                )
 
-        $('<div>',{'class':'row'}   
-        ).append(
-        $('<div>',{ 'class':'col-md-4'}
-        ).append(
-        $('<div>',{'class':'form-group'}
-        ).append(
-        $('<label>',{'text':'Correo electronico entidad'}),
-        $('<input>',{'type':'email','class':'form-control','id':'CorreoElectronicoEntidad'+id2,'name':'CorreoElectronicoEntidad'+id2})
-        )
-        ),
+            ),
 
-        $('<div>',{ 'class':'col-md-4'}
-        ).append(
-        $('<div>',{'class':'form-group'}
-        ).append(
-        $('<label>',{'text':'Fecha Ingreso'}),
-        $('<input>',{'type':'date', 'class':'form-control','id':'FechaIngreso'+id2,'name':'FechaIngreso'+id2})
-        )
-        ),
+            $('<div>', { 'class': 'row' }).append(
+                $('<div>', { 'class': 'col-md-4' }).append(
+                    $('<div>', { 'class': 'form-group' }).append(
+                        $('<label>', { 'text': 'Correo electronico entidad' }),
+                        $('<input>', { 'type': 'email', 'class': 'form-control', 'id': 'CorreoElectronicoEntidad' + id2, 'name': 'CorreoElectronicoEntidad' + id2 })
+                    )
+                ),
 
-        $('<div>',{ 'class':'col-md-4'}
-        ).append(
-        $('<div>',{'class':'form-group'}
-        ).append(
-        $('<label>',{'text':'fecha Retiro'}),
-        $('<input>',{'type':'date','class':'form-control','id':'FechaRetiro'+id2,'name':'FechaRetiro'+id2})
-        )
-        )
+                $('<div>', { 'class': 'col-md-4' }).append(
+                    $('<div>', { 'class': 'form-group' }).append(
+                        $('<label>', { 'text': 'Fecha Ingreso' }),
+                        $('<input>', { 'type': 'date', 'class': 'form-control', 'id': 'FechaIngreso' + id2, 'name': 'FechaIngreso' + id2 })
+                    )
+                ),
 
-        
+                $('<div>', { 'class': 'col-md-4' }).append(
+                    $('<div>', { 'class': 'form-group' }).append(
+                        $('<label>', { 'text': 'fecha Retiro' }),
+                        $('<input>', { 'type': 'date', 'class': 'form-control', 'id': 'FechaRetiro' + id2, 'name': 'FechaRetiro' + id2 })
+                    )
+                )
 
-        ),
 
-        $('<div>',{'class':'row'}   
-        ).append(
-        $('<div>',{ 'class':'col-md-4'}
-        ).append(
-        $('<div>',{'class':'form-group'}
-        ).append(
-        $('<label>',{'text':'Cargo o contrato acual'}),
-        $('<input>',{'type':'text','class':'form-control','id':'CargoActualEmpresa'+id2, 'name':'CargoActualEmpresa'+id2})
-        )
-        ),
 
-        
-        $('<div>',{ 'class':'col-md-4'}
-        ).append(
-        $('<div>',{'class':'form-group'}
-        ).append(
-        $('<label>',{'text':'Dependencia'}),
-        $('<input>',{'type':'text','class':'form-control','id':'DependenciaEmpresa'+id2,'name':'DependenciaEmpresa'+id2})
-        )
-        ),
+            ),
 
-        $('<div>',{ 'class':'col-md-4'}
-        ).append(
-        $('<div>',{'class':'form-group'}
-        ).append(
-        $('<label>',{'text':'Direccion'}),
-        $('<input>',{'type':'text','class':'form-control','id':'DireccionEmpresa'+id2,'name':'DireccionEmpresa'+id2})
-        )
-        )
-        
-        )
+            $('<div>', { 'class': 'row' }).append(
+                $('<div>', { 'class': 'col-md-4' }).append(
+                    $('<div>', { 'class': 'form-group' }).append(
+                        $('<label>', { 'text': 'Cargo o contrato acual' }),
+                        $('<input>', { 'type': 'text', 'class': 'form-control', 'id': 'CargoActualEmpresa' + id2, 'name': 'CargoActualEmpresa' + id2 })
+                    )
+                ),
 
+
+                $('<div>', { 'class': 'col-md-4' }).append(
+                    $('<div>', { 'class': 'form-group' }).append(
+                        $('<label>', { 'text': 'Dependencia' }),
+                        $('<input>', { 'type': 'text', 'class': 'form-control', 'id': 'DependenciaEmpresa' + id2, 'name': 'DependenciaEmpresa' + id2 })
+                    )
+                ),
+
+                $('<div>', { 'class': 'col-md-4' }).append(
+                    $('<div>', { 'class': 'form-group' }).append(
+                        $('<label>', { 'text': 'Direccion' }),
+                        $('<input>', { 'type': 'text', 'class': 'form-control', 'id': 'DireccionEmpresa' + id2, 'name': 'DireccionEmpresa' + id2 })
+                    )
+                )
+
+            )
+
+        )
     )
-    )
-id2++;
+    id2++;
 
-if (id2>=4) {
-    $('#AgregarTrabajo').css('display','none');
-}
+    if (id2 >= 4) {
+        $('#AgregarTrabajo').css('display', 'none');
+    }
 });
 
 
 
 $('#btnNext').click(() => {
-    if (flag) {                 
-        $('#myModal').modal("show");// with this i can show the modal       
+    if (flag) {
+        $('#myModal').modal("show"); // with this i can show the modal       
         $('#btnBack').css('display', 'block');
         $('#btnNext').css('display', 'none');
         $('#btnSubmit').css('display', 'block');
         flag = false; // this flag is used for show the button "btnBack"
-    }else{
-        
+    } else {
+
     }
 });
 
@@ -365,7 +333,7 @@ function AgregarDatosTable() {
 }
 
 function EliminarFila() {
-    $(document).on('click', '.btn-danger', function (event) {
+    $(document).on('click', '.btn-danger', function(event) {
         event.preventDefault();
         $(this).closest('tr').remove();
     });
@@ -396,7 +364,7 @@ function AgregarDatosIdioma() {
 
 var namePattern = "^[a-z A-Z]{4,30}$";
 var emailPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$";
- 
+
 function checkInput(idInput, pattern) {
     return $(idInput).val().match(pattern) ? true : false;
 }
@@ -414,19 +382,18 @@ function ValidarNumero(dato) {
 
 function checkCampos(components) {
     var camposRellenados = true;
-    $.each(components, function (i, val) {
+    $.each(components, function(i, val) {
         var $this = val;
-        if ($($this).val()=="") { // this validate the inputs, that not be empty           
+        if ($($this).val() == "") { // this validate the inputs, that not be empty           
             camposRellenados = false;
-           // checkInput(idInput, pattern)
+            // checkInput(idInput, pattern)
             return false;
         }
     });
 
     if (camposRellenados == false) {
         return false;
-    }
-    else {
+    } else {
         return true;
     }
 }
@@ -440,20 +407,20 @@ function FiltrerCollapse(obj) {
     var Formato3 = ["#TiempoDIV"];
     var $id = obj.id;
     if ($id == "Formato1") {
-        $.each(Formato1, function (i, val) {
+        $.each(Formato1, function(i, val) {
             $(val).css("display", "none");
         });
         $('#myModal').modal('hide');
     }
 
     if ($id == "Formato2") {
-        $.each(Formato2, function (i, val) {
+        $.each(Formato2, function(i, val) {
             $(val).css("display", "none");
         });
         $('#myModal').modal('hide');
     }
     if ($id == "Formato3") {
-        $.each(Formato3, function (i, val) {
+        $.each(Formato3, function(i, val) {
             $(val).css("display", "none");
         });
         $('#myModal').modal('hide');
@@ -462,45 +429,44 @@ function FiltrerCollapse(obj) {
 
 
 //#region validations for each one of the collapses
-$(document).ready(function () {
+$(document).ready(function() {
 
-    $("#DatosPersonalesForm input").keyup(function () {
+    $("#DatosPersonalesForm input").keyup(function() {
         var components = ["#PrimerApellido", "#Nombres", "#TipoDocumento", "#numero", "#DireccionResidencia", "#PaisResidencia", "#Departamento",
-            "#Municipios", "#CorreoElectronico", "#fechaNacimiento", "#DepartamentoNacimiento", "#MunicipioNacimiento"]; // this is inputs id 
+            "#Municipios", "#CorreoElectronico", "#fechaNacimiento", "#DepartamentoNacimiento", "#MunicipioNacimiento"
+        ]; // this is inputs id 
         var check = checkCampos(components);
         if (check) {
             $("#btnNext").prop("disabled", false);
-        }
-        else {
-               $("#btnNext").prop("disabled", true); 
+        } else {
+            $("#btnNext").prop("disabled", true);
         }
     });
 
-    $("#formacionDiv input").keyup(function () {
+    $("#formacionDiv input").keyup(function() {
         var components = ["#SelectEducacion", "#tituloObtenido", "#Modalidad", "#semestresAprobados", "#SelectGraduado", "#nombretitulo"]; // this is inputs id 
         var check = checkCampos(components);
         if (check) {
             $("#btnAdd").prop("disabled", false);
-        }
-        else {
+        } else {
             $("#btnAdd").prop("disabled", true);
         }
     });
 
-    $("#collapseIdioma input").keyup(function () {
+    $("#collapseIdioma input").keyup(function() {
         var components = ["#Idioma", "#habla", "#lee", "#escribe"]; // this is inputs id 
         var check = checkCampos(components);
-        var nfilas = $("#tbodyIdioma tr").length;       
+        var nfilas = $("#tbodyIdioma tr").length;
         if (nfilas <= 1) {
             if (check) {
-                $("#AddIdioma").prop("disabled", false);               
+                $("#AddIdioma").prop("disabled", false);
             } else {
                 $("#AddIdioma").prop("disabled", true);
             }
         } else {
             $("#AddIdioma").prop("disabled", true);
         }
-     
+
     });
 
     // this methos is a sum for the block of "Experience " 
@@ -518,7 +484,7 @@ $(document).ready(function () {
         while (TotalMeses >= 12) {
             TotalMeses = parseInt(TotalMeses) - 12;
             TotalAños++;
-        }       
+        }
         if (!isNaN(TotalAños) && !isNaN(TotalMeses)) {
             $('#totalAÑOS').text(TotalAños);
             $('#totalMESES').text(TotalMeses);
@@ -541,13 +507,13 @@ function showNotification(from, align) {
         message: "Por favor llene los campos requeridos para poder avanzar."
 
     }, {
-            type: color,
-            timer: 8000,
-            placement: {
-                from: from,
-                align: align
-            }
-        });
+        type: color,
+        timer: 8000,
+        placement: {
+            from: from,
+            align: align
+        }
+    });
 }
 //#endregion
 
@@ -557,12 +523,12 @@ function showNotification(from, align) {
 //#region load Departamentos  and municipios 
 var JSONFinal;
 $(document).ready(function init() {
-    loadJSON(function (response) {
+    loadJSON(function(response) {
         // Parse JSON string into object
         JSONFinal = JSON.parse(response);
         var $select = $('#Departamento');
         //alert(options);
-        $.each(JSONFinal, function (id, name) {
+        $.each(JSONFinal, function(id, name) {
             $select.append('<option value=' + name.id + '>' + name.departamento + '</option>');
         });
     });
@@ -572,9 +538,9 @@ $(document).ready(function init() {
             $('#Municipios').empty();
             var $select = $('#Municipios');
             var valor = $('#Departamento').val();
-            $.each(JSONFinal, function (id, name) {
+            $.each(JSONFinal, function(id, name) {
                 if (name.id == valor) {
-                    $.each(name.ciudades, function (id, city) {
+                    $.each(name.ciudades, function(id, city) {
                         $select.append('<option >' + city + '</option>');
                     })
                 }
@@ -589,7 +555,7 @@ function loadJSON(callback) {
 
     xobj.overrideMimeType("application/json");
     xobj.open('GET', 'assets/js/colombia.json', true); // Reemplaza colombia-json.json con el nombre que le hayas puesto
-    xobj.onreadystatechange = function () {
+    xobj.onreadystatechange = function() {
         if (xobj.readyState == 4 && xobj.status == "200") {
             callback(xobj.responseText);
         }
@@ -599,8 +565,8 @@ function loadJSON(callback) {
 
 //#endregion
 
-function CatchData(){
-    
+function CatchData() {
+
     // try {
     //     var config = {};
     //     $('input').each(function () {
@@ -612,16 +578,15 @@ function CatchData(){
     //     alert(error);
     // }
 
-  
-  if ($("#DatosPersonalesForm").submit()) {
 
-    console.log(this);
-      alert("Entra");
+    if ($("#DatosPersonalesForm").submit()) {
 
-  } else{
-      alert("sale");
-  }
-   ;
+        console.log(this);
+        alert("Entra");
+
+    } else {
+        alert("sale");
+    };
 
     function processData() {
         alert(data);
@@ -629,15 +594,16 @@ function CatchData(){
 }
 
 
+// cAPTURAR DATOS DEL FORM
 
 
+$(function() {
+    $('#DatosPersonalesForm').on("submit", function(e) {
+        e.preventDefault(); // cancel the actual submit
 
+        var form = document.getElementById('DatosPersonalesForm');
+        console.log(form);
 
-
-
-
-
-
-
-
-
+        alert('hi');
+    });
+});
