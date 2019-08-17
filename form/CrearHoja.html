@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
-
+        <link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
@@ -22,10 +22,10 @@
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-3264204221323420",
-        enable_page_level_ads: true
-      });
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3264204221323420",
+            enable_page_level_ads: true
+        });
     </script>
 </head>
 
@@ -47,168 +47,189 @@
                             <div class="card card-user">
                                 <div id="DatosPersonales" class="tabcontent" style="display: initial">
                                     <div class="card-body">
-                                        <div class="contorno">
-                                            <h7>Datos personales</h7>
-                                            <div class="row">
-                                                <div class="col-md-3 pr-1">
-                                                    <div class="form-group">
-                                                        <label>Primer Apellido</label>
-                                                        <input type="text" class="form-control" id="PrimerApellido"
-                                                             pattern="[A-Za-z]+" placeholder="Ej. Ramirez">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3 pr-1">
-                                                    <div class="form-group">
-                                                        <label>Segundo Apellido</label>
-                                                        <input type="text" class="form-control" id="SegundoApellido"
-                                                            placeholder="Ej. Suarez" pattern="[A-Za-z]*">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-5 pr-1">
-                                                    <div class="form-group">
-                                                        <label>Nombres</label>
-                                                        <input type="text" class="form-control" id="Nombres" 
-                                                            placeholder="Ej. Pedro Antonio" pattern="[A-Za-z]+">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <label>Tipo Documento</label>
-                                                    <select class="form-control" id="TipoDocumento" >
-                                                        <option selected value="">Seleccione</option>
-                                                        <option value="C.C">C.C</option>
-                                                        <option value="C.E">C.E</option>
-                                                        <option value="PAS">PAS</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <div class="form-group">
-                                                        <label>Numero</label>
-                                                        <input type="text" class="form-control" id="numero" 
-                                                            pattern="[1-9]+">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <label>Sexo</label>
-                                                    <div class="form-group">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="SexoRadio" id="MasculinoRadio" value="Masculino" />
-                                                            <label class="form-check-label"
-                                                                for="MasculinoRadio">Masculino</label>
-                                                        </div>
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="SexoRadio" id="FemeninoRadio" value="Femenino">
-                                                            <label class="form-check-label"
-                                                                for="FemeninoRadio">Femenino</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <label>Nacionalidad</label>
-                                                    <div class="form-group">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="inlineRadioOptions" id="ColombianoRadio"
-                                                                value="Colombiano">
-                                                            <label class="form-check-label"
-                                                                for="ColombianoRadio">Colombiano</label>
-                                                        </div>
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio"
-                                                                name="inlineRadioOptions" id="ExtranjeroRadio"
-                                                                value="Extranjero">
-                                                            <label class="form-check-label"
-                                                                for="ExtranjeroRadio">Extranjero</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <div class="form-group">
-                                                        <label>País</label>
-                                                        <input class="form-control" type="text" id="PaisCiudadania"
-                                                            pattern="[A-Za-z]*+">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="contorno">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <h7>Datos residencia</h7>
-                                                    <div class="form-group">
-                                                        <label>Dirección de residencia</label>
-                                                        <input type="text" class="form-control" id="DireccionResidencia">
+                                        <form id="PrimeraPag">
 
-                                                        <label>País</label>
-                                                        <input type="text" class="form-control" id="PaisResidencia"
-                                                            value="Colombia" disabled>
-
-                                                        <label>Departamento</label>
-                                                        <select name="Departamento" id="Departamento"
-                                                            class="form-control"></select>
-
-                                                        <label>Municipio</label>
-                                                        <select name="Municipios" id="Municipios"
-                                                            class="form-control"></select>
-
-                                                        <label>Correo electronico</label>
-                                                        <input type="email" id="CorreoElectronico" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <h7>Fecha y lugar de nacimiento</h4>
+                                            <div class="contorno">
+                                                <h7>Datos personales</h7>
+                                                <div class="row">
+                                                    <div class="col-md-3 pr-1">
                                                         <div class="form-group">
-
-                                                            <label>Fecha de nacimiento</label>
-                                                            <input type="date" class="form-control"
-                                                                id="fechaNacimiento">
+                                                            <label>Primer Apellido</label>
+                                                            <input type="text" class="form-control" id="PrimerApellido"
+                                                                name="Primer apellido" pattern="[A-Za-z]+"
+                                                                placeholder="Ej. Ramirez">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 pr-1">
+                                                        <div class="form-group">
+                                                            <label>Segundo Apellido</label>
+                                                            <input type="text" class="form-control" id="SegundoApellido"
+                                                                name="Segundo Apellido" placeholder="Ej. Suarez"
+                                                                pattern="[A-Za-z]*">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5 pr-1">
+                                                        <div class="form-group">
+                                                            <label>Nombres</label>
+                                                            <input type="text" class="form-control" id="Nombres"
+                                                                name="Nombres" placeholder="Ej. Pedro Antonio"
+                                                                pattern="[A-Za-z]+">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <label>Tipo Documento</label>
+                                                        <select class="form-control" id="TipoDocumento"
+                                                            name="Tipo Documento">
+                                                            <option selected value="">Seleccione</option>
+                                                            <option value="C.C">C.C</option>
+                                                            <option value="C.E">C.E</option>
+                                                            <option value="PAS">PAS</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="form-group">
+                                                            <label>Numero</label>
+                                                            <input type="text" class="form-control" id="numero"
+                                                                name="Numero Documento" pattern="[1-9]+">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <label>Sexo</label>
+                                                        <div class="form-group">
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio" name="Sexo"
+                                                                    id="MasculinoRadio" value="Masculino" />
+                                                                <label class="form-check-label"
+                                                                    for="MasculinoRadio">Masculino</label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio" name="Sexo"
+                                                                    id="FemeninoRadio" value="Femenino">
+                                                                <label class="form-check-label"
+                                                                    for="FemeninoRadio">Femenino</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <label>Nacionalidad</label>
+                                                        <div class="form-group">
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="Nacionalidad" id="ColombianoRadio"
+                                                                    value="Colombiano">
+                                                                <label class="form-check-label"
+                                                                    for="ColombianoRadio">Colombiano</label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="Nacionalidad" id="ExtranjeroRadio"
+                                                                    value="Extranjero">
+                                                                <label class="form-check-label"
+                                                                    for="ExtranjeroRadio">Extranjero</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="form-group">
+                                                            <label>País</label>
+                                                            <input class="form-control" type="text" id="PaisCiudadania"
+                                                                name="Pais Extranjero" pattern="[A-Za-z]*+">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="contorno">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <h7>Datos residencia</h7>
+                                                        <div class="form-group">
+                                                            <label>Dirección de residencia</label>
+                                                            <input type="text" class="form-control"
+                                                                id="DireccionResidencia" name="Direccion Residencia">
 
                                                             <label>País</label>
-                                                            <input type="text" class="form-control"
-                                                                Placeholder="Ej. Colombia" id="PaisNacimiento" >
+                                                            <input type="text" class="form-control" id="PaisResidencia"
+                                                                name="País residencia" value="Colombia" disabled>
 
                                                             <label>Departamento</label>
-                                                            <input type="text" class="form-control" 
-                                                                id="DepartamentoNacimiento" pattern="[A-Za-z]+">
+                                                            <select name="Departamento" id="Departamento"
+                                                                name="Departamento residencia"
+                                                                class="form-control"></select>
 
                                                             <label>Municipio</label>
-                                                            <input type="text" class="form-control" 
-                                                                id="MunicipioNacimiento" pattern="[A-Za-z]+">
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <h7>Libreta militar</h7>
-                                                    <div class="form-group">
-                                                        <br>
-                                                        <input class="form-check-input" type="radio"
-                                                            name="LibretaMilitar" id="PrimeraClase" value="Primera">
-                                                        <label class="form-check-label" for="PrimeraClase">Primera
-                                                            Clase</label>
+                                                            <select name="Municipios" id="Municipios"
+                                                                name="Municipio residencia"
+                                                                class="form-control"></select>
 
-                                                        <div class="form-group ">
+                                                            <label>Correo electronico</label>
+                                                            <input type="email" id="CorreoElectronico"
+                                                                class="form-control" name="Correo electronico">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <h7>Fecha y lugar de nacimiento</h4>
+                                                            <div class="form-group">
+
+                                                                <label>Fecha de nacimiento</label>
+                                                                <input type="date" class="form-control"
+                                                                    name="Fecha de nacimiento" id="fechaNacimiento">
+
+                                                                <label>País</label>
+                                                                <input type="text" class="form-control"
+                                                                    Placeholder="Ej. Colombia" id="PaisNacimiento"
+                                                                    name="País nacimiento">
+
+                                                                <label>Departamento</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="DepartamentoNacimiento" pattern="[A-Za-z]+"
+                                                                    name="Departamento nacimiento">
+
+                                                                <label>Municipio</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="MunicipioNacimiento" pattern="[A-Za-z]+"
+                                                                    name="Municipio nacimiento">
+                                                            </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <h7>Libreta militar</h7>
+                                                        <div class="form-group">
+                                                            <br>
                                                             <input class="form-check-input" type="radio"
-                                                                name="LibretaMilitar" id="SegundaClase" value="Segunda">
-                                                            <label class="form-check-label" for="SegundaClase">Segunda
+                                                                name="LibretaMilitar" id="PrimeraClase" value="Primera">
+                                                            <label class="form-check-label" for="PrimeraClase">Primera
                                                                 Clase</label>
-                                                        </div>
-                                                        <label>Numero</label>
-                                                        <input type="text" class="form-control" id="NumeroLibreta"
-                                                            pattern="[1-9]*+">
 
-                                                        <label>D.M</label>
-                                                        <input type="text" class="form-control" id="DistritoMilitar"
-                                                            pattern="[1-9]*+">
+                                                            <div class="form-group ">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="LibretaMilitar" id="SegundaClase"
+                                                                    value="Segunda">
+                                                                <label class="form-check-label"
+                                                                    for="SegundaClase">Segunda
+                                                                    Clase</label>
+                                                            </div>
+                                                            <label>Numero</label>
+                                                            <input type="text" class="form-control" id="NumeroLibreta"
+                                                                name="Numero libreta" pattern="[1-9]*+">
+
+                                                            <label>D.M</label>
+                                                            <input type="text" class="form-control" id="DistritoMilitar"
+                                                                name="Distrito militar" pattern="[1-9]*+">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="col-md-3 offset-md-9">
+                                                    <input id="btnNext" type="button" value="siguiente" class="btn btn-success" disabled="true">
+                                            </div>
                                     </div>
                                 </div>
-   
-
+                                
+                                
+                             </form>
     <div id="FormacionAcademica" class="tabcontent">
         <div class="row" id="PerfilDIV">
             <div class="col-md-12">
@@ -226,7 +247,7 @@
                             data-parent="#accordionExample">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="comment">Descripción:</label>
+                                    <label for="comment" name="Descripcion">Descripción:</label>
                                     <textarea class="form-control" rows="10" id="Descripcion"></textarea>
                                 </div>
                             </div>
@@ -256,7 +277,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Educación básica</label>
-                                        <select name="EduBasica" class="form-control" id="SelectEducacion" >
+                                        <select name="EduBasica" class="form-control" id="SelectEducacion">
                                             <option>1o</option>
                                             <option>2o</option>
                                             <option>3o</option>
@@ -274,13 +295,13 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Titulo obtenido</label>
-                                        <input type="text" class="form-control"  id="tituloObtenido">
+                                        <input type="text" class="form-control" id="tituloObtenido" name="Titulo">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Fecha de grado</label>
-                                        <input type="date" class="form-control" id="FechaGrado" >
+                                        <input type="date" class="form-control" id="FechaGrado" name="FechaGrado">
                                     </div>
                                 </div>
                             </div>
@@ -289,7 +310,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Modalidad </label>
-                                        <select name="Modalidad" class="form-control" id="Modalidad" >
+                                        <select name="Modalidad" class="form-control" id="Modalidad">
                                             <option value="TC">Técnica</option>
                                             <option value="TL">Tecnológica</option>
                                             <option value="TE">Tecnológia especializada
@@ -305,13 +326,13 @@
                                 <div class="col-md-1">
                                     <div class="form-group">
                                         <label>Semestres</label>
-                                        <input type="text" class="form-control" id="semestresAprobados" >
+                                        <input type="text" class="form-control" id="semestresAprobados" name="SemestresAprobados">
                                     </div>
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group">
                                         <label>Graduado</label>
-                                        <select name="Graduado" class="form-control" id="SelectGraduado" >
+                                        <select name="Graduado" class="form-control" id="SelectGraduado">
                                             <option value="Si">SI</option>
                                             <option value="No">NO</option>
                                         </select>
@@ -320,7 +341,7 @@
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label>Nombre de los estudios o titulo obtenido </label>
-                                        <input type="text" class="form-control" id="nombretitulo" >
+                                        <input type="text" class="form-control" id="nombretitulo" name="TituloOptenido">
                                     </div>
                                 </div>
                             </div>
@@ -328,14 +349,14 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Fecha Terminacion</label>
-                                        <input type="date" class="form-control" id="FechaTerminacion">
+                                        <input type="date" class="form-control" id="FechaTerminacion" name="fechaterminacion2">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>N° tarjeta profesional </label>
                                         <input type="text" class="form-control" placeholder="Tarjeta prof"
-                                            id="tarjetaProf">
+                                            id="tarjetaProf" name="numerotarjetaprof">
                                     </div>
                                 </div>
                                 <div class="col-2">
@@ -384,7 +405,7 @@
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label>Idioma</label>
-                                        <input type="text" class="form-control" id="Idioma">
+                                        <input type="text" class="form-control" id="Idioma" name="Idioma">
                                     </div>
                                 </div>
                                 <div class="col-md-2">
@@ -463,13 +484,13 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>Empresa o entidad</label>
-                                                    <input type="text" class="form-control" id="Empresa">
+                                                    <input type="text" class="form-control" id="Empresa" name="Empresa">
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label>Sector</label>
-                                                    <select class="form-control" id="Sector">
+                                                    <select class="form-control" id="Sector" name="Sector">
                                                         <option>Publica</option>
                                                         <option>Privada</option>
                                                     </select>
@@ -478,19 +499,19 @@
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label>País</label>
-                                                    <input type="text" class="form-control" id="PaisEmpresa">
+                                                    <input type="text" class="form-control" id="PaisEmpresa" name="PaisEmpresa">
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label>Departamento</label>
-                                                    <input class="form-control" type="text" id="DepartamentoEmpresa">
+                                                    <input class="form-control" type="text" id="DepartamentoEmpresa" name="DepartamentoEmpresa">
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label>Municipio</label>
-                                                    <input class="form-control" type="text" id="MunicipioEmpresa">
+                                                    <input class="form-control" type="text" id="MunicipioEmpresa" name="MunicipioEmpresa">
                                                 </div>
                                             </div>
                                         </div>
@@ -498,19 +519,20 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>Correo electrónico entidad</label>
-                                                    <input type="email" class="form-control" id="CorreoElectronicoEntidad">
+                                                    <input type="email" class="form-control"
+                                                        id="CorreoElectronicoEntidad">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>Fecha ingreso</label>
-                                                    <input type="date" class="form-control" id="FechaIngreso">
+                                                    <input type="date" class="form-control" id="FechaIngreso" name="FechaIngreso">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>Fecha de retiro</label>
-                                                    <input type="date" class="form-control" id="FechaRetiro">
+                                                    <input type="date" class="form-control" id="FechaRetiro" name="FechaRetiro">
                                                 </div>
                                             </div>
                                         </div>
@@ -518,19 +540,19 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>cargo o contrato actual</label>
-                                                    <input type="text" class=form-control id="CargoActualEmpresa">
+                                                    <input type="text" class=form-control id="CargoActualEmpresa" name="CargoActualEmpresa">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>Dependencia</label>
-                                                    <input class="form-control" type="text" id="DependenciaEmpresa">
+                                                    <input class="form-control" type="text" id="DependenciaEmpresa" name="DependenciaEmpresa">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>Direccion</label>
-                                                    <input type="text" class="form-control" id="DireccionEmpresa">
+                                                    <input type="text" class="form-control" id="DireccionEmpresa" name="DireccionEmpresa">
                                                 </div>
                                             </div>
                                         </div>
@@ -541,13 +563,13 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>Empresa o entidad</label>
-                                                    <input type="text" class="form-control" id="Empresa1">
+                                                    <input type="text" class="form-control" id="Empresa1" name="Empresa1">
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label>Sector</label>
-                                                    <select class="form-control" id="Sector1">
+                                                    <select class="form-control" id="Sector1" name="Sector1">
                                                         <option>Publica</option>
                                                         <option>Privada</option>
                                                     </select>
@@ -556,19 +578,19 @@
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label>País</label>
-                                                    <input type="text" class="form-control" id="PaisEmpresa1">
+                                                    <input type="text" class="form-control" id="PaisEmpresa1" name="PaisEmpresa1">
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label>Departamento</label>
-                                                    <input class="form-control" type="text" id="DepartamentoEmpresa1">
+                                                    <input class="form-control" type="text" id="DepartamentoEmpresa1" name="DepartamentoEmpresa1">
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label>Municipio</label>
-                                                    <input class="form-control" type="text" id="MunicipioEmpresa1">
+                                                    <input class="form-control" type="text" id="MunicipioEmpresa1" name="MunicipioEmpresa1">
                                                 </div>
                                             </div>
                                         </div>
@@ -576,20 +598,21 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>Correo electrónico entidad</label>
-                                                    <input type="email" class="form-control" id="CorreoElectronicoEntidad1">
+                                                    <input type="text" class="form-control"
+                                                        id="CorreoElectronicoEntidad1" name="CorreoElectronicoEntidad1">
                                                 </div>
                                             </div>
 
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>Fecha ingreso</label>
-                                                    <input type="date" class="form-control" id="FechaIngreso1">
+                                                    <input type="date" class="form-control" id="FechaIngreso1" name="FechaIngreso1">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>Fecha de retiro</label>
-                                                    <input type="date" class="form-control" id="FechaRetiro1">
+                                                    <input type="date" class="form-control" id="FechaRetiro1" name="FechaRetiro1">
                                                 </div>
                                             </div>
                                         </div>
@@ -597,29 +620,29 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>cargo o contrato actual</label>
-                                                    <input type="text" class=form-control id="CargoActualEmpresa1">
+                                                    <input type="text" class=form-control id="CargoActualEmpresa1" name="CargoActualEmpresa1">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>Dependencia</label>
-                                                    <input class="form-control" type="text" id="DependenciaEmpresa1">
+                                                    <input class="form-control" type="text" id="DependenciaEmpresa1" name="DependenciaEmpresa1">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>Direccion</label>
-                                                    <input type="text" class="form-control" id="DireccionEmpresa1">
+                                                    <input type="text" class="form-control" id="DireccionEmpresa1" name="DireccionEmpresa1">
                                                 </div>
                                             </div>
-                                        </div>                                        
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
-                                       <button id="AgregarTrabajo" class="btn btn-blue">Agregar</button>
-                                    </div>                            
-                                 </div>  
+                                        <button id="AgregarTrabajo" class="btn btn-blue">Agregar</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -652,8 +675,7 @@
                                                         <label>Servidor Publico</label>
                                                     </td>
                                                     <td>
-                                                        <input type="number" id="AñosSP" min=0 class="form-control"
-                                                            pattern="[1-9]*{1,3}">
+                                                        <input type="number" id="AñosSP" min=0 class="form-control"     >
                                                     </td>
                                                     <td>
                                                         <input type="number" id="MesesSP" min=0 max=11
@@ -720,56 +742,56 @@
                             <div id="Referencias" class="collapse" aria-labelledby="headingThree"
                                 data-parent="#accordionExample">
                                 <div class="card-body" id="bodyReferencias">
-                                    <div class="contorno">                                    
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label>Nombre y apellido</label>
-                                                <input type="text" class="form-control" id="NombreReferencia">
+                                    <div class="contorno">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label>Nombre y apellido</label>
+                                                    <input type="text" class="form-control" id="NombreReferencia">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Empresa</label>
+                                                    <input type="text" class="form-control" id="EmpresaReferencia">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Cargo</label>
+                                                    <input type="text" class="form-control" id="CargoReferencia">
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Empresa</label>
-                                                <input type="text" class="form-control" id="EmpresaReferencia">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Direccion</label>
+                                                    <input type="text" id="DireccionReferencia" class="form-control">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label>Cargo</label>
-                                                <input type="text" class="form-control" id="CargoReferencia">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Telefono</label>
+                                                    <input type="text" id="TelefonoReferencia" class="form-control">
+                                                </div>
                                             </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Correo Electronico</label>
+                                                    <input type="email" id="EmailReferencia" class="form-control">
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Direccion</label>
-                                                <input type="text" id="DireccionReferencia" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label>Telefono</label>
-                                                <input type="text" id="TelefonoReferencia" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Correo Electronico</label>
-                                                <input type="email" id="EmailReferencia" class="form-control">
-                                            </div>
-                                        </div>
-                                       
-                                    </div>
-                                </div>    
-                                                                                        
+
                                 </div>
                                 <div class="row">
-                                        <div class="col-md-3">
-                                           <button id="AgregarReferencia" class="btn btn-blue">Agregar</button>
-                                        </div>                            
-                                     </div>  
+                                    <div class="col-md-3">
+                                        <button id="AgregarReferencia" class="btn btn-blue">Agregar</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -777,12 +799,12 @@
             </div>
         </div>
     </div>
-</form>
+    </form>
     <div class="card-footer">
         <div class="row">
             <div class="col-md-4">
-                <button class="btn" onclick="crearHoja2();$('#DatosPersonalesForm').submit(false);"></button>
                 
+
                 <div class="form-group">
                     <button class="btn " id="btnBack" style="display: none"
                         onclick="openCity(event, 'DatosPersonales')">Atras</button>
@@ -790,9 +812,9 @@
             </div>
 
             <div class="col-md-4 offset-md-4">
-                <div class="form-group">
-                    <input id="btnNext" type="button" value="siguiente" class="btn btn-success" enabled="false">
-                    <input id="btnSubmit" type="submit" style="display: none" value="Descargar" onclick="CatchData()" class="btn btn-success">
+                <div class="form-group">                   
+                    <input id="btnSubmit" type="submit" style="display: none" value="Descargar" onclick="CatchData()"
+                        class="btn btn-success">
                 </div>
             </div>
         </div>
@@ -849,7 +871,7 @@
                                 <button class="btn" id="Formato1" onclick="FiltrerCollapse(this);">Seleccionar</button>
                             </div>
                         </div>
-                      <div class="col-md-4">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <div id="Img2" class="carousel slide" data-ride="carousel">
                                     <ol class="carousel-indicators">
@@ -906,7 +928,7 @@
                                 <button class="btn" id="Formato3" onclick="FiltrerCollapse(this)">Seleccionar</button>
                             </div>
                         </div>
-                    </div>                   
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-danger" onclick="$('#myModal').modal('hide'); $('#btnBack').click()">Cancelar
@@ -922,7 +944,7 @@
     <script src="assets/js/core/popper.min.js"></script>
     <script src="assets/js/core/bootstrap.min.js"></script>
     <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <!-- Chart JS -->
     <script src="assets/js/canvasjs.min.js"></script>
     <script src="assets/js/jspdf.min.js"></script>

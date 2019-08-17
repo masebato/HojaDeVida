@@ -43,7 +43,8 @@ $('#AgregarReferencia').click(() => {
                         $('<input>', {
                             'type':'text',
                             'class':'form-control',
-                            'id':'NombreReferencia'+idBloque
+                            'id':'NombreReferencia'+idBloque,
+                            'name':'NombreReferencia'+idBloque
                         })
                     )
                 ),
@@ -60,7 +61,8 @@ $('#AgregarReferencia').click(() => {
                         $('<input>', {
                             'type':'text',
                             'class':'form-control',
-                            'id':'EmpresaReferencia'+idBloque
+                            'id':'EmpresaReferencia'+idBloque,
+                            'name':'EmpresaReferencia'+idBloque
                         })
                     )
                 ),
@@ -77,7 +79,8 @@ $('#AgregarReferencia').click(() => {
                         $('<input>', {
                             'type':'text',
                             'class':'form-control',
-                            'id':'CargoReferencia'+idBloque
+                            'id':'CargoReferencia'+idBloque,
+                            'name':'CargoReferencia'+idBloque
                         })
                     )
                 )
@@ -98,7 +101,8 @@ $('#AgregarReferencia').click(() => {
                         $('<input>', {
                             'type':'text',
                             'class':'form-control',
-                            'id':'DireccionReferencia'+idBloque
+                            'id':'DireccionReferencia'+idBloque,
+                            'name':'DireccionReferencia'+idBloque
                         })
                     )
                 ),
@@ -115,7 +119,8 @@ $('#AgregarReferencia').click(() => {
                         $('<input>', {
                             'type':'text',
                             'class':'form-control',
-                            'id':'TelefonoReferencia'+idBloque
+                            'id':'TelefonoReferencia'+idBloque,
+                            'name':'TelefonoReferencia'+idBloque
                         })
                     )
                 ),
@@ -132,7 +137,8 @@ $('#AgregarReferencia').click(() => {
                         $('<input>', {
                             'type':'email',
                             'class':'form-control',
-                            'id':'EmailReferencia'+idBloque
+                            'id':'EmailReferencia'+idBloque,
+                            'name':'EmailReferencia'+idBloque
                         })
                     )
                 )
@@ -161,7 +167,7 @@ $('#AgregarTrabajo').click(()=>{
         $('<div>',{'class':'form-group'}
         ).append(
         $('<label>',{'text':'Empresa o entidad'}),
-        $('<input>',{'type':'text','class':'form-control','id':'empresa'+id2})
+        $('<input>',{'type':'text','class':'form-control','id':'empresa'+id2,'name':'empresa'+id2 })
         )
         ),
 
@@ -170,7 +176,7 @@ $('#AgregarTrabajo').click(()=>{
         $('<div>',{'class':'form-group'}
         ).append(
         $('<label>',{'text':'Sector'}),
-        $('<select>',{'class':'form-control','id':'sector'+id2}).append($('<option>',{'text':'Publica'}),$('<option>',{'text':'Privada'}))
+        $('<select>',{'class':'form-control','id':'sector'+id2,'name':'sector'+id2}).append($('<option>',{'text':'Publica'}),$('<option>',{'text':'Privada'}))
         )
         ),
 
@@ -179,7 +185,7 @@ $('#AgregarTrabajo').click(()=>{
         $('<div>',{'class':'form-group'}
         ).append(
         $('<label>',{'text':'Pais'}),
-        $('<input>',{'type':'text','class':'form-control','id':'PaisEmpresa'+id2})
+        $('<input>',{'type':'text','class':'form-control','id':'PaisEmpresa'+id2,'name':'PaisEmpresa'+id2 })
         )
         ),
 
@@ -188,7 +194,7 @@ $('#AgregarTrabajo').click(()=>{
         $('<div>',{'class':'form-group'}
         ).append(
         $('<label>',{'text':'Departamento'}),
-        $('<input>',{'type':'text','class':'form-control','id':'DepartamentoEmpresa'+id2})
+        $('<input>',{'type':'text','class':'form-control','id':'DepartamentoEmpresa'+id2,'name':'DepartamentoEmpresa'+id2})
         )
         ),
 
@@ -198,7 +204,7 @@ $('#AgregarTrabajo').click(()=>{
         $('<div>',{'class':'form-group'}
         ).append(
         $('<label>',{'text':'Municipio'}),
-        $('<input>',{'type':'text','class':'form-control','id':'MunicipioEmpresa'+id2})
+        $('<input>',{'type':'text','class':'form-control','id':'MunicipioEmpresa'+id2,'name':'MunicipioEmpresa'+id2})
         )
         )
 
@@ -211,7 +217,7 @@ $('#AgregarTrabajo').click(()=>{
         $('<div>',{'class':'form-group'}
         ).append(
         $('<label>',{'text':'Correo electronico entidad'}),
-        $('<input>',{'type':'email','class':'form-control','id':'CorreoElectronicoEntidad'+id2})
+        $('<input>',{'type':'email','class':'form-control','id':'CorreoElectronicoEntidad'+id2,'name':'CorreoElectronicoEntidad'+id2})
         )
         ),
 
@@ -220,7 +226,7 @@ $('#AgregarTrabajo').click(()=>{
         $('<div>',{'class':'form-group'}
         ).append(
         $('<label>',{'text':'Fecha Ingreso'}),
-        $('<input>',{'type':'date', 'class':'form-control','id':'FechaIngreso'+id2})
+        $('<input>',{'type':'date', 'class':'form-control','id':'FechaIngreso'+id2,'name':'FechaIngreso'+id2})
         )
         ),
 
@@ -229,7 +235,7 @@ $('#AgregarTrabajo').click(()=>{
         $('<div>',{'class':'form-group'}
         ).append(
         $('<label>',{'text':'fecha Retiro'}),
-        $('<input>',{'type':'date','class':'form-control','id':'FechaRetiro'+id2})
+        $('<input>',{'type':'date','class':'form-control','id':'FechaRetiro'+id2,'name':'FechaRetiro'+id2})
         )
         )
 
@@ -244,7 +250,7 @@ $('#AgregarTrabajo').click(()=>{
         $('<div>',{'class':'form-group'}
         ).append(
         $('<label>',{'text':'Cargo o contrato acual'}),
-        $('<input>',{'type':'text','class':'form-control','id':'CargoActualEmpresa'+id2})
+        $('<input>',{'type':'text','class':'form-control','id':'CargoActualEmpresa'+id2, 'name':'CargoActualEmpresa'+id2})
         )
         ),
 
@@ -254,7 +260,7 @@ $('#AgregarTrabajo').click(()=>{
         $('<div>',{'class':'form-group'}
         ).append(
         $('<label>',{'text':'Dependencia'}),
-        $('<input>',{'type':'text','class':'form-control','id':'DependenciaEmpresa'+id2})
+        $('<input>',{'type':'text','class':'form-control','id':'DependenciaEmpresa'+id2,'name':'DependenciaEmpresa'+id2})
         )
         ),
 
@@ -263,7 +269,7 @@ $('#AgregarTrabajo').click(()=>{
         $('<div>',{'class':'form-group'}
         ).append(
         $('<label>',{'text':'Direccion'}),
-        $('<input>',{'type':'text','class':'form-control','id':'DireccionEmpresa'+id2})
+        $('<input>',{'type':'text','class':'form-control','id':'DireccionEmpresa'+id2,'name':'DireccionEmpresa'+id2})
         )
         )
         
@@ -281,8 +287,7 @@ if (id2>=4) {
 
 
 $('#btnNext').click(() => {
-    if (flag) {
-        $('#DatosPersonalesForm').submit(false);       
+    if (flag) {                 
         $('#myModal').modal("show");// with this i can show the modal       
         $('#btnBack').css('display', 'block');
         $('#btnNext').css('display', 'none');
@@ -388,70 +393,36 @@ function AgregarDatosIdioma() {
 //});
 
 //#region validations
-function ObtenerFecha() {
-    var n, y, m, d;
-    n = new Date();
-    y = n.getFullYear();
-    m = n.getMonth() + 1;
-    d = n.getDate();
-    return d + "/" + m + "/" + y;
-}
-function ValidarFecha(dato) {
-    var fecha_hoy = new Date();
-    var fecha_selec = new Date(dato.value);
 
-    if (fecha_selec.getFullYear() > (fecha_hoy.getFullYear() - 18)) {
-        document.getElementById("" + dato.id).style.borderColor = "#dd4b39";
+var namePattern = "^[a-z A-Z]{4,30}$";
+var emailPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$";
+ 
+function checkInput(idInput, pattern) {
+    return $(idInput).val().match(pattern) ? true : false;
+}
 
-    } else {
-        document.getElementById("" + dato.id).style.borderColor = "#d2d6de";
-    }
+function checkRadioBox(nameRadioBox) {
+    return $(nameRadioBox).is(":checked") ? true : false;
 }
-function validarEmail(dato) {
-    if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(dato.value)) {
-        document.getElementById('correo').style.borderColor = "#d2d6de";
-    } else {
-        document.getElementById('correo').style.borderColor = "#dd4b39";
-    }
-}
-function ValidarTexto(dato) {
-    if (dato.value == "") {
-        document.getElementById("" + dato.id).style.borderColor = "#dd4b39";
-    } else {
-        //document.getElementById("" + dato.id).style.borderColor = "#d2d6de";
-    }
-}
+
 function ValidarNumero(dato) {
-
     var key = window.event ? dato.which : dato.keyCode;
     if (key < 48 || key > 57) {
         dato.preventDefault();
     }
 }
-function ValidarSelector(dato) {
-    if (dato.value == "Seleccionar" || dato.value == "") {
-        document.getElementById("" + dato.id).style.borderColor = "#dd4b39";
-    } else {
-        document.getElementById("" + dato.id).style.borderColor = "#d2d6de";
-    }
-}
-function validarRadio(dato) {
-    if (dato.value != 'checked') {
-        document.getElementById("" + dato.id).style.borderColor = "#d2d6de";
-    }
-    else {
 
-    }
-}
 function checkCampos(components) {
     var camposRellenados = true;
     $.each(components, function (i, val) {
         var $this = val;
-        if ($($this).val().length <= 0 || $($this).val() == "") { // this validate the inputs, that not be empty
+        if ($($this).val()=="") { // this validate the inputs, that not be empty           
             camposRellenados = false;
+           // checkInput(idInput, pattern)
             return false;
         }
     });
+
     if (camposRellenados == false) {
         return false;
     }
@@ -630,15 +601,24 @@ function loadJSON(callback) {
 
 function CatchData(){
     
-    $("#DatosPersonalesForm").submit(function(event) {
-
+    try {
         var config = {};
         $('input').each(function () {
          config[this.name] = this.value;
         });
         console.log(config);
+    } catch (error) {
+        showNotification(center,left);
+        alert(error);
+    }
 
-    });
+  
+//   if ($("#DatosPersonalesForm").submit()) {
+//       alert("Entra");
+//   } else{
+//       alert("sale");
+//   }
+   ;
 
     function processData() {
         alert(data);
