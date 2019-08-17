@@ -603,8 +603,11 @@ $(function() {
 
         var form = document.getElementById('DatosPersonalesForm');
         //var porElementos = document.forms["form1"].elements[0].value;
-        console.log(form.elements[0].value);
-        console.log(form.elements[0].name);
+        for (var i = 0; i < form.elements.length; i++) {
+            console.log(form.elements[i].value);
+            console.log(form.elements[i].name);
+        }
+
 
         alert('hi');
     });
