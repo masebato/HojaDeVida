@@ -605,6 +605,8 @@ $(function() {
         //var porElementos = document.forms["form1"].elements[0].value;
         for (var i = 0; i < form.elements.length; i++) {
             console.log(form.elements[i].value);
+
+
             console.log(form.elements[i].name);
         }
 
