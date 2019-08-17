@@ -121,7 +121,7 @@ async function Hoja2() {
                 d = d + 35;
                 e = e + 35;
             }
-            //..............experiencia laboral .........
+            //..............referencias laboral .........
             var ax = 153;
             var az = 158;
             var bx = 163;

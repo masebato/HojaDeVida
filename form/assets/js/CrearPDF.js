@@ -3,7 +3,7 @@
 
 async function crear1() {
     doc = new jsPDF();
-   
+
 
     var hoja1 = await Hoja1();
     var hoja2 = await Hoja2();
@@ -115,13 +115,13 @@ function Hoja1() {
         doc.text(150, 279, "X"); // lo escribe MB
 
         //feducacion basica y media 
-        doc.text(130, 167.5, "Titulo obtenido");
-        doc.setFontSize(12);
-        doc.text(29, 179, "X"); //primaria 1
-        doc.text(34, 179, "X"); //primaria 2
-        doc.text(39, 179, "X"); //primaria 3
-        doc.text(44, 179, "X"); //primaria 4
-        doc.text(49, 179, "X"); //primaria 4
+        //doc.text(130, 167.5, "Titulo obtenido");
+        //doc.setFontSize(12);
+        //doc.text(29, 179, "X"); //primaria 1
+        //doc.text(34, 179, "X"); //primaria 2
+        //doc.text(39, 179, "X"); //primaria 3
+        //doc.text(44, 179, "X"); //primaria 4
+        //doc.text(49, 179, "X"); //primaria 4
 
         doc.addPage();
         //doc.save("prueba.pdf");
