@@ -602,7 +602,9 @@ $(function() {
         e.preventDefault(); // cancel the actual submit
 
         var form = document.getElementById('DatosPersonalesForm');
-        console.log(form);
+        //var porElementos = document.forms["form1"].elements[0].value;
+        console.log(form.elements[0].value);
+        console.log(form.elements[0].name);
 
         alert('hi');
     });
