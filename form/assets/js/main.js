@@ -601,23 +601,26 @@ function loadJSON(callback) {
 
 function CatchData(){
     
-    try {
-        var config = {};
-        $('input').each(function () {
-         config[this.name] = this.value;
-        });
-        console.log(config);
-    } catch (error) {
-        showNotification(center,left);
-        alert(error);
-    }
+    // try {
+    //     var config = {};
+    //     $('input').each(function () {
+    //      config[this.name] = this.value;
+    //     });
+    //     console.log(config);
+    // } catch (error) {
+    //     showNotification(center,left);
+    //     alert(error);
+    // }
 
   
-//   if ($("#DatosPersonalesForm").submit()) {
-//       alert("Entra");
-//   } else{
-//       alert("sale");
-//   }
+  if ($("#DatosPersonalesForm").submit()) {
+
+    console.log(this);
+      alert("Entra");
+
+  } else{
+      alert("sale");
+  }
    ;
 
     function processData() {
