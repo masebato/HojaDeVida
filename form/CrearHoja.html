@@ -1,3 +1,31 @@
+
+Skip to content
+Pull requests
+Issues
+Marketplace
+Explore
+@masebato
+
+1
+1
+
+    0
+
+masebato/HojaDeVida
+Code
+Issues 0
+Pull requests 0
+Projects 0
+Wiki
+Security
+Insights
+Settings
+HojaDeVida/form/CrearHoja.html
+@masebato masebato ajuste form 593328a 32 minutes ago
+@masebato
+@Danilo9508
+@jairorojas95
+964 lines (929 sloc) 63.2 KB
 <!DOCTYPE html>
 
 <html lang="es">
@@ -9,7 +37,8 @@
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
@@ -36,7 +65,8 @@
                     <div class="row">
                         <div class="col-md-2">
                             <!-- anuncio2 -->
-                            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5804496081140821" data-ad-slot="5984986553" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5804496081140821"
+                                data-ad-slot="5984986553" data-ad-format="auto" data-full-width-responsive="true"></ins>
                             <script>
                                 (adsbygoogle = window.adsbygoogle || []).push({});
                             </script>
@@ -53,26 +83,33 @@
                                                     <div class="col-md-3 pr-1">
                                                         <div class="form-group">
                                                             <label>Primer Apellido</label>
-                                                            <input type="text" class="form-control" id="PrimerApellido" name="Primer_apellido" pattern="[A-Za-z]+" placeholder="Ej. Ramirez" title="Primer apellido">
+                                                            <input type="text" class="form-control" id="PrimerApellido"
+                                                                name="Primer apellido" pattern="[A-Za-z]+"
+                                                                placeholder="Ej. Ramirez"  title="Primer apellido">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-3 pr-1">
                                                         <div class="form-group">
                                                             <label>Segundo Apellido</label>
-                                                            <input type="text" class="form-control" id="SegundoApellido" name="Segundo Apellido" placeholder="Ej. Suarez" pattern="[A-Za-z]*">
+                                                            <input type="text" class="form-control" id="SegundoApellido"
+                                                                name="Segundo Apellido" placeholder="Ej. Suarez"
+                                                                pattern="[A-Za-z]*">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5 pr-1">
                                                         <div class="form-group">
                                                             <label>Nombres</label>
-                                                            <input type="text" class="form-control" id="Nombres" name="Nombres" placeholder="Ej. Pedro Antonio" pattern="[A-Za-z]+">
+                                                            <input type="text" class="form-control" id="Nombres"
+                                                                name="Nombres" placeholder="Ej. Pedro Antonio"
+                                                                pattern="[A-Za-z]+">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-3">
                                                         <label>Tipo Documento</label>
-                                                        <select class="form-control" id="TipoDocumento" name="Tipo Documento">
+                                                        <select class="form-control" id="TipoDocumento"
+                                                            name="Tipo Documento">
                                                             <option selected value="">Seleccione</option>
                                                             <option value="C.C">C.C</option>
                                                             <option value="C.E">C.E</option>
@@ -82,19 +119,24 @@
                                                     <div class="col-md-2">
                                                         <div class="form-group">
                                                             <label>Numero</label>
-                                                            <input type="text" class="form-control" id="numero" name="Numero Documento" pattern="[1-9]+">
+                                                            <input type="text" class="form-control" id="numero"
+                                                                name="Numero Documento" pattern="[1-9]+">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <label>Sexo</label>
                                                         <div class="form-group">
                                                             <div class="form-check form-check-inline">
-                                                                <input class="form-check-input" type="radio" name="Sexo" id="MasculinoRadio" value="Masculino" />
-                                                                <label class="form-check-label" for="MasculinoRadio">Masculino</label>
+                                                                <input class="form-check-input" type="radio" name="Sexo"
+                                                                    id="MasculinoRadio" value="Masculino" />
+                                                                <label class="form-check-label"
+                                                                    for="MasculinoRadio">Masculino</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
-                                                                <input class="form-check-input" type="radio" name="Sexo" id="FemeninoRadio" value="Femenino">
-                                                                <label class="form-check-label" for="FemeninoRadio">Femenino</label>
+                                                                <input class="form-check-input" type="radio" name="Sexo"
+                                                                    id="FemeninoRadio" value="Femenino">
+                                                                <label class="form-check-label"
+                                                                    for="FemeninoRadio">Femenino</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -102,19 +144,26 @@
                                                         <label>Nacionalidad</label>
                                                         <div class="form-group">
                                                             <div class="form-check form-check-inline">
-                                                                <input class="form-check-input" type="radio" name="Nacionalidad" id="ColombianoRadio" value="Colombiano">
-                                                                <label class="form-check-label" for="ColombianoRadio">Colombiano</label>
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="Nacionalidad" id="ColombianoRadio"
+                                                                    value="Colombiano">
+                                                                <label class="form-check-label"
+                                                                    for="ColombianoRadio">Colombiano</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
-                                                                <input class="form-check-input" type="radio" name="Nacionalidad" id="ExtranjeroRadio" value="Extranjero">
-                                                                <label class="form-check-label" for="ExtranjeroRadio">Extranjero</label>
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="Nacionalidad" id="ExtranjeroRadio"
+                                                                    value="Extranjero">
+                                                                <label class="form-check-label"
+                                                                    for="ExtranjeroRadio">Extranjero</label>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <div class="form-group">
                                                             <label>País</label>
-                                                            <input class="form-control" type="text" id="PaisCiudadania" name="Pais Extranjero" pattern="[A-Za-z]*+">
+                                                            <input class="form-control" type="text" id="PaisCiudadania"
+                                                                name="Pais Extranjero" pattern="[A-Za-z]*+">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -125,19 +174,26 @@
                                                         <h7>Datos residencia</h7>
                                                         <div class="form-group">
                                                             <label>Dirección de residencia</label>
-                                                            <input type="text" class="form-control" id="DireccionResidencia" name="Direccion Residencia">
+                                                            <input type="text" class="form-control"
+                                                                id="DireccionResidencia" name="Direccion Residencia">
 
                                                             <label>País</label>
-                                                            <input type="text" class="form-control" id="PaisResidencia" name="País residencia" value="Colombia" disabled>
+                                                            <input type="text" class="form-control" id="PaisResidencia"
+                                                                name="País residencia" value="Colombia" disabled>
 
                                                             <label>Departamento</label>
-                                                            <select name="Departamento" id="Departamento" name="Departamento residencia" class="form-control"></select>
+                                                            <select name="Departamento" id="Departamento"
+                                                                name="Departamento residencia"
+                                                                class="form-control"></select>
 
                                                             <label>Municipio</label>
-                                                            <select name="Municipios" id="Municipios" name="Municipio residencia" class="form-control"></select>
+                                                            <select name="Municipios" id="Municipios"
+                                                                name="Municipio residencia"
+                                                                class="form-control"></select>
 
                                                             <label>Correo electronico</label>
-                                                            <input type="email" id="CorreoElectronico" class="form-control" name="Correo electronico">
+                                                            <input type="email" id="CorreoElectronico"
+                                                                class="form-control" name="Correo electronico">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
@@ -145,29 +201,40 @@
                                                             <div class="form-group">
 
                                                                 <label>Fecha de nacimiento</label>
-                                                                <input type="date" class="form-control" name="Fecha de nacimiento" id="fechaNacimiento">
+                                                                <input type="date" class="form-control"
+                                                                    name="Fecha de nacimiento" id="fechaNacimiento">
 
                                                                 <label>País</label>
-                                                                <input type="text" class="form-control" Placeholder="Ej. Colombia" id="PaisNacimiento" name="País nacimiento">
+                                                                <input type="text" class="form-control"
+                                                                    Placeholder="Ej. Colombia" id="PaisNacimiento"
+                                                                    name="País nacimiento">
 
                                                                 <label>Departamento</label>
-                                                                <input type="text" class="form-control" id="DepartamentoNacimiento" pattern="[A-Za-z]+" name="Departamento nacimiento">
+                                                                <input type="text" class="form-control"
+                                                                    id="DepartamentoNacimiento" pattern="[A-Za-z]+"
+                                                                    name="Departamento nacimiento">
 
                                                                 <label>Municipio</label>
-                                                                <input type="text" class="form-control" id="MunicipioNacimiento" pattern="[A-Za-z]+" name="Municipio nacimiento">
+                                                                <input type="text" class="form-control"
+                                                                    id="MunicipioNacimiento" pattern="[A-Za-z]+"
+                                                                    name="Municipio nacimiento">
                                                             </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <h7>Libreta militar</h7>
                                                         <div class="form-group">
                                                             <br>
-                                                            <input class="form-check-input" type="radio" name="LibretaMilitar" id="PrimeraClase" value="Primera">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="LibretaMilitar" id="PrimeraClase" value="Primera">
                                                             <label class="form-check-label" for="PrimeraClase">Primera
                                                                 Clase</label>
 
                                                             <div class="form-group ">
-                                                                <input class="form-check-input" type="radio" name="LibretaMilitar" id="SegundaClase" value="Segunda">
-                                                                <label class="form-check-label" for="SegundaClase">Segunda
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="LibretaMilitar" id="SegundaClase"
+                                                                    value="Segunda">
+                                                                <label class="form-check-label"
+                                                                    for="SegundaClase">Segunda
                                                                     Clase</label>
                                                             </div>
                                                             <label>Numero</label>
@@ -183,9 +250,9 @@
                                             </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-3 offset-md-9">
-                                            <input id="btnNext" type="button" value="siguiente" class="btn btn-success" disabled="true">
-                                        </div>
+                                            <div class="col-md-3 offset-md-9">
+                                                    <input id="btnNext" type="button" value="siguiente" class="btn btn-success" disabled="true">
+                                            </div>
                                     </div>
                                 </div>
                                 
@@ -215,15 +282,16 @@
                         </div>
                     </div>
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="card card-stats " id="FormacionDIV">
-                                                <div class="card-header" id="headingTwo">
-                                                    <h2 class="mb-0">
-                                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#formacionDiv" aria-expanded="false" aria-controls="formacionDiv">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-stats " id="FormacionDIV">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#formacionDiv" aria-expanded="false" aria-controls="formacionDiv">
                                 <i class="icono-document"></i> Formación
                             </button>
                         </h2>
@@ -296,53 +364,6 @@
                                             <option value="Si">SI</option>
                                             <option value="No">NO</option>
                                         </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-5">
-                                                                <div class="form-group">
-                                                                    <label>Nombre de los estudios o titulo obtenido </label>
-                                                                    <input type="text" class="form-control" id="nombretitulo">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-4">
-                                                                <div class="form-group">
-                                                                    <label>Fecha Terminacion</label>
-                                                                    <input type="date" class="form-control" id="FechaTerminacion">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div class="form-group">
-                                                                    <label>N° tarjeta profesional </label>
-                                                                    <input type="text" class="form-control" placeholder="Tarjeta prof" id="tarjetaProf">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-2">
-                                                                <button class="btn btn-info" id="btnAdd" disabled="true" onclick="AgregarDatosTable()">Agregar</button>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <table class="table-bordered table-responsive-md" id="tableAcademico">
-                                                                    <thead>
-                                                                        <th>MODALIDAD ACADÉMICA</th>
-                                                                        <th>No. SEMESTRES APROBADOS</th>
-                                                                        <th>GRADUADO</th>
-                                                                        <th>NOMBRE DE LOS ESTUDIOS O TITULOS OBTENIDO</th>
-                                                                        <th>FECHA TERMINACION</th>
-                                                                        <th>TARJETA PROFESIONAL</th>
-                                                                        <th>ACCIÓN</th>
-                                                                    </thead>
-                                                                    <tbody id="tbodyAcademico">
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-5">
@@ -394,12 +415,13 @@
             </div>
         </div>
 
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="card card-stats">
-                                                <div class="card-header" id="headingThree">
-                                                    <h2 class="mb-0">
-                                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseIdioma" aria-expanded="false" aria-controls="collapseIdioma">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-stats">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseIdioma" aria-expanded="false" aria-controls="collapseIdioma">
                                 <i class="icono-bookmarkEmpty"></i> Idiomas
                             </button>
                         </h2>
@@ -422,22 +444,22 @@
                                             <option value="B">Bien</option>
                                             <option value="MB">Muy bien</option>
                                         </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-2">
-                                                                <div class="form-group">
-                                                                    <label>Lo lee</label>
-                                                                    <select name="lo lee" id="lee" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>Lo lee</label>
+                                        <select name="lo lee" id="lee" class="form-control">
                                             <option value="R">Regular</option>
                                             <option value="B">Bien</option>
                                             <option value="MB">Muy bien</option>
                                         </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-2">
-                                                                <div class="form-group">
-                                                                    <label>Lo escribe</label>
-                                                                    <select name="lo escibe" id="escribe" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>Lo escribe</label>
+                                        <select name="lo escibe" id="escribe" class="form-control">
                                             <option value="R">Regular</option>
                                             <option value="B">Bien</option>
                                             <option value="MB">Muy bien</option>
@@ -644,6 +666,15 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <button id="AgregarTrabajo" class="btn btn-blue">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="row" id="TiempoDIV">
                     <div class="col-md-12">
@@ -816,12 +847,14 @@
     </div>
     </div>
     <div class="col-md-2">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5804496081140821" data-ad-slot="2369422591" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5804496081140821"
+            data-ad-slot="2369422591" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
     </div>
-    <div id="myModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div id="myModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -849,11 +882,13 @@
                                         </div>
                                     </div>
                                     <a class="carousel-control-prev" href="#Img1" role="button" data-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: black"></span>
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"
+                                            style="background-color: black"></span>
                                         <span class="sr-only">Anterior</span>
                                     </a>
                                     <a class="carousel-control-next" href="#Img1" role="button" data-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: black"></span>
+                                        <span class="carousel-control-next-icon" aria-hidden="true"
+                                            style="background-color: black"></span>
                                         <span class="sr-only">Siguiente</span>
                                     </a>
                                 </div>
@@ -877,11 +912,13 @@
                                         </div>
                                     </div>
                                     <a class="carousel-control-prev" href="#Img2" role="button" data-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: black"></span>
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"
+                                            style="background-color: black"></span>
                                         <span class="sr-only">Anterior</span>
                                     </a>
                                     <a class="carousel-control-next" href="#Img2" role="button" data-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: black"></span>
+                                        <span class="carousel-control-next-icon" aria-hidden="true"
+                                            style="background-color: black"></span>
                                         <span class="sr-only">Siguiente</span>
                                     </a>
                                 </div>
@@ -902,11 +939,13 @@
                                         </div>
                                     </div>
                                     <a class="carousel-control-prev" href="#Img3" role="button" data-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: black"></span>
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"
+                                            style="background-color: black"></span>
                                         <span class="sr-only">Anterior</span>
                                     </a>
                                     <a class="carousel-control-next" href="#Img3" role="button" data-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: black"></span>
+                                        <span class="carousel-control-next-icon" aria-hidden="true"
+                                            style="background-color: black"></span>
                                         <span class="sr-only">Siguiente</span>
                                     </a>
                                 </div>
@@ -951,3 +990,5 @@
 
 </html>
 <!-- end document-->
+
+   
