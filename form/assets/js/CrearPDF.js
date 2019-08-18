@@ -3,15 +3,14 @@
 
 async function crear1() {
     doc = new jsPDF();
-
-
-    var hoja1 = await Hoja1();
+    var data = datos();
+    var hoja1 = await Hoja1(data);
     var hoja2 = await Hoja2();
     var hoja3 = await Hoja3();
 
 }
 
-function Hoja1() {
+function Hoja1(obj) {
     var url1 = 'assets/img/0001.jpg';
     var img = new Image();
     $(img).on('load', function() {
@@ -19,15 +18,25 @@ function Hoja1() {
         doc.addImage(this, 'JPG', -8, 0, 220, 300);
         doc.setFontSize(12);
         doc.setFont("Arial")
-        doc.text(15, 72.8, "primer apellido");
-        doc.text(74, 72.8, "segundo apellido");
-        doc.text(135, 72.8, "nombres");
+        doc.text(15, 72.8, obj[0].value);
+        doc.text(74, 72.8, obj[1].value);
+        doc.text(135, 72.8, obj[2].value);
         doc.setFontSize(10);
-        doc.text(22, 82, "x"); //C.C
-        doc.text(33, 82, "x"); //C.E
-        doc.text(45, 82, "x"); //Pass
+        if (obj[3].value == "C.C") {
+
+            doc.text(22, 82, "X"); //C.C
+        }
+        if (obj[3].value == "C.E") {
+
+            doc.text(33, 82, "X"); //C.C
+        }
+        if (obj[3].value == "PAS") {
+
+            doc.text(45, 82, "X"); //C.C
+        }
+
         doc.setFontSize(12);
-        doc.text(58, 82.8, "Identificacion");
+        doc.text(58, 82.8, obj[4].value);
         doc.setFontSize(10);
         doc.text(106.2, 82, "x"); //F
         doc.text(115, 82, "x"); //M

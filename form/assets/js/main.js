@@ -579,7 +579,7 @@ function CatchData() {
     // }
 
 
-    if ($("#DatosPersonalesForm").submit()) {
+    if ($("#DatosPersonalesForm").submit(true)) {
 
         console.log(this);
         alert("Entra");
@@ -596,21 +596,16 @@ function CatchData() {
 
 // cAPTURAR DATOS DEL FORM
 
+function datos() {
 
-$(function() {
-    $('#DatosPersonalesForm').on("submit", function(e) {
-        e.preventDefault(); // cancel the actual submit
+    var ar;
 
-        var form = document.getElementById('DatosPersonalesForm');
-        //var porElementos = document.forms["form1"].elements[0].value;
-        for (var i = 0; i < form.elements.length; i++) {
-            console.log(form.elements[i].value);
+    $('#DatosPersonalesForm').submit(false); // cancel the actual submit
 
-
-            console.log(form.elements[i].name);
-        }
+    var form = document.getElementById('DatosPersonalesForm');
+    ar = form.elements;
+    console.log(ar);
+    return ar;
 
 
-        alert('hi');
-    });
-});
+};
