@@ -3,15 +3,27 @@
 
 async function crear1() {
     doc = new jsPDF();
+    $(function() {
+        $('#DatosPersonalesForm').on("submit", function(e) {
+            e.preventDefault(); // cancel the actual submit
 
-
-    var hoja1 = await Hoja1();
+            var form = document.getElementById('DatosPersonalesForm');
+            //var porElementos = document.forms["form1"].elements[0].value;
+            for (var i = 0; i < form.elements.length; i++) {
+                console.log(form.elements[i].name);
+                console.log(form.elements[i].value);
+                console.log(i);
+            }
+        });
+    });
+    var data = datos();
+    var hoja1 = await Hoja1(data);
     var hoja2 = await Hoja2();
     var hoja3 = await Hoja3();
 
 }
 
-function Hoja1() {
+function Hoja1(obj) {
     var url1 = 'assets/img/0001.jpg';
     var img = new Image();
     $(img).on('load', function() {
@@ -19,59 +31,126 @@ function Hoja1() {
         doc.addImage(this, 'JPG', -8, 0, 220, 300);
         doc.setFontSize(12);
         doc.setFont("Arial")
-        doc.text(15, 72.8, "primer apellido");
-        doc.text(74, 72.8, "segundo apellido");
-        doc.text(135, 72.8, "nombres");
+        doc.text(15, 72.8, obj[0].value);
+        doc.text(74, 72.8, obj[1].value);
+        doc.text(135, 72.8, obj[2].value);
         doc.setFontSize(10);
-        doc.text(22, 82, "x"); //C.C
-        doc.text(33, 82, "x"); //C.E
-        doc.text(45, 82, "x"); //Pass
+        if (obj[3].value == "C.C") {
+
+            doc.text(22, 82, "X"); //C.C
+        }
+        if (obj[3].value == "C.E") {
+
+            doc.text(33, 82, "X"); //C.C
+        }
+        if (obj[3].value == "PAS") {
+
+            doc.text(45, 82, "X"); //C.C
+        }
+
         doc.setFontSize(12);
-        doc.text(58, 82.8, "Identificacion");
+        doc.text(58, 82.8, obj[4].value);
         doc.setFontSize(10);
-        doc.text(106.2, 82, "x"); //F
-        doc.text(115, 82, "x"); //M
-        doc.text(130.5, 82, "x"); //COL
-        doc.text(156.5, 82, "x"); //EXTRA
+        if (obj[5].value == "Femenino") {
+
+            doc.text(106.2, 82, "x"); //F
+        }
+        if (obj[5].value == "Femenino") {
+
+            doc.text(115, 82, "x"); //M
+        }
+
+        if (obj[6].value == "Colombiano") {
+
+            doc.text(130.5, 82, "x"); //COL
+        }
+
+        if (obj[7].value == "Extranjero") {
+
+            doc.text(156.5, 82, "x"); //EXTRA
+        }
         doc.setFontSize(12);
-        doc.text(163, 82.8, "Pais");
+        doc.text(163, 82.8, obj[8].value); //PAIS
         doc.setFontSize(10);
-        doc.text(44.6, 94, "x");
-        doc.text(86.3, 94, "x");
+        if (obj[19].value == "Primera") {
+
+            doc.text(44.6, 94, "x"); // libreta militar primera clase
+        }
+        if (obj[20].value == "Segunda") {
+
+            doc.text(86.3, 94, "x"); // libreta militar primera clase
+        }
         doc.setFontSize(12);
-        doc.text(114, 94, "Numero");
-        doc.text(171, 94, "D.M");
+        doc.text(114, 94, obj[21].value); //numeor de libreta
+        doc.text(171, 94, obj[22].value); //dsitrito militar
         doc.text(41.2, 108, "0 7"); //Dia
         doc.text(59, 108, "0 8"); //Mes
         doc.text(77.4, 108, "2 0 1 9"); //Año
         doc.setFontSize(12);
-        doc.text(98, 107.8, "Dir Correspondencia");
+        doc.text(98, 107.8, obj[10].value);
         doc.setFontSize(12);
         //fecha de nacimiento ylugar
-        doc.text(34, 114.6, "Pais nacimiento");
-        doc.text(34, 121, "Depto Naci");
-        doc.text(34, 127.5, "Municipio Nac");
+        doc.text(34, 114.6, obj[16].value);
+        doc.text(34, 121, obj[17].value);
+        doc.text(34, 127.5, obj[18].value);
         //direccion de correspondencia
-        doc.text(107, 114.6, "Pais Corres");
-        doc.text(162, 114.6, "Depto corres");
-        doc.text(117, 121, "Municipio corres");
+        doc.text(107, 114.6, obj[11].value);
+        doc.text(162, 114.6, obj[12].value);
+        doc.text(117, 121, obj[13].value);
         doc.text(117, 128, "Telefono");
-        doc.text(162, 128, "Email");
+        doc.text(162, 128, obj[14].value);
 
         //educacion basica y media 
-        doc.text(130, 167.5, "Titulo obtenido");
+        doc.text(130, 167.5, obj[28].value);
         doc.setFontSize(12);
-        doc.text(29, 179, "X"); //primaria 1
-        doc.text(35, 179, "X"); //primaria 2
-        doc.text(41, 179, "X"); //primaria 3
-        doc.text(47, 179, "X"); //primaria 4
-        doc.text(53, 179, "X"); //primaria 5
-        doc.text(59, 179, "X"); //secundaria  6
-        doc.text(65, 179, "X"); //secundaria  7
-        doc.text(71, 179, "X"); //secundaria  8
-        doc.text(77, 179, "X"); //secundaria  9
-        doc.text(83, 179, "X"); //secundaria  10
-        doc.text(89, 179, "X"); //secundaria  11
+        if (obj[27].value == "1o") {
+
+            doc.text(29, 179, "X"); //primaria 1
+        }
+        if (obj[27].value == "2o") {
+
+            doc.text(35, 179, "X"); //primaria 2
+        }
+
+        if (obj[27].value == "3o") {
+
+            doc.text(41, 179, "X"); //primaria 3
+        }
+
+        if (obj[27].value == "4o") {
+
+            doc.text(47, 179, "X"); //primaria 4
+        }
+
+        if (obj[27].value == "5o") {
+
+            doc.text(53, 179, "X"); //primaria 5
+        }
+        if (obj[27].value == "6o") {
+
+            doc.text(59, 179, "X"); //secundaria  6
+        }
+        if (obj[27].value == "7o") {
+            doc.text(65, 179, "X"); //secundaria  7
+        }
+
+        if (obj[27].value == "8o") {
+            doc.text(71, 179, "X"); //secundaria  8
+        }
+
+        if (obj[27].value == "9o") {
+            doc.text(77, 179, "X"); //secundaria  9
+        }
+
+        if (obj[27].value == "10") {
+            doc.text(83, 179, "X"); //secundaria  10
+        }
+
+        if (obj[27].value == "11") {
+            doc.text(89, 179, "X"); //secundaria  11
+
+        }
+
         doc.text(118, 179, "0 9"); //fecha de grado mes
         doc.text(140, 179, "2 0 1 9"); //fecha de grado año
 
