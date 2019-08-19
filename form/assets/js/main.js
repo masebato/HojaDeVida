@@ -13,7 +13,7 @@ window.addEventListener("load", function() {
 var flag = true;
 $('#btnBack').click(function() {
     $('#btnBack').css('display', 'none'); // this method is for hiden the btn
-    $('#btnBack').css('display', 'block');
+   // $('#btnBack').css('display', 'block');
     $('#btnSubmit').css('display', 'none');
     $('#btnNext').css('display', 'block');
     flag = true; // this flag is used for show the button "btnBack"
@@ -314,21 +314,21 @@ function AgregarDatosTable() {
             }
         }
         if (!verificar) {
-            var fila = "<tr><td>" + _modalidad.value + "</td><td>" + _semestres + "</td><td>" + _graduado.value + "</td><td>" + _titulo + "</td><td>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a></tr>"
+            var fila = "<td>" + _modalidad.value + "</td><td>" + _semestres + "</td><td>" + _graduado.value + "</td><td>" + _titulo + "</td><td>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>"
 
             var btn = document.createElement("TR");
             btn.innerHTML = fila;
             document.getElementById("tbodyAcademico").appendChild(btn);
         }
     } else {
-        var fila = "<tr><td>" + _modalidad.value + "</td><td>" + _semestres + "</td><td>" + _graduado.value + "</td><td>" + _titulo + "</td><td>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a></tr>"
+        var fila = "<td>" + _modalidad.value + "</td><td>" + _semestres + "</td><td>" + _graduado.value + "</td><td>" + _titulo + "</td><td>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>"
 
         var btn = document.createElement("TR");
         btn.innerHTML = fila;
         document.getElementById("tbodyAcademico").appendChild(btn);
     }
 
-    var fila = "<tr><td>" + _modalidad.value + "</td><td>" + _semestres + "</td><td>" + _graduado.value + "</td><td>" + _titulo + "</td><td>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><a style='margin-left: 2px;' type='button' class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a></tr>"
+    var fila = "<td>" + _modalidad.value + "</td><td>" + _semestres + "</td><td>" + _graduado.value + "</td><td>" + _titulo + "</td><td>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><a style='margin-left: 2px;' type='button' class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>"
 
 }
 
@@ -345,7 +345,7 @@ function AgregarDatosIdioma() {
     var _escribe = document.getElementById("escribe");
     var _habla = document.getElementById("habla");
 
-    var fila = "<tr><td>" + _idioma + "</td><td>" + _habla.value + "</td><td>" + _lee.value + "</td><td>" + _escribe.value + "</td></tr>"
+    var fila = "<td>" + _idioma + "</td><td>" + _habla.value + "</td><td>" + _lee.value + "</td><td>" + _escribe.value + "</td>"
 
     var btn = document.createElement("TR");
     btn.innerHTML = fila;
@@ -408,6 +408,7 @@ function FiltrerCollapse(obj) {
     var $id = obj.id;
     if ($id == "Formato1") {
         $.each(Formato1, function(i, val) {
+            
             $(val).css("display", "none");
         });
         $('#myModal').modal('hide');
@@ -599,9 +600,7 @@ function CatchData() {
 function datos() {
 
     var ar;
-
     $('#DatosPersonalesForm').submit(false); // cancel the actual submit
-
     var form = document.getElementById('DatosPersonalesForm');
     ar = form.elements;
     console.log(ar);
@@ -609,3 +608,29 @@ function datos() {
 
 
 };
+
+
+function valueTablas(){
+
+    var valores = "";
+    var valores2 ="";
+    // Obtenemos todos los valores contenidos en los <td> de la fila
+    // seleccionada
+    $('#tbodyIdioma').find("td").each(function() {
+      valores += $(this).html() + ",";
+    });
+
+    $('#tbodyAcademico').find("td").each(function() {
+        valores2 += $(this).html() + ",";
+      });
+  
+    var tablaLaboral = valores3.split(',');
+    var tablaIdioma = valores.split(",");
+
+
+    
+    console.log( tablaLaboral + tablaIdioma);
+    
+}
+   
+
