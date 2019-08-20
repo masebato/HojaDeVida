@@ -610,39 +610,23 @@ function datos() {
 
 
 function valueTablasIdiomas(){
-
-    var valores = "";
-  
+    var valores = "";  
     // Obtenemos todos los valores contenidos en los <td> de la fila
     // seleccionada
     $('#tbodyIdioma').find("td").each(function() {
       valores += $(this).html() + ",";
-    });
-
-   
-  
-    var tablaIdioma = valores.split(",");
-
- 
-    
-    return tablaIdioma;
-    
+    });     
+    var tablaIdioma = valores.split(",");    
+    return tablaIdioma;    
 }
    
 
-function valueTablasFormacion(){
-
-  
-    var valores2 ="";
-   
+function valueTablasFormacion(){  
+    var valores2 ="";   
     $('#tbodyAcademico').find(".value").each(function() {
         valores2 += $(this).html() + ",";
-      });
-  
-    var tablaLaboral = valores2.split(',');
-    
- 
-    
-    return tablaLaboral;
+      });  
+    var formacion = valores2.split(',');         
+    return formacion;
     
 }
