@@ -314,21 +314,20 @@ function AgregarDatosTable() {
             }
         }
         if (!verificar) {
-            var fila = "<td>" + _modalidad.value + "</td><td>" + _semestres + "</td><td>" + _graduado.value + "</td><td>" + _titulo + "</td><td>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>"
+            var fila = "<td class='value'>" + _modalidad.value + "</td><td class='value'>" + _semestres + "</td><td class='value'>" + _graduado.value + "</td><td class='value'>" + _titulo + "</td><td class='value'>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>"
 
             var btn = document.createElement("TR");
             btn.innerHTML = fila;
             document.getElementById("tbodyAcademico").appendChild(btn);
         }
     } else {
-        var fila = "<td>" + _modalidad.value + "</td><td>" + _semestres + "</td><td>" + _graduado.value + "</td><td>" + _titulo + "</td><td>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>"
+        var fila = "<td class='value'>" + _modalidad.value + "</td><td class='value'>" + _semestres + "</td><td class='value'>" + _graduado.value + "</td><td class='value'>" + _titulo + "</td><td class='value'>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>"
 
         var btn = document.createElement("TR");
         btn.innerHTML = fila;
         document.getElementById("tbodyAcademico").appendChild(btn);
     }
 
-    var fila = "<td>" + _modalidad.value + "</td><td>" + _semestres + "</td><td>" + _graduado.value + "</td><td>" + _titulo + "</td><td>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><a style='margin-left: 2px;' type='button' class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>"
 
 }
 
@@ -610,27 +609,40 @@ function datos() {
 };
 
 
-function valueTablas(){
+function valueTablasIdiomas(){
 
     var valores = "";
-    var valores2 ="";
+  
     // Obtenemos todos los valores contenidos en los <td> de la fila
     // seleccionada
     $('#tbodyIdioma').find("td").each(function() {
       valores += $(this).html() + ",";
     });
 
-    $('#tbodyAcademico').find("td").each(function() {
-        valores2 += $(this).html() + ",";
-      });
+   
   
-    var tablaLaboral = valores3.split(',');
     var tablaIdioma = valores.split(",");
 
-
+ 
     
-    console.log( tablaLaboral + tablaIdioma);
+    return tablaIdioma;
     
 }
    
 
+function valueTablasFormacion(){
+
+  
+    var valores2 ="";
+   
+    $('#tbodyAcademico').find(".value").each(function() {
+        valores2 += $(this).html() + ",";
+      });
+  
+    var tablaLaboral = valores2.split(',');
+    
+ 
+    
+    return tablaLaboral;
+    
+}

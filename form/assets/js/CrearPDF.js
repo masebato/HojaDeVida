@@ -3,19 +3,7 @@
 
 async function crear1() {
     doc = new jsPDF();
-    $(function() {
-        $('#DatosPersonalesForm').on("submit", function(e) {
-            e.preventDefault(); // cancel the actual submit
-
-            var form = document.getElementById('DatosPersonalesForm');
-            //var porElementos = document.forms["form1"].elements[0].value;
-            for (var i = 0; i < form.elements.length; i++) {
-                console.log(form.elements[i].name);
-                console.log(form.elements[i].value);
-                console.log(i);
-            }
-        });
-    });
+    valueTablas();
     var data = datos();
     var hoja1 = await Hoja1(data);
     var hoja2 = await Hoja2(data);
@@ -344,5 +332,4 @@ async function Hoja3(obj3) {
 
     }, 2000);
 }
-""
-s
+
