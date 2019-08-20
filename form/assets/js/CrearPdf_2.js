@@ -191,7 +191,7 @@ async function Hoja2(obj2) {
                 doc.setFontSize(11);
                 doc.text(48, av, obj2[44].value); //nombre emrpesa
                 doc.text(44, b, "De " + obj2[50].value + " a " + obj2[51].value); //año de estudio
-                doc.text(123, b, obj2[48].value + " " + obj2[47].value); // ciudad empresa
+                doc.text(123, b, obj2[48].value + "-" + obj2[47].value); // ciudad empresa
                 doc.text(44.5, c, obj2[45].value); // sector
                 doc.text(43, d, obj2[52].value); //cargo
                 doc.text(55, e, obj2[49].value); //e-mail
