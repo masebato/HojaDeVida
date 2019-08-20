@@ -1,11 +1,26 @@
 var doc;
 async function crearHoja3() {
     doc = new jsPDF();
-    await Hoja1();
+
+    $(function() {
+        $('#DatosPersonalesForm').on("submit", function(e) {
+            e.preventDefault(); // cancel the actual submit
+
+            var form = document.getElementById('DatosPersonalesForm');
+            //var porElementos = document.forms["form1"].elements[0].value;
+            for (var i = 0; i < form.elements.length; i++) {
+                console.log(form.elements[i].name);
+                console.log(form.elements[i].value);
+                console.log(i);
+            }
+        });
+    });
+    var data3 = datos();
+    await Hoja1(data3);
 
 }
 
-async function Hoja1() {
+async function Hoja1(obj) {
     var url1 = 'assets/img/hoja3.jpg';
     var img = new Image();
 
@@ -15,36 +30,71 @@ async function Hoja1() {
         //...........datos personales .............
         doc.setFontSize(20);
         doc.setFont("Arial");
-        doc.text(80, 38, "Socrates Martinez Berrio"); //nombre y apellidos
+        doc.text(80, 38, obj[2].value + " " + obj[0].value + " " + obj[1].value); //nombre y apellidos
         doc.setFontSize(12);
-        doc.text(10, 85, "1117546877"); // numero de documento de identidad
-        doc.text(10, 95, "11/08/1995"); // numero de documento de identidad
+        doc.text(10, 85, obj[4].value); // numero de documento de identidad
+        doc.text(10, 95, obj[15].value); // numero de documento de identidad
         doc.text(10, 105, "321 2586973"); // telefono
-        doc.text(10, 115, "Calle 23 # 15-44") // direccion
-        doc.text(10, 125, "Florencia Caqueta") // ciudad de residencia
-        doc.text(10, 135, "Colombia") // ciudad de residencia
-        doc.text(10, 145, "socrates@mastercode.com.co") // email
+        doc.text(10, 115, obj[10].value) // direccion
+        doc.text(10, 125, obj[13].value + "-" + obj[12].value) // ciudad de residencia
+        if (obj[7].checked == true) {
+            doc.text(10, 135, "Colombiano"); // nacionalidad
+        } else {
+            doc.text(10, 135, obj[9].value); // nacionalidad}
+        }
+        doc.text(10, 145, obj[14].value); // email
 
         // ............perfil..........
 
-        doc.text(84, 60, "Descripcion del perfil. "); // descripcion del perfil
+        doc.text(84, 60, obj[25].value); // descripcion del perfil
         //..............estudios.............
         var a = 110;
         var b = 115;
         var c = 120;
         var d = 125;
         doc.setFont("Arial");
+        var fechaestuio = obj[15].value;
+        var fecha1 = fechaestuio.split("-"); // 
         for (var i = 0; i <= 2; i++) {
             doc.setFontSize(11);
-            doc.text(95, a, "2013"); //año de estudio
-            doc.text(115, b, "Graduado"); //ciudad de estudio 
-            doc.text(97, c, "Bachiller academico"); // titulo obtenido
-            doc.text(115, d, "Educacion basica y media"); //institucion
+            doc.text(95, a, fecha1[0]); //año de estudio
+            doc.text(97, c, obj[33].value); // titulo obtenido
+            if (obj[32].value == "SI") {
+                doc.text(115, b, "Graduado"); //ciudad de estudio 
+            } else {
+                doc.text(115, b, obj[31].value); //total del ciclos   
+            }
+            if (obj[30].value == "TC") {
+                doc.text(115, d, "Tecnica"); //Modalidad
+            }
+            if (obj[30].value == "TL") {
+                doc.text(115, d, "Tecnológia "); //Modalidad
+            }
+            if (obj[30].value == "TE") {
+                doc.text(115, d, "Tecnológia especializada"); //Modalidad
+            }
+            if (obj[30].value == "UN") {
+                doc.text(115, d, "Universitaria"); //Modalidad
+            }
+            if (obj[30].value == "ES") {
+                doc.text(115, d, "Especializacióna"); //Modalidad
+            }
+            if (obj[30].value == "MG") {
+                doc.text(115, d, "Maestria o magiste"); //Modalidad
+            }
+            if (obj[30].value == "DOC") {
+                doc.text(115, d, "Doctorado o PHD"); //Modalidad
+            }
+
             a = a + 23;
             b = b + 23;
             c = c + 23;
             d = d + 23;
         }
+
+
+
+
         //..............experiencia laboral.............
         var av = 190;
         var b = 195;
@@ -53,12 +103,12 @@ async function Hoja1() {
         var e = 210;
 
         for (var i = 0; i <= 2; i++) {
-            doc.text(105, av, "Master Code"); //nombre emrpesa
-            doc.text(100, b, "De 14/08/2013 a 15/08/2014 "); //año de estudio
-            doc.text(171, b, "Florencia caquetá  "); // ciudad empresa
-            doc.text(100, c, "Privada  "); // sector
-            doc.text(100, d, "empleada de servico y la perra de la empresa"); //cargo
-            doc.text(115, e, "gerenciamastercode@gmail.com"); //e-mail
+            doc.text(105, av, obj[44].value); //nombre emrpesa
+            doc.text(100, b, "De " + obj[50].value + " a " + obj[51].value); //año de estudio
+            doc.text(171, b, obj[48].value + " -" + obj[47].value); // ciudad empresa
+            doc.text(100, c, obj[45].value); // sector
+            doc.text(100, d, obj[52].value); //cargo
+            doc.text(115, e, obj[49].value); //e-mail
             av = av + 35;
             b = b + 35;
             c = c + 35;
@@ -73,12 +123,12 @@ async function Hoja1() {
         var dx = 224;
         var ex = 228;
         for (var i = 0; i <= 2; i++) {
-            doc.text(10, ax, "Marx Danilo Zuñiga Torres  "); //nombre de la persona d ela refeencia laboral 
-            doc.text(10, az, "Master code "); //nombre de la empresa
-            doc.text(10, bx, "Jefe de personal "); // cargo
-            doc.text(10, cx, "calle 10 # 12-33 "); // direccion
-            doc.text(10, dx, "3125458775"); //telefono
-            doc.text(10, ex, "marx@mastercode.com.co"); //e-amil entidad
+            doc.text(10, ax, obj[75].value); //nombre de la persona d ela refeencia laboral 
+            doc.text(10, az, obj[76].value); //nombre de la empresa
+            doc.text(10, bx, obj[77].value); // cargo
+            doc.text(10, cx, obj[78].value); // direccion
+            doc.text(10, dx, obj[79].value); //telefono
+            doc.text(10, ex, obj[80].value); //e-amil entidad
             ax = ax + 30;
             az = az + 30;
             bx = bx + 30;
@@ -89,7 +139,7 @@ async function Hoja1() {
         //..........Idioma....................
         var x = 177;
         for (var i = 0; i <= 2; i++) {
-            doc.text(18, x, "Español"); // idioma que domina
+            doc.text(18, x, obj[38].value); // idioma que domina
             doc.text(38, x, "Basico"); // nivel de idioma
 
             x = x + 7;

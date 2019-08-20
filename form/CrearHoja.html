@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="es">
@@ -736,14 +735,15 @@
                                 </div>
                                 <div class="card-footer">
                                     <div class="row">
-                                        <div class="col-md-4">                                           
+                                        <div class="col-md-4">
+                                            <button class="btn" onclick="crearHoja3();$('#DatosPersonalesForm').submit(false);"></button>
                                             <div class="form-group">
                                                 <button class="btn " id="btnBack" style="display: none" onclick="openCity(event, 'DatosPersonales')">Atras</button>
                                             </div>
                                         </div>
                                         <div class="col-md-4 offset-md-4">
                                             <div class="form-group">
-                                                <input id="btnSubmit" type="submit" style="display: none" value="Descargar" onclick="crear1()" class="btn btn-success">
+                                                <input id="btnSubmit" type="submit" style="display: none" value="Descargar" onclick="crearHoja3()" class="btn btn-success">
                                             </div>
                                         </div>
                                     </div>
@@ -872,7 +872,8 @@
     <script src="assets/js/plugins/chartjs.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/CrearPDF.js"></script>
-    <!-- <script src="assets/js/CrearPdf_2.js"></script> -->
+    <script src="assets/js/CrearPdf_2.js"></script>
+    <script src="assets/js/crearPDF_3.js"></script>
 
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -883,19 +884,7 @@
     <script src="assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
     <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 
-    <footer class="page-footer font-small" style="background-color: darkgrey">
-
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2019 Copyright:
-          <a href="https://mastercode.com.co" style="color: firebrick"> MasterCode</a>
-        </div>
-        <!-- Copyright -->
-      
-      </footer>
-      
 </body>
 
 </html>
 <!-- end document-->
-
- 

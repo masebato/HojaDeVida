@@ -13,7 +13,7 @@ window.addEventListener("load", function() {
 var flag = true;
 $('#btnBack').click(function() {
     $('#btnBack').css('display', 'none'); // this method is for hiden the btn
-   // $('#btnBack').css('display', 'block');
+    $('#btnBack').css('display', 'block');
     $('#btnSubmit').css('display', 'none');
     $('#btnNext').css('display', 'block');
     flag = true; // this flag is used for show the button "btnBack"
@@ -344,7 +344,7 @@ function AgregarDatosIdioma() {
     var _escribe = document.getElementById("escribe");
     var _habla = document.getElementById("habla");
 
-    var fila = "<td>" + _idioma + "</td><td>" + _habla.value + "</td><td>" + _lee.value + "</td><td>" + _escribe.value + "</td>"
+    var fila = "<tr><td>" + _idioma + "</td><td>" + _habla.value + "</td><td>" + _lee.value + "</td><td>" + _escribe.value + "</td></tr>"
 
     var btn = document.createElement("TR");
     btn.innerHTML = fila;
@@ -407,7 +407,6 @@ function FiltrerCollapse(obj) {
     var $id = obj.id;
     if ($id == "Formato1") {
         $.each(Formato1, function(i, val) {
-            
             $(val).css("display", "none");
         });
         $('#myModal').modal('hide');
@@ -599,7 +598,9 @@ function CatchData() {
 function datos() {
 
     var ar;
+
     $('#DatosPersonalesForm').submit(false); // cancel the actual submit
+
     var form = document.getElementById('DatosPersonalesForm');
     ar = form.elements;
     console.log(ar);
