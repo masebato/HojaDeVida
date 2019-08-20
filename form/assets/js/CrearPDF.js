@@ -344,5 +344,3 @@ async function Hoja3(obj3) {
 
     }, 2000);
 }
-""
-s
