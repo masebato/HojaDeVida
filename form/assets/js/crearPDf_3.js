@@ -15,12 +15,16 @@ async function crearHoja3() {
             }
         });
     });
+
+    var tableidioma = valueTablasIdiomas();
+    var tablestudi = valueTablasFormacion();
     var data3 = datos();
-    await Hoja1(data3);
+
+    await Hoja1(data3, tableidioma, tablestudi);
 
 }
 
-async function Hoja1(obj) {
+async function Hoja1(obj, tabidio, tabestudio) {
     var url1 = 'assets/img/hoja3.jpg';
     var img = new Image();
 
@@ -47,45 +51,57 @@ async function Hoja1(obj) {
         // ............perfil..........
 
         doc.text(84, 60, obj[25].value); // descripcion del perfil
+        doc.text(84, 60, 'jadaaaaaaaaaa\ddddddddfsfsdfsfsfs.'); // descripcion del perfil
         //..............estudios.............
         var a = 110;
         var b = 115;
         var c = 120;
         var d = 125;
+
+        var a0 = 0;
+        var a1 = 1;
+        var a2 = 2;
+        var a3 = 3;
+        var a4 = 4;
         doc.setFont("Arial");
-        var fechaestuio = obj[15].value;
+        var fechaestuio = tabestudio[a4];
         var fecha1 = fechaestuio.split("-"); // 
         for (var i = 0; i <= 2; i++) {
             doc.setFontSize(11);
             doc.text(95, a, fecha1[0]); //año de estudio
-            doc.text(97, c, obj[33].value); // titulo obtenido
-            if (obj[32].value == "SI") {
+            doc.text(97, c, tabestudio[a3]); // titulo obtenido
+            if (tabestudio[a2] == "SI") {
                 doc.text(115, b, "Graduado"); //ciudad de estudio 
             } else {
-                doc.text(115, b, obj[31].value); //total del ciclos   
+                doc.text(115, b, tabestudio[a1]); //total del ciclos   
             }
-            if (obj[30].value == "TC") {
+            if (tabestudio[a0] == "TC") {
                 doc.text(115, d, "Tecnica"); //Modalidad
             }
-            if (obj[30].value == "TL") {
+            if (tabestudio[a0] == "TL") {
                 doc.text(115, d, "Tecnológia "); //Modalidad
             }
-            if (obj[30].value == "TE") {
+            if (tabestudio[a0] == "TE") {
                 doc.text(115, d, "Tecnológia especializada"); //Modalidad
             }
-            if (obj[30].value == "UN") {
+            if (tabestudio[a0] == "UN") {
                 doc.text(115, d, "Universitaria"); //Modalidad
             }
-            if (obj[30].value == "ES") {
+            if (tabestudio[a0] == "ES") {
                 doc.text(115, d, "Especializacióna"); //Modalidad
             }
-            if (obj[30].value == "MG") {
+            if (tabestudio[a0] == "MG") {
                 doc.text(115, d, "Maestria o magiste"); //Modalidad
             }
-            if (obj[30].value == "DOC") {
+            if (tabestudio[a0] == "DOC") {
                 doc.text(115, d, "Doctorado o PHD"); //Modalidad
             }
 
+            a0 += 5;
+            a1 += 5;
+            a2 += 5;
+            a3 += 5;
+            a4 += 5;
             a = a + 23;
             b = b + 23;
             c = c + 23;
@@ -138,10 +154,13 @@ async function Hoja1(obj) {
         }
         //..........Idioma....................
         var x = 177;
-        for (var i = 0; i <= 2; i++) {
-            doc.text(18, x, obj[38].value); // idioma que domina
+        var za = 0;
+        for (var i = 0; i <= 1; i++) {
+            // doc.text(18, x, obj[38].value); // idioma que domina
+            doc.text(18, x, tabidio[za]); // idioma que domina
             doc.text(38, x, "Basico"); // nivel de idioma
 
+            za += 4;
             x = x + 7;
         }
         //..............Label experiencia laboral.............

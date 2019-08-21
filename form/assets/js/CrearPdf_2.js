@@ -17,12 +17,21 @@ async function crearHoja2() {
         });
     });
     var data2 = datos();
-    await Hoja1(data2);
+    var tableidioma = valueTablasIdiomas();
+    var tablestudi = valueTablasFormacion();
+    var experiencia = valueTablasFormacion();
+
+    for (var i = 0; i <= tablestudi.length; i++) {
+
+        console.log(tablestudi[i]);
+    }
+
+    await Hoja1(data2, tableidioma, tablestudi);
     await Hoja2(data2);
 
 }
 
-async function Hoja1(obj) {
+async function Hoja1(obj, tabidio2, tabestudio2) {
     var url1 = 'assets/img/formato2.jpg';
     var img = new Image();
 
@@ -50,83 +59,105 @@ async function Hoja1(obj) {
 
         doc.text(28, 104, obj[25].value); // descripcion del perfil
         //..............estudios.............
+
+
         var a = 190;
         var b = 195;
+        var ab0 = 0;
+        var ab1 = 1;
+        var ab2 = 2;
+        var ab3 = 3;
+        var ab4 = 4;
         doc.setFont("Arial");
-        var fechaestuio = obj[15].value;
-        var fecha1 = fechaestuio.split("-"); // 
-        for (var i = 0; i <= 3; i++) {
+        var fechaestuio = tabestudio2[ab4];
+        var fecha1 = fechaestuio.split("-"); //       
+        var nfilas = $("#tableAcademico >tbody >tr").length;
+        for (var i = 0; i <= nfilas - 1; i++) {
             doc.setFontSize(11);
             doc.text(39, a, fecha1[0]); //año de estudio
-            if (obj[32].value == "SI") {
+            if (tabestudio2[ab2] == "SI") {
                 doc.text(58, b, "Graduado"); //total del ciclos
             } else {
-                doc.text(58, b, obj[31].value); //total del ciclos   
+                //doc.text(58, b, tabestudio2[ab1]); //total del ciclos   
+                doc.text(58, b, "asdada"); //total del ciclos   
             }
 
-            doc.text(104, a, obj[33].value); // titulo obtenido
-            if (obj[30].value == "TC") {
+            doc.text(104, a, tabestudio2[ab3]); // titulo obtenido
+            if (tabestudio2[ab0] == "TC") {
                 doc.text(121, b, "Tecnica"); //Modalidad
             }
-            if (obj[30].value == "TL") {
+            if (tabestudio2[ab0] == "TL") {
                 doc.text(121, b, "Tecnológia "); //Modalidad
             }
-            if (obj[30].value == "TE") {
+            if (tabestudio2[ab0] == "TE") {
                 doc.text(121, b, "Tecnológia especializada"); //Modalidad
             }
-            if (obj[30].value == "UN") {
+            if (tabestudio2[ab0] == "UN") {
                 doc.text(121, b, "Universitaria"); //Modalidad
             }
-            if (obj[30].value == "ES") {
+            if (tabestudio2[ab0] == "ES") {
                 doc.text(121, b, "Especializacióna"); //Modalidad
             }
-            if (obj[30].value == "MG") {
+            if (tabestudio2[ab0] == "MG") {
                 doc.text(121, b, "Maestria o magiste"); //Modalidad
             }
-            if (obj[30].value == "DOC") {
+            if (tabestudio2[ab0] == "DOC") {
                 doc.text(121, b, "Doctorado o PHD"); //Modalidad
             }
-
+            ab0 += 5;
+            ab1 += 5;
+            ab2 += 5;
+            ab3 += 5;
+            ab4 += 5;
             a = a + 18;
             b = b + 18;
         }
 
         //..........Idioma....................
         var x = 155;
-        for (var i = 0; i <= 2; i++) {
-            doc.text(28, x, obj[38].value); // idioma que domina
-            if (obj[39].value == "R") {
+        var x0 = 0;
+        var x1 = 1;
+        var x2 = 2;
+        var x3 = 3;
+        var nfilas2 = $("#tableIdioma >tbody >tr").length;
+
+        for (var i = 0; i <= nfilas2 - 1; i++) {
+            doc.text(28, x, tabidio2[x0]); // idioma que domina
+            if (tabidio2[x1] == "R") {
                 doc.text(52, x, "Regular"); // nivel de idioma
             }
-            if (obj[39].value == "B") {
+            if (tabidio2[x1] == "B") {
                 doc.text(52, x, "Bien"); // nivel de idioma
             }
-            if (obj[39].value == "MB") {
+            if (tabidio2[x1] == "MB") {
                 doc.text(52, x, "Bien"); // nivel de idioma
             }
 
-            if (obj[40].value == "R") {
+            if (tabidio2[x2] == "R") {
                 doc.text(76, x, "Regular"); // nivel de idioma
             }
-            if (obj[40].value == "B") {
+            if (tabidio2[x2] == "B") {
                 doc.text(76, x, "Bien"); // nivel de idioma
             }
-            if (obj[40].value == "MB") {
+            if (tabidio2[x2] == "MB") {
                 doc.text(76, x, "Muy bien"); // nivel de idioma
             }
 
-
-            if (obj[41].value == "R") {
+            if (tabidio2[x3] == "R") {
                 doc.text(98, x, "Regular"); // nivel de idioma
             }
-            if (obj[41].value == "B") {
+            if (tabidio2[x3] == "B") {
                 doc.text(98, x, "Bien"); // nivel de idioma
             }
-            if (obj[41].value == "MB") {
+            if (tabidio2[x3] == "MB") {
                 doc.text(98, x, "Muy bien"); // nivel de idioma
             }
 
 
+            x0 += 4;
+            x1 += 4;
+            x2 += 4;
+            x3 += 4;
             x = x + 7;
         }
 
@@ -145,7 +176,7 @@ async function Hoja1(obj) {
         //........ label de estudios............
         var aa = 190;
         var bb = 195;
-        for (var i = 0; i <= 3; i++) {
+        for (var i = 0; i <= nfilas - 1; i++) {
             doc.setFontSize(11);
             doc.text(28, aa, "Año:"); //año de estudio
             doc.text(28, bb, "No° semestres:"); //año de estudio
@@ -279,4 +310,3 @@ async function Hoja2(obj2) {
 
 
     }, 2000);
-}

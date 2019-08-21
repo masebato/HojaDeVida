@@ -314,14 +314,14 @@ function AgregarDatosTable() {
             }
         }
         if (!verificar) {
-            var fila = "<td class='value'>" + _modalidad.value + "</td><td class='value'>" + _semestres + "</td><td class='value'>" + _graduado.value + "</td><td class='value'>" + _titulo + "</td><td class='value'>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>"
+            var fila = "<td class='value'>" + _modalidad.value + "</td><td class='value'>" + _semestres + "</td><td class='value'>" + _graduado.value + "</td><td class='value'>" + _titulo + "</td><td class='value'>" + _fechaGrado + "</td><td class='value'>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>"
 
             var btn = document.createElement("TR");
             btn.innerHTML = fila;
             document.getElementById("tbodyAcademico").appendChild(btn);
         }
     } else {
-        var fila = "<td class='value'>" + _modalidad.value + "</td><td class='value'>" + _semestres + "</td><td class='value'>" + _graduado.value + "</td><td class='value'>" + _titulo + "</td><td class='value'>" + _fechaGrado + "</td><td>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>"
+        var fila = "<td class='value'>" + _modalidad.value + "</td><td class='value'>" + _semestres + "</td><td class='value'>" + _graduado.value + "</td><td class='value'>" + _titulo + "</td><td class='value'>" + _fechaGrado + "</td><td class='value'>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>"
 
         var btn = document.createElement("TR");
         btn.innerHTML = fila;
@@ -528,7 +528,7 @@ $(document).ready(function init() {
         var $select = $('#Departamento');
         //alert(options);
         $.each(JSONFinal, function(id, name) {
-            $select.append('<option value=' + name.id + '>' + name.departamento + '</option>');
+            $select.append('<option value=' + name.departamento + '>' + name.departamento + '</option>');
         });
     });
 
@@ -538,7 +538,7 @@ $(document).ready(function init() {
             var $select = $('#Municipios');
             var valor = $('#Departamento').val();
             $.each(JSONFinal, function(id, name) {
-                if (name.id == valor) {
+                if (name.departamento == valor) {
                     $.each(name.ciudades, function(id, city) {
                         $select.append('<option >' + city + '</option>');
                     })
@@ -610,24 +610,24 @@ function datos() {
 };
 
 
-function valueTablasIdiomas(){
-    var valores = "";  
+function valueTablasIdiomas() {
+    var valores = "";
     // Obtenemos todos los valores contenidos en los <td> de la fila
     // seleccionada
     $('#tbodyIdioma').find("td").each(function() {
-      valores += $(this).html() + ",";
-    });     
-    var tablaIdioma = valores.split(",");    
-    return tablaIdioma;    
+        valores += $(this).html() + ",";
+    });
+    var tablaIdioma = valores.split(",");
+    return tablaIdioma;
 }
-   
 
-function valueTablasFormacion(){  
-    var valores2 ="";   
+
+function valueTablasFormacion() {
+    var valores2 = "";
     $('#tbodyAcademico').find(".value").each(function() {
         valores2 += $(this).html() + ",";
-      });  
-    var formacion = valores2.split(',');         
+    });
+    var formacion = valores2.split(',');
     return formacion;
-    
+
 }
