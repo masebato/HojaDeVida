@@ -365,7 +365,7 @@ function AgregarDatosExperiencia(){
     var _EmailReferencia = document.getElementById('EmailReferencia').value;
    
 if (_NombreReferencia != "" && _EmpresaReferencia!="" && _CargoReferencia != "" && _DireccionReferencia != ""  && _TelefonoReferencia != "" && _EmailReferencia != ""  ) {
-    var fila = "<td>" + _NombreReferencia + "</td><td>" + _EmpresaReferencia + "</td><td>" + _CargoReferencia + "</td><td>" + _DireccionReferencia + "</td><td>"+_TelefonoReferencia +"</td><td>"+ _EmailReferencia+"</td><a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>";
+    var fila = "<td class='value'>" + _NombreReferencia + "</td><td class='value'>" + _EmpresaReferencia + "</td><td class='value'>" + _CargoReferencia + "</td><td class='value'>" + _DireccionReferencia + "</td><td class='value'>"+_TelefonoReferencia +"</td><td class='value'>"+ _EmailReferencia+"</td><a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>";
     var btn = document.createElement("TR");
     btn.innerHTML = fila;
     document.getElementById("tbodyExperiencia").appendChild(btn);
@@ -656,7 +656,7 @@ function valueTablasFormacion(){
 
 function valueTablasReferencia(){  
     var valores2 ="";   
-    $('#tbodyAcademico').find(".value").each(function() {
+    $('#tbodyExperiencia').find(".value").each(function() {
         valores2 += $(this).html() + ",";
       });  
     var referencia = valores2.split(',');         
