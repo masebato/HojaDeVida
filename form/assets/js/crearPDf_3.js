@@ -18,13 +18,14 @@ async function crearHoja3() {
 
     var tableidioma = valueTablasIdiomas();
     var tablestudi = valueTablasFormacion();
+    var referen = valueTablasReferencia();
     var data3 = datos();
 
-    await Hoja1(data3, tableidioma, tablestudi);
+    await Hoja1(data3, tableidioma, tablestudi, referen);
 
 }
 
-async function Hoja1(obj, tabidio, tabestudio) {
+async function Hoja1(obj, tabidio, tabestudio, referen) {
     var url1 = 'assets/img/hoja3.jpg';
     var img = new Image();
 
@@ -66,11 +67,12 @@ async function Hoja1(obj, tabidio, tabestudio) {
         doc.setFont("Arial");
         var fechaestuio = tabestudio[a4];
         var fecha1 = fechaestuio.split("-"); // 
-        for (var i = 0; i <= 2; i++) {
+        var nfilas = $("#tableAcademico >tbody >tr").length;
+        for (var i = 0; i <= nfilas - 1; i++) {
             doc.setFontSize(11);
             doc.text(95, a, fecha1[0]); //año de estudio
             doc.text(97, c, tabestudio[a3]); // titulo obtenido
-            if (tabestudio[a2] == "SI") {
+            if (tabestudio[a2] == "Si") {
                 doc.text(115, b, "Graduado"); //ciudad de estudio 
             } else {
                 doc.text(115, b, tabestudio[a1]); //total del ciclos   
@@ -97,11 +99,11 @@ async function Hoja1(obj, tabidio, tabestudio) {
                 doc.text(115, d, "Doctorado o PHD"); //Modalidad
             }
 
-            a0 += 5;
-            a1 += 5;
-            a2 += 5;
-            a3 += 5;
-            a4 += 5;
+            a0 += 6;
+            a1 += 6;
+            a2 += 6;
+            a3 += 6;
+            a4 += 6;
             a = a + 23;
             b = b + 23;
             c = c + 23;
@@ -109,28 +111,29 @@ async function Hoja1(obj, tabidio, tabestudio) {
         }
 
 
+        //..............experiencia laboral empresa1 .............
 
+        doc.text(105, 190, obj[44].value); //nombre emrpesa
+        doc.text(100, 195, "De " + obj[50].value + " a " + obj[51].value); //año de estudio
+        doc.text(171, 195, obj[48].value + " -" + obj[47].value); // ciudad empresa
+        doc.text(100, 200, obj[45].value); // sector
+        doc.text(100, 205, obj[52].value); //cargo
+        doc.text(115, 210, obj[49].value); //e-mail
+        //..............experiencia laboral empresa2 .............
+        doc.text(105, 225, obj[55].value); //nombre emrpesa
+        doc.text(100, 230, "De " + obj[61].value + " a " + obj[62].value); //año de estudio
+        doc.text(171, 230, obj[59].value + " -" + obj[58].value); // ciudad empresa
+        doc.text(100, 235, obj[56].value); // sector
+        doc.text(100, 240, obj[63].value); //cargo
+        doc.text(115, 245, obj[60].value); //e-mail
+        //..............experiencia laboral empresa3 .............
+        doc.text(105, 260, obj[66].value); //nombre emrpesa
+        doc.text(100, 265, "De " + obj[72].value + " a " + obj[73].value); //año de estudio
+        doc.text(171, 265, obj[70].value + " -" + obj[69].value); // ciudad empresa
+        doc.text(100, 270, obj[67].value); // sector
+        doc.text(100, 275, obj[74].value); //cargo
+        doc.text(115, 280, obj[71].value); //e-mail
 
-        //..............experiencia laboral.............
-        var av = 190;
-        var b = 195;
-        var c = 200;
-        var d = 205;
-        var e = 210;
-
-        for (var i = 0; i <= 2; i++) {
-            doc.text(105, av, obj[44].value); //nombre emrpesa
-            doc.text(100, b, "De " + obj[50].value + " a " + obj[51].value); //año de estudio
-            doc.text(171, b, obj[48].value + " -" + obj[47].value); // ciudad empresa
-            doc.text(100, c, obj[45].value); // sector
-            doc.text(100, d, obj[52].value); //cargo
-            doc.text(115, e, obj[49].value); //e-mail
-            av = av + 35;
-            b = b + 35;
-            c = c + 35;
-            d = d + 35;
-            e = e + 35;
-        }
         //..............referencias laboral .........
         var ax = 208;
         var az = 212;
@@ -138,13 +141,26 @@ async function Hoja1(obj, tabidio, tabestudio) {
         var cx = 220;
         var dx = 224;
         var ex = 228;
-        for (var i = 0; i <= 2; i++) {
-            doc.text(10, ax, obj[75].value); //nombre de la persona d ela refeencia laboral 
-            doc.text(10, az, obj[76].value); //nombre de la empresa
-            doc.text(10, bx, obj[77].value); // cargo
-            doc.text(10, cx, obj[78].value); // direccion
-            doc.text(10, dx, obj[79].value); //telefono
-            doc.text(10, ex, obj[80].value); //e-amil entidad
+        var h0 = 0;
+        var h1 = 1;
+        var h2 = 2;
+        var h3 = 3;
+        var h4 = 4;
+        var h5 = 5;
+        var nfilas3 = $("#tablereferencia >tbody >tr").length;
+        for (var i = 0; i <= nfilas3 - 1; i++) {
+            doc.text(10, ax, referen[h0]); //nombre de la persona d ela refeencia laboral 
+            doc.text(10, az, referen[h1]); //nombre de la empresa
+            doc.text(10, bx, referen[h2]); // cargo
+            doc.text(10, cx, referen[h3]); // direccion
+            doc.text(10, dx, referen[h4]); //telefono
+            doc.text(10, ex, referen[h5]); //e-amil entidad
+            h0 += 6;
+            h1 += 6;
+            h2 += 6;
+            h3 += 6;
+            h4 += 6;
+            h5 += 6;
             ax = ax + 30;
             az = az + 30;
             bx = bx + 30;
@@ -170,7 +186,14 @@ async function Hoja1(obj, tabidio, tabestudio) {
         var cx = 200;
         var dx = 205;
         var ex = 210;
-        for (var i = 0; i <= 2; i++) {
+        var veces = 0; // las veces qe se va hacer el for
+        if (obj[63].value != "") {
+            veces = 1;
+        }
+        if (obj[74].value != "") {
+            veces = 2;
+        }
+        for (var i = 0; i <= veces; i++) {
             doc.setFont("Arial", 'bold');
             doc.text(84, ax, "Empresa : "); //nombre empresa
             doc.text(84, bx, "Fecha :"); //fecha de labor

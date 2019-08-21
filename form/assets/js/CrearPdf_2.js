@@ -206,27 +206,29 @@ async function Hoja2(obj2, referen) {
             doc.addImage(this, 'JPG', -2, 0, 212, 300);
 
             //..............experiencia laboral.............
-            var av = 40;
-            var b = 45;
-            var c = 50;
-            var d = 55;
-            var e = 60;
 
-            for (var i = 0; i <= 2; i++) {
-                doc.setFont("Arial");
-                doc.setFontSize(11);
-                doc.text(48, av, obj2[44].value); //nombre emrpesa
-                doc.text(44, b, "De " + obj2[50].value + " a " + obj2[51].value); //año de estudio
-                doc.text(123, b, obj2[48].value + "-" + obj2[47].value); // ciudad empresa
-                doc.text(44.5, c, obj2[45].value); // sector
-                doc.text(43, d, obj2[52].value); //cargo
-                doc.text(55, e, obj2[49].value); //e-mail
-                av = av + 35;
-                b = b + 35;
-                c = c + 35;
-                d = d + 35;
-                e = e + 35;
-            }
+
+            doc.text(48, 40, obj2[44].value); //nombre emrpesa
+            doc.text(44, 45, "De " + obj2[50].value + " a " + obj2[51].value); //año de estudio
+            doc.text(123, 45, obj2[48].value + " -" + obj2[47].value); // ciudad empresa
+            doc.text(44.5, 50, obj2[45].value); // sector
+            doc.text(43, 55, obj2[52].value); //cargo
+            doc.text(55, 60, obj2[49].value); //e-mail
+            //..............experiencia laboral empresa2 .............
+            doc.text(48, 75, obj2[55].value); //nombre emrpesa
+            doc.text(44, 80, "De " + obj2[61].value + " a " + obj2[62].value); //año de estudio
+            doc.text(123, 80, obj2[59].value + " -" + obj2[58].value); // ciudad empresa
+            doc.text(44.5, 85, obj2[56].value); // sector
+            doc.text(43, 90, obj2[63].value); //cargo
+            doc.text(55, 95, obj2[60].value); //e-mail
+            //..............experiencia laboral empresa3 .............
+            doc.text(48, 110, obj2[66].value); //nombre emrpesa
+            doc.text(44, 115, "De " + obj2[72].value + " a " + obj2[73].value); //año de estudio
+            doc.text(123, 115, obj2[70].value + " -" + obj2[69].value); // ciudad empresa
+            doc.text(44.5, 120, obj2[67].value); // sector
+            doc.text(43, 125, obj2[74].value); //cargo
+            doc.text(55, 130, obj2[71].value); //e-mail
+
             //..............referencias laboral .........
             var ax = 153;
             var az = 158;
@@ -274,14 +276,21 @@ async function Hoja2(obj2, referen) {
             var cx = 50;
             var dx = 55;
             var ex = 60;
-            for (var i = 0; i <= 2; i++) {
+            var veces = 0; // las veces qe se va hacer el for
+            if (obj2[63].value != "") {
+                veces = 1;
+            }
+            if (obj2[74].value != "") {
+                veces = 2;
+            }
+            for (var i = 0; i <= veces; i++) {
                 doc.setFont("Arial", 'bold');
                 doc.text(28, ax, "Empresa : "); //nombre empresa
                 doc.text(28, bx, "Fecha :"); //fecha de labor
                 doc.text(106, bx, "Ciudad :"); // ciudad de la empresa
                 doc.text(28, cx, "Sector  :"); // sector
                 doc.text(28, dx, "Cargo :"); //cargo
-                doc.text(28, ex, "E-mail entidad :"); //e-amil entidad
+                doc.text(28, ex, "E-mail entidad:"); //e-amil entidad
                 ax = ax + 35;
                 bx = bx + 35;
                 cx = cx + 35;
@@ -301,7 +310,7 @@ async function Hoja2(obj2, referen) {
                 doc.text(28, bx, "Cargo :"); // ciudad de la empresa
                 doc.text(28, cx, "Direccion :"); // sector
                 doc.text(28, dx, "Telefono :"); //cargo
-                doc.text(28, ex, "E-mail entidad :"); //e-amil entidad
+                doc.text(28, ex, "E-mail entidad:"); //e-amil entidad
                 ax = ax + 35;
                 az = az + 35;
                 bx = bx + 35;

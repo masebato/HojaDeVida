@@ -3,15 +3,39 @@
 
 async function crear1() {
     doc = new jsPDF();
-    valueTablas();
+
+    $(function() {
+        $('#DatosPersonalesForm').on("submit", function(e) {
+            e.preventDefault(); // cancel the actual submit
+
+            var form = document.getElementById('DatosPersonalesForm');
+            //var porElementos = document.forms["form1"].elements[0].value;
+            for (var i = 0; i < form.elements.length; i++) {
+                console.log(form.elements[i].name);
+                console.log(form.elements[i].value);
+                console.log(i);
+            }
+        });
+    });
+
     var data = datos();
-    var hoja1 = await Hoja1(data);
+    var tableidioma = valueTablasIdiomas();
+    var tablestudi = valueTablasFormacion();
+    console.log(tablestudi[0]);
+    console.log(tablestudi[1]);
+    console.log(tablestudi[2]);
+    console.log(tablestudi[3]);
+    console.log(tablestudi[4]);
+    console.log(tablestudi[5]);
+    console.log(tablestudi[6]);
+    console.log(tablestudi[7]);
+    var hoja1 = await Hoja1(data, tableidioma, tablestudi);
     var hoja2 = await Hoja2(data);
     var hoja3 = await Hoja3(data);
 
 }
 
-function Hoja1(obj) {
+function Hoja1(obj, tabidio2, tabestudio2) {
     var url1 = 'assets/img/0001.jpg';
     var img = new Image();
     $(img).on('load', function() {
@@ -149,84 +173,97 @@ function Hoja1(obj) {
 
         // educacion superior - pregrado y postgrado
         var cc = 224;
-        for (var i = 0; i <= 4; i++) {
+        var ab0 = 0;
+        var ab1 = 1;
+        var ab2 = 2;
+        var ab3 = 3;
+        var ab4 = 4;
+        var ab5 = 5;
+        var nfilas = $("#tableAcademico >tbody >tr").length;
+        for (var i = 0; i < nfilas - 1; i++) {
             doc.setFontSize(10);
-            doc.text(14, cc, obj[30].value); //modalidad academica
+            doc.text(14, cc, tabestudio2[ab0]); //modalidad academica
             doc.setFontSize(11);
-            doc.text(39, cc, obj[31].value); //no semestres aprovados 
-            if (obj[32].value == "si") {
+            doc.text(39, cc, tabestudio2[ab1]); //no semestres aprovados 
+            if (tabestudio2[ab2] == "Si") {
                 doc.text(57, cc, "X"); //graduado si 
 
             }
-            if (obj[32].value == "no") {
+            if (tabestudio2[ab2] == "No") {
                 doc.text(66, cc, "X"); //graduado no 
 
             }
 
 
-            doc.text(75, cc, obj[33].value); // nombre del titulo obtenido  
-            console.log(obj[34].value);
-            var fechaterminacion = obj[34].value;
+            doc.text(75, cc, tabestudio2[ab3]); // nombre del titulo obtenido  
+            var fechaterminacion = tabestudio2[ab4];
             var fecha3 = fechaterminacion.split("-"); // 
             doc.text(145, cc, fecha3[1]); // terminacion mes 
             doc.text(157, cc, fecha3[0]); // terminacion año 
-            doc.text(173, cc, obj[35].value); // no de tarjeta profesional  
+            doc.text(173, cc, tabestudio2[ab5]); // no de tarjeta profesional  
+
+            ab0 += 6;
+            ab1 += 6;
+            ab2 += 6;
+            ab3 += 6;
+            ab4 += 6;
+            ab5 += 6;
             cc = cc + 6.5;
         }
         //idioma 1
         doc.setFontSize(12);
-        doc.text(50, 273, obj[38].value); // Idioma 
-        if (obj[39].value == "R") {
-            doc.text(101, 273, "X"); // lo habla R 
 
-        }
-        if (obj[39].value == "B") {
-            doc.text(107, 273, "X"); // lo habla B 
 
-        }
-        if (obj[39].value == "MB") {
-            doc.text(113, 273, "X"); // lo habla MB
 
-        }
-        if (obj[40].value == "R") {
-            doc.text(119, 273, "X"); // lo lee R 
+        var x = 273;
+        var x0 = 0;
+        var x1 = 1;
+        var x2 = 2;
+        var x3 = 3;
+        var nfilas2 = $("#tableIdioma >tbody >tr").length;
+        for (var i = 0; i <= nfilas2 - 1; i++) {
+            doc.text(65, x, tabidio2[x0]); // idioma que domina
+            if (tabidio2[x1] == "R") {
+                doc.text(101, x, "X"); // nivel de idioma
+            }
+            if (tabidio2[x1] == "B") {
+                doc.text(107, x, "X"); // nivel de idioma
+            }
+            if (tabidio2[x1] == "MB") {
+                doc.text(113, x, "X"); // nivel de idioma
+            }
 
-        }
-        if (obj[40].value == "B") {
-            doc.text(125, 273, "X"); // lo lee B 
+            if (tabidio2[x2] == "R") {
+                doc.text(119, x, "X"); // nivel de idioma
+            }
+            if (tabidio2[x2] == "B") {
+                doc.text(125, x, "X"); // nivel de idioma
+            }
+            if (tabidio2[x2] == "MB") {
+                doc.text(132, x, "X"); // nivel de idioma
+            }
 
-        }
-        if (obj[40].value == "MB") {
-            doc.text(132, 273, "X"); // lo lee MB
+            if (tabidio2[x3] == "R") {
+                doc.text(137.5, x, "X"); // nivel de idioma
+            }
+            if (tabidio2[x3] == "B") {
+                doc.text(144.5, x, "X"); // nivel de idioma
+            }
+            if (tabidio2[x3] == "MB") {
+                doc.text(150, x, "X"); // nivel de idioma
+            }
 
+
+            x0 += 4;
+            x1 += 4;
+            x2 += 4;
+            x3 += 4;
+            x = x + 7;
         }
 
-        if (obj[41].value == "R") {
-            doc.text(137.5, 273, "X"); // lo escribe R 
-
-        }
-        if (obj[41].value == "B") {
-            doc.text(144.5, 273, "X"); // lo escribe B 
-        }
-        if (obj[41].value == "MB") {
-            doc.text(150, 273, "X"); // lo escribe MB
-
-        }
-        // Idioma 2
-        //doc.text(50, 279, "Idioma"); // Idioma 
-        //doc.text(101, 279, "X"); // lo habla R 
-        //doc.text(107, 279, "X"); // lo habla B 
-        //doc.text(113, 279, "X"); // lo habla MB
-        //doc.text(119, 279, "X"); // lo lee R 
-        //doc.text(125, 279, "X"); // lo lee B 
-        //doc.text(132, 279, "X"); // lo lee MB
-        //doc.text(137.5, 279, "X"); // lo escribe R 
-        //doc.text(144.5, 279, "X"); // lo escribe B 
-        //doc.text(150, 279, "X"); // lo escribe MB
 
         doc.addPage();
-        //doc.save("prueba.pdf");
-        //doc.addPage();
+
     });
     img.crossOrigin = "";
     img.src = url1;
@@ -241,59 +278,94 @@ async function Hoja2(obj2) {
         console.log(2);
         doc.addImage(this, 'JPG', -8, 0, 220, 300);
         // ..........Experiencia laboral..........
-
-        var a = 90;
-        var b = 101;
-        var c = 114;
-        var d = 125;
-        for (var i = 0; i <= 3; i++) {
-            doc.setFontSize(12);
-            doc.text(15, a, obj2[44].value);
-
-            if (obj2[45].value == "Publica") {
-                doc.text(115, a, "X"); // publica
-
-            }
-            if (obj2[45].value == "Privada") {
-                doc.text(133, a, "X"); //privada
-
-            }
-
-
-            doc.text(147, a, obj2[46].value); //pais
-            doc.text(15, b, obj2[47].value); //departamento
-            doc.text(80, b, obj2[48].value); //municipio
-            doc.text(143, b, obj2[49].value); //correo electreonico
-            doc.text(15, c, "Telefono"); //telefono
-
-            var fechaingreso = obj2[50].value;
-            console.log(obj2[50].value);
-            var fecha4 = fechaingreso.split("-"); // 
-            doc.text(85.5, c, fecha4[2]); //fecha ingreso dia
-            doc.text(103.5, c, fecha4[1]); //fecha ingreso mes 
-            doc.text(121, c, fecha4[0]); //fecha ingreso año
-
-            var fecharetiro = obj2[51].value;
-            console.log(obj2[51].value);
-            var fecha5 = fecharetiro.split("-"); // 
-            doc.text(145.5, c, fecha5[2]); //fecha reito dia
-            doc.text(163.5, c, fecha5[1]); //fecha retiro mes 
-            doc.text(181, c, fecha5[0]); //fecha retiro año
-            doc.text(15, d, obj2[52].value); //cargo o contrato actual 
-            doc.text(80, d, obj2[53].value); //dependencia
-            doc.text(139, d, obj2[54].value); //direccion 
-            if (i == 2) {
-                c = c + 49.5;
-            } else { c = c + 49; }
-            a = a + 50;
-            b = b + 50;
-
-            d = d + 49;
+        doc.setFontSize(12);
+        doc.text(15, 90, obj2[44].value); // nombre empresa
+        if (obj2[45].value == "Publica") {
+            doc.text(115, 90, "X"); // publica
         }
+        if (obj2[45].value == "Privada") {
+            doc.text(133, 90, "X"); //privada
+        }
+        doc.text(147, 90, obj2[46].value); //pais
+        doc.text(15, 101, obj2[47].value); //departamento
+        doc.text(80, 101, obj2[48].value); //municipio
+        doc.text(143, 101, obj2[49].value); //correo electreonico
+        doc.text(15, 114, "Telefono"); //telefono
+
+        var fechaingreso = obj2[50].value;
+        var fecha4 = fechaingreso.split("-"); // 
+        doc.text(85.5, 114, fecha4[2]); //fecha ingreso dia
+        doc.text(103.5, 114, fecha4[1]); //fecha ingreso mes 
+        doc.text(121, 114, fecha4[0]); //fecha ingreso año
+
+        var fecharetiro = obj2[51].value;
+        console.log(obj2[51].value);
+        var fecha5 = fecharetiro.split("-"); // 
+        doc.text(145.5, 114, fecha5[2]); //fecha reito dia
+        doc.text(163.5, 114, fecha5[1]); //fecha retiro mes 
+        doc.text(181, 114, fecha5[0]); //fecha retiro año
+        doc.text(15, 125, obj2[52].value); //cargo o contrato actual 
+        doc.text(80, 125, obj2[53].value); //dependencia
+        doc.text(139, 125, obj2[54].value); //direccion 
+        //.....................................................................
+        doc.text(15, 140, obj2[55].value); // nombre empresa
+        if (obj2[56].value == "Publica") {
+            doc.text(115, 140, "X"); // publica
+        }
+        if (obj2[56].value == "Privada") {
+            doc.text(133, 140, "X"); //privada
+        }
+        doc.text(147, 140, obj2[57].value); //pais
+        doc.text(15, 151, obj2[58].value); //departamento
+        doc.text(80, 151, obj2[59].value); //municipio
+        doc.text(143, 151, obj2[60].value); //correo electreonico
+        doc.text(15, 163.5, "Telefono"); //telefono
+
+        var fechaingreso = obj2[61].value;
+        var fecha4 = fechaingreso.split("-"); // 
+        doc.text(85.5, 163.5, fecha4[2]); //fecha ingreso dia
+        doc.text(103.5, 163.5, fecha4[1]); //fecha ingreso mes 
+        doc.text(121, 163.5, fecha4[0]); //fecha ingreso año
+
+        var fecharetiro = obj2[62].value;
+        var fecha5 = fecharetiro.split("-"); // 
+        doc.text(145.5, 163.5, fecha5[2]); //fecha reito dia
+        doc.text(163.5, 163.5, fecha5[1]); //fecha retiro mes 
+        doc.text(181, 163.5, fecha5[0]); //fecha retiro año
+        doc.text(15, 174, obj2[63].value); //cargo o contrato actual 
+        doc.text(80, 174, obj2[64].value); //dependencia
+        doc.text(139, 174, obj2[65].value); //direccion 
+        //.....................................................................
+        doc.text(15, 190, obj2[66].value); // nombre empresa
+        if (obj2[67].value == "Publica") {
+            doc.text(115, 190, "X"); // publica
+        }
+        if (obj2[67].value == "Privada") {
+            doc.text(133, 190, "X"); //privada
+        }
+        doc.text(147, 190, obj2[68].value); //pais
+        doc.text(15, 201, obj2[69].value); //departamento
+        doc.text(80, 201, obj2[70].value); //municipio
+        doc.text(143, 201, obj2[71].value); //correo electreonico
+        doc.text(15, 213, "Telefono"); //telefono
+
+        var fechaingreso = obj2[72].value;
+        var fecha4 = fechaingreso.split("-"); // 
+        doc.text(85.5, 213, fecha4[2]); //fecha ingreso dia
+        doc.text(103.5, 213, fecha4[1]); //fecha ingreso mes 
+        doc.text(121, 213, fecha4[0]); //fecha ingreso año
+
+        var fecharetiro = obj2[73].value;
+        var fecha5 = fecharetiro.split("-"); // 
+        doc.text(145.5, 213, fecha5[2]); //fecha reito dia
+        doc.text(163.5, 213, fecha5[1]); //fecha retiro mes 
+        doc.text(181, 213, fecha5[0]); //fecha retiro año
+        doc.text(15, 223, obj2[74].value); //cargo o contrato actual 
+        doc.text(80, 223, obj2[75].value); //dependencia
+        doc.text(139, 223, obj2[76].value); //direccion 
 
         doc.addPage();
-        //doc.save("prueba.pdf");
-        //doc.addPage();
+
     });
     img.crossOrigin = "";
     img.src = url2;
@@ -307,17 +379,17 @@ async function Hoja3(obj3) {
 
             console.log(3);
             doc.addImage(this, 'JPG', -8, 0, 220, 300);
-            var totalaños = parseInt(obj3[68].value) + parseInt(obj3[70].value) + parseInt(obj3[72].value);
-            var totalmeses = parseInt(obj3[69].value) + parseInt(obj3[71].value) + parseInt(obj3[73].value);
+            var totalaños = parseInt(obj3[78].value) + parseInt(obj3[80].value) + parseInt(obj3[82].value);
+            var totalmeses = parseInt(obj3[79].value) + parseInt(obj3[81].value) + parseInt(obj3[83].value);
             var añostotal = totalaños.toString();
             var mesestotal = totalmeses.toString();
             // .......... Tiempo total de Experiencia ..........
-            doc.text(130, 75, obj3[68].value); // servicios publicos años
-            doc.text(153, 75, obj3[69].value); // servicios publicos mes
-            doc.text(130, 85, obj3[70].value); //empleado del sector privado años 
-            doc.text(153, 85, obj3[71].value); //empleado del sector privado meses
-            doc.text(130, 95, obj3[72].value); //trabajador independiente años
-            doc.text(153, 95, obj3[73].value); //trabajador independiente meses
+            doc.text(130, 75, obj3[78].value); // servicios publicos años
+            doc.text(153, 75, obj3[79].value); // servicios publicos mes
+            doc.text(130, 85, obj3[80].value); //empleado del sector privado años 
+            doc.text(153, 85, obj3[81].value); //empleado del sector privado meses
+            doc.text(130, 95, obj3[82].value); //trabajador independiente años
+            doc.text(153, 95, obj3[83].value); //trabajador independiente meses
             doc.text(130, 105, añostotal); //total timepo experiencia años
             doc.text(153, 105, mesestotal); //total timepo experiencia meses
             // ..........Firma del servicio publico o contratista..........
@@ -332,4 +404,3 @@ async function Hoja3(obj3) {
 
     }, 2000);
 }
-
