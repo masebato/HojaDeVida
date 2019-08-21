@@ -364,7 +364,9 @@ function AgregarDatosExperiencia() {
     var _CargoReferencia = document.getElementById('CargoReferencia').value;
     var _DireccionReferencia = document.getElementById('DireccionReferencia').value;
     var _TelefonoReferencia = document.getElementById('TelefonoReferencia').value;
-    var _EmailReferencia = document.getElementById('EmailReferencia').value;
+    var _EmailReferencia = document.getElementById('EmailReferencia').value; <<
+    <<
+    << < HEAD
 
     if (_NombreReferencia != "" && _EmpresaReferencia != "" && _CargoReferencia != "" && _DireccionReferencia != "" && _TelefonoReferencia != "" && _EmailReferencia != "") {
         var fila = "<td>" + _NombreReferencia + "</td><td>" + _EmpresaReferencia + "</td><td>" + _CargoReferencia + "</td><td>" + _DireccionReferencia + "</td><td>" + _TelefonoReferencia + "</td><td>" + _EmailReferencia + "</td><a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>";
@@ -380,6 +382,27 @@ function AgregarDatosExperiencia() {
     }
 
 
+    ===
+    ===
+    =
+
+    if (_NombreReferencia != "" && _EmpresaReferencia != "" && _CargoReferencia != "" && _DireccionReferencia != "" && _TelefonoReferencia != "" && _EmailReferencia != "") {
+        var fila = "<td class='value'>" + _NombreReferencia + "</td><td class='value'>" + _EmpresaReferencia + "</td><td class='value'>" + _CargoReferencia + "</td><td class='value'>" + _DireccionReferencia + "</td><td class='value'>" + _TelefonoReferencia + "</td><td class='value'>" + _EmailReferencia + "</td><a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>";
+        var btn = document.createElement("TR");
+        btn.innerHTML = fila;
+        document.getElementById("tbodyExperiencia").appendChild(btn);
+        $('#NombreReferencia').val("");
+        $('#TelefonoReferencia').val("");
+        $('#CargoReferencia').val("");
+        $('#EmpresaReferencia').val("");
+        $('#EmailReferencia').val("");
+        $('#DireccionReferencia').val("");
+    }
+
+
+    >>>
+    >>>
+    > b5dee6e5a0dd5d88a9110792a6929f1689fd9544
 }
 
 
@@ -659,13 +682,12 @@ function valueTablasFormacion() {
 
 }
 
-async function valueTablasReferencia() {
-    var valores3 = "";
+function valueTablasReferencia() {
+    var valores2 = "";
     $('#tbodyExperiencia').find(".value").each(function() {
-        valores3 += $(this).html() + ",";
+        valores2 += $(this).html() + ",";
     });
-    var referencia = valores3.split(',');
-
+    var referencia = valores2.split(',');
     return referencia;
 
 }
