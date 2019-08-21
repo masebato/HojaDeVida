@@ -4,6 +4,24 @@
 
 <head>
 
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-T2NB625');
+    </script>
+    <!-- End Google Tag Manager -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
@@ -29,6 +47,10 @@
 </head>
 
 <body background="/form/cta-background.jpg">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2NB625"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <form id="DatosPersonalesForm">
         <div class="wrapper-full-page">
             <div class="main-panel ps-container ps-active-y ">
@@ -162,13 +184,11 @@
                                                     <div class="form-group">
                                                         <br>
                                                         <input class="form-check-input" type="radio" name="LibretaMilitar" id="PrimeraClase" value="Primera">
-                                                        <label class="form-check-label" for="PrimeraClase">Primera
-                                                                Clase</label>
+                                                        <label class="form-check-label" for="PrimeraClase">Primera Clase</label>
 
                                                         <div class="form-group ">
                                                             <input class="form-check-input" type="radio" name="LibretaMilitar" id="SegundaClase" value="Segunda">
-                                                            <label class="form-check-label" for="SegundaClase">Segunda
-                                                                    Clase</label>
+                                                            <label class="form-check-label" for="SegundaClase">Segunda Clase</label>
                                                         </div>
                                                         <label>Numero</label>
                                                         <input type="text" class="form-control" id="NumeroLibreta" name="Numerolibreta" pattern="[1-9]*+">
@@ -197,8 +217,7 @@
                                                     <div class="card-header" id="headingOne">
                                                         <h2 class="mb-0">
                                                             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <i class="icono-user"></i> Perfil
-                                </button>
+                                                            <i class="icono-user"></i> Perfil</button>
                                                         </h2>
                                                     </div>
                                                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -220,8 +239,7 @@
                                                 <div class="card-header" id="headingTwo">
                                                     <h2 class="mb-0">
                                                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#formacionDiv" aria-expanded="false" aria-controls="formacionDiv">
-                                <i class="icono-document"></i> Formación
-                            </button>
+                                                        <i class="icono-document"></i> Formación</button>
                                                     </h2>
                                                 </div>
                                                 <div id="formacionDiv" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
@@ -233,18 +251,19 @@
                                                                 <div class="form-group">
                                                                     <label>Educación básica</label>
                                                                     <select name="SelectEducacion" class="form-control" id="SelectEducacion">
-                                            <option>1o</option>
-                                            <option>2o</option>
-                                            <option>3o</option>
-                                            <option>4o</option>
-                                            <option>5o</option>
-                                            <option>6o</option>
-                                            <option>7o</option>
-                                            <option>8o</option>
-                                            <option>9o</option>
-                                            <option>10</option>
-                                            <option>11</option>
-                                        </select>
+                                                                        <option></option>
+                                                                        <option>1o</option>
+                                                                        <option>2o</option>
+                                                                        <option>3o</option>
+                                                                        <option>4o</option>
+                                                                        <option>5o</option>
+                                                                        <option>6o</option>
+                                                                        <option>7o</option>
+                                                                        <option>8o</option>
+                                                                        <option>9o</option>
+                                                                        <option>10</option>
+                                                                        <option>11</option>
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-4">
@@ -266,16 +285,15 @@
                                                                 <div class="form-group">
                                                                     <label>Modalidad </label>
                                                                     <select name="Modalidad" class="form-control" id="Modalidad">
-                                            <option value="TC">Técnica</option>
-                                            <option value="TL">Tecnológica</option>
-                                            <option value="TE">Tecnológia especializada
-                                            </option>
-                                            <option value="UN">Universitaria</option>
-                                            <option value="ES">Especialización</option>
-                                            <option value="MG">Maestria o magister
-                                            </option>
-                                            <option value="DOC">Doctorado o PHD</option>
-                                        </select>
+                                                                            <option></option>
+                                                                          <option value="TC">Técnica</option>
+                                                                           <option value="TL">Tecnológica</option>
+                                                                            <option value="TE">Tecnológia especializada</option>
+                                                                          <option value="UN">Universitaria</option>
+                                                                         <option value="ES">Especialización</option>
+                                                                        <option value="MG">Maestria o magister </option>
+                                                                      <option value="DOC">Doctorado o PHD</option>
+                                                             </select>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-1">
@@ -288,9 +306,10 @@
                                                                 <div class="form-group">
                                                                     <label>Graduado</label>
                                                                     <select name="Graduado" class="form-control" id="SelectGraduado" name="SelectGraduado">
-                                            <option value="Si">SI</option>
-                                            <option value="No">NO</option>
-                                        </select>
+                                                                        <option></option>
+                                                                        <option value="Si">SI</option>
+                                                                        <option value="No">NO</option>
+                                                                   </select>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-5">
@@ -363,19 +382,21 @@
                                                                 <div class="form-group">
                                                                     <label>Lo habla</label>
                                                                     <select name="lo Habla" id="habla" class="form-control">
-                                            <option value="R">Regular</option>
-                                            <option value="B">Bien</option>
-                                            <option value="MB">Muy bien</option>
-                                        </select>
+                                                                            <option></option>
+                                                                            <option value="R">Regular</option>
+                                                                            <option value="B">Bien</option>
+                                                                            <option value="MB">Muy bien</option>
+                                                                   </select>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form-group">
                                                                     <label>Lo lee</label>
                                                                     <select name="lo lee" id="lee" class="form-control">
-                                            <option value="R">Regular</option>
-                                            <option value="B">Bien</option>
-                                            <option value="MB">Muy bien</option>
+                                                                            <option></option>
+                                                                             <option value="R">Regular</option>
+                                                                            <option value="B">Bien</option>
+                                                                            <option value="MB">Muy bien</option>
                                         </select>
                                                                 </div>
                                                             </div>
@@ -383,10 +404,11 @@
                                                                 <div class="form-group">
                                                                     <label>Lo escribe</label>
                                                                     <select name="lo escibe" id="escribe" class="form-control">
-                                            <option value="R">Regular</option>
-                                            <option value="B">Bien</option>
-                                            <option value="MB">Muy bien</option>
-                                        </select>
+                                                                            <option></option>
+                                                                              <option value="R">Regular</option>
+                                                                              <option value="B">Bien</option>
+                                                                            <option value="MB">Muy bien</option>
+                                                                              </select>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -438,9 +460,10 @@
                                                                             <div class="form-group">
                                                                                 <label>Sector</label>
                                                                                 <select class="form-control" id="Sector" name="Sector">
-                                                        <option>Publica</option>
-                                                        <option>Privada</option>
-                                                    </select>
+                                                                                        <option></option>
+                                                                                       <option>Publica</option>
+                                                                                       <option>Privada</option>
+                                                                                    </select>
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-md-2">
@@ -516,9 +539,10 @@
                                                                             <div class="form-group">
                                                                                 <label>Sector</label>
                                                                                 <select class="form-control" id="Sector1" name="Sector1">
-                                                        <option>Publica</option>
-                                                        <option>Privada</option>
-                                                    </select>
+                                                                                        <option></option>
+                                                                                        <option>Publica</option>
+                                                                                        <option>Privada</option>
+                                                                                   </select>
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-md-2">
@@ -599,8 +623,7 @@
                                                         <div class="card-header" id="headingThree">
                                                             <h2 class="mb-0">
                                                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#Tiempo" aria-expanded="false" aria-controls="Tiempo">
-                                        <i class="icono-bookmarkEmpty"></i> Tiempo Experiencia
-                                    </button>
+                                                           <i class="icono-bookmarkEmpty"></i> Tiempo Experiencia</button>
                                                             </h2>
                                                         </div>
                                                         <div id="Tiempo" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
@@ -672,8 +695,7 @@
                                                         <div class="card-header" id="headingThree">
                                                             <h2 class="mb-0">
                                                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#Referencias" aria-expanded="false" aria-controls="Referencias">
-                                        <i class="icono-bookmarkEmpty"></i> Referencias
-                                    </button>
+                                                              <i class="icono-bookmarkEmpty"></i> Referencias</button>
                                                             </h2>
                                                         </div>
                                                         <div id="Referencias" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
@@ -720,10 +742,32 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
+
+                                                                <div class="bd">
+                                                                    <table class=" table-bordered table-responsive-lg">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="col">NOMBRES</th>
+                                                                                <th class="col">EMPRESA</th>
+                                                                                <th class="col">CARGO</th>
+                                                                                <th class="col">DIRECCION</th>
+                                                                                <th class="col">TELEFONO</th>
+                                                                                <th class="col">CORREO</th>
+                                                                                <th class="col">ACCIÓN</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody id="tbodyExperiencia">
+
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+
                                                             </div>
+
+
                                                             <div class="row">
                                                                 <div class="col-md-3">
-                                                                    <button id="AgregarReferencia" class="btn btn-blue" style="display: none">Agregar</button>
+                                                                    <button id="" class="btn btn-blue" onclick="AgregarDatosExperiencia()">Agregar</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -865,7 +909,6 @@
     <script src="assets/js/core/popper.min.js"></script>
     <script src="assets/js/core/bootstrap.min.js"></script>
     <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-
     <!-- Chart JS -->
     <script src="assets/js/canvasjs.min.js"></script>
     <script src="assets/js/jspdf.min.js"></script>
@@ -883,7 +926,17 @@
     <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
     <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+    <!-- Footer -->
+    <footer class="page-footer font-small" style="background-color: darkgrey">
 
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a href="https://MasterCode.com.co/" style="color: darkred"> Master Code</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
 </body>
 
 </html>
