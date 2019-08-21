@@ -659,12 +659,13 @@ function valueTablasFormacion() {
 
 }
 
-function valueTablasReferencia() {
-    var valores2 = "";
-    $('#tbodyAcademico').find(".value").each(function() {
-        valores2 += $(this).html() + ",";
+async function valueTablasReferencia() {
+    var valores3 = "";
+    $('#tbodyExperiencia').find(".value").each(function() {
+        valores3 += $(this).html() + ",";
     });
-    var referencia = valores2.split(',');
+    var referencia = valores3.split(',');
+
     return referencia;
 
 }
