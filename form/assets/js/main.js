@@ -343,14 +343,41 @@ function AgregarDatosIdioma() {
     var _lee = document.getElementById("lee");
     var _escribe = document.getElementById("escribe");
     var _habla = document.getElementById("habla");
-
+if (_idioma!="" && _lee != "" && _escribe != "" && _habla != "" ) {
     var fila = "<tr><td>" + _idioma + "</td><td>" + _habla.value + "</td><td>" + _lee.value + "</td><td>" + _escribe.value + "</td></tr>"
-
     var btn = document.createElement("TR");
     btn.innerHTML = fila;
     document.getElementById("tbodyIdioma").appendChild(btn);
-    $('#Idioma').val("");
+    $('#Idioma').val("");  $('#lee').val("");
+    $('#escribe').val(""); $('#habla').val("");
 }
+    
+}
+
+
+function AgregarDatosExperiencia(){
+
+    var _NombreReferencia = document.getElementById('NombreReferencia').value;
+    var _EmpresaReferencia = document.getElementById('EmpresaReferencia').value;
+    var _CargoReferencia = document.getElementById('CargoReferencia').value;
+    var _DireccionReferencia = document.getElementById('DireccionReferencia').value;
+    var _TelefonoReferencia = document.getElementById('TelefonoReferencia').value;
+    var _EmailReferencia = document.getElementById('EmailReferencia').value;
+   
+if (_NombreReferencia != "" && _EmpresaReferencia!="" && _CargoReferencia != "" && _DireccionReferencia != ""  && _TelefonoReferencia != "" && _EmailReferencia != ""  ) {
+    var fila = "<td>" + _NombreReferencia + "</td><td>" + _EmpresaReferencia + "</td><td>" + _CargoReferencia + "</td><td>" + _DireccionReferencia + "</td><td>"+_TelefonoReferencia +"</td><td>"+ _EmailReferencia+"</td><a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>";
+    var btn = document.createElement("TR");
+    btn.innerHTML = fila;
+    document.getElementById("tbodyExperiencia").appendChild(btn);
+    $('#NombreReferencia').val("");$('#TelefonoReferencia').val("");
+    $('#CargoReferencia').val("");$('#EmpresaReferencia').val("");
+    $('#EmailReferencia').val("");$('#DireccionReferencia').val("");
+}  
+
+   
+}
+
+
 
 //#endregion
 
@@ -596,17 +623,12 @@ function CatchData() {
 // cAPTURAR DATOS DEL FORM
 
 function datos() {
-
     var ar;
-
     $('#DatosPersonalesForm').submit(false); // cancel the actual submit
-
     var form = document.getElementById('DatosPersonalesForm');
     ar = form.elements;
-    console.log(ar);
+   // console.log(ar);
     return ar;
-
-
 };
 
 
@@ -629,5 +651,15 @@ function valueTablasFormacion(){
       });  
     var formacion = valores2.split(',');         
     return formacion;
+    
+}
+
+function valueTablasReferencia(){  
+    var valores2 ="";   
+    $('#tbodyAcademico').find(".value").each(function() {
+        valores2 += $(this).html() + ",";
+      });  
+    var referencia = valores2.split(',');         
+    return referencia;
     
 }

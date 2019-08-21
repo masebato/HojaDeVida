@@ -612,8 +612,7 @@
                                                         <div class="card-header" id="headingThree">
                                                             <h2 class="mb-0">
                                                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#Tiempo" aria-expanded="false" aria-controls="Tiempo">
-                                        <i class="icono-bookmarkEmpty"></i> Tiempo Experiencia
-                                    </button>
+                                                           <i class="icono-bookmarkEmpty"></i> Tiempo Experiencia</button>
                                                             </h2>
                                                         </div>
                                                         <div id="Tiempo" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
@@ -685,8 +684,7 @@
                                                         <div class="card-header" id="headingThree">
                                                             <h2 class="mb-0">
                                                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#Referencias" aria-expanded="false" aria-controls="Referencias">
-                                        <i class="icono-bookmarkEmpty"></i> Referencias
-                                    </button>
+                                                              <i class="icono-bookmarkEmpty"></i> Referencias</button>
                                                             </h2>
                                                         </div>
                                                         <div id="Referencias" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
@@ -733,10 +731,32 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
+
+                                                                                    <div class="bd">
+                                                                                            <table class=" table-bordered table-responsive-lg">
+                                                                                                <thead>
+                                                                                                    <tr>
+                                                                                                            <th class="col">NOMBRES</th>
+                                                                                                            <th class="col">EMPRESA</th>
+                                                                                                            <th class="col">CARGO</th>
+                                                                                                            <th class="col">DIRECCION</th>
+                                                                                                            <th class="col">TELEFONO</th>
+                                                                                                            <th class="col">CORREO</th>
+                                                                                                            <th class="col">ACCIÓN</th>
+                                                                                                    </tr>
+                                                                                                </thead>
+                                                                                                <tbody id="tbodyExperiencia">
+                                
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </div>
+
                                                             </div>
+
+
                                                             <div class="row">
                                                                 <div class="col-md-3">
-                                                                    <button id="AgregarReferencia" class="btn btn-blue" style="display: none">Agregar</button>
+                                                                    <button id="" class="btn btn-blue" onclick="AgregarDatosExperiencia()">Agregar</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -749,7 +769,7 @@
                                 <div class="card-footer">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <button class="btn" onclick="crearHoja3();$('#DatosPersonalesForm').submit(false);"></button>
+                                           <!-- <button class="btn" onclick="crearHoja3();$('#DatosPersonalesForm').submit(false);"></button> -->
                                             <div class="form-group">
                                                 <button class="btn " id="btnBack" style="display: none" onclick="openCity(event, 'DatosPersonales')">Atras</button>
                                             </div>
@@ -878,7 +898,6 @@
     <script src="assets/js/core/popper.min.js"></script>
     <script src="assets/js/core/bootstrap.min.js"></script>
     <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-
     <!-- Chart JS -->
     <script src="assets/js/canvasjs.min.js"></script>
     <script src="assets/js/jspdf.min.js"></script>
@@ -896,7 +915,17 @@
     <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
     <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+<!-- Footer -->
+<footer class="page-footer font-small" style="background-color: darkgrey">
 
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+          <a href="https://MasterCode.com.co/" style="color: darkred"> Master Code</a>
+        </div>
+        <!-- Copyright -->
+      
+      </footer>
+      <!-- Footer -->
 </body>
 
 </html>
