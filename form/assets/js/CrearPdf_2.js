@@ -19,7 +19,7 @@ async function crearHoja2() {
     var data2 = datos();
     var tableidioma = valueTablasIdiomas();
     var tablestudi = valueTablasFormacion();
-    var referencia = await valueTablasReferencia();
+    var referencia = valueTablasReferencia();
 
 
     await Hoja1(data2, tableidioma, tablestudi);
@@ -72,7 +72,7 @@ async function Hoja1(obj, tabidio2, tabestudio2) {
         for (var i = 0; i <= nfilas - 1; i++) {
             doc.setFontSize(11);
             doc.text(39, a, fecha1[0]); //año de estudio
-            if (tabestudio2[ab2] == "SI") {
+            if (tabestudio2[ab2] == "Si") {
                 doc.text(58, b, "Graduado"); //total del ciclos
             } else {
                 doc.text(58, b, tabestudio2[ab1]); //total del ciclos   
@@ -99,11 +99,11 @@ async function Hoja1(obj, tabidio2, tabestudio2) {
             if (tabestudio2[ab0] == "DOC") {
                 doc.text(121, b, "Doctorado o PHD"); //Modalidad
             }
-            ab0 += 5;
-            ab1 += 5;
-            ab2 += 5;
-            ab3 += 5;
-            ab4 += 5;
+            ab0 += 6;
+            ab1 += 6;
+            ab2 += 6;
+            ab3 += 6;
+            ab4 += 6;
             a = a + 18;
             b = b + 18;
         }
