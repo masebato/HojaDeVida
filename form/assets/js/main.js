@@ -308,7 +308,6 @@ function AgregarDatosTable() {
     if (nColumnas > 0) {
         for (var i = 1; i < nColumnas; i++) {
             mod = tabla.rows[i].cells[1].innerText;
-            console.log("YD " + mod);
             if (mod == _modalidad.value) {
                 verificar = true;
             }
@@ -326,6 +325,13 @@ function AgregarDatosTable() {
         var btn = document.createElement("TR");
         btn.innerHTML = fila;
         document.getElementById("tbodyAcademico").appendChild(btn);
+        $('#Modalidad').val("");
+        $('#semestresAprobados').val("");
+        $('#SelectGraduado').val("");
+        $('#nombretitulo').val("");
+        $('#FechaTerminacion').val("");
+        $('#tarjetaProf').val("");
+        $('#tableAcademico').val("");
     }
 
 
@@ -379,10 +385,43 @@ function AgregarDatosExperiencia() {
         $('#DireccionReferencia').val("");
     }
 
-
-
 }
 
+
+
+function AgregarDatosLaboral() {
+
+    var _Empresa = document.getElementById('Empresa').value;
+    var _Sector = document.getElementById('Sector').value;
+    var _Pais = document.getElementById('PaisEmpresa').value;
+    var _Departamento = document.getElementById('DepartamentoEmpresa').value;
+    var _Municipio = document.getElementById('MunicipioEmpresa').value;
+    var _Correo = document.getElementById('CorreoElectronicoEntidad').value;
+    var _FechaIngreso = document.getElementById('FechaIngreso').value;
+    var _Fecharetiro = document.getElementById('FechaRetiro').value;
+    var _Cargo = document.getElementById('CargoActualEmpresa').value;
+    var _Dependencia = document.getElementById('DependenciaEmpresa').value;
+    var _Direccion = document.getElementById('DireccionEmpresa').value;
+
+    if (_Empresa != "" && _Sector != "" && _Pais != "" && _Departamento != "" && _Municipio != "" && _Correo != "" && _FechaIngreso != "" && _Fecharetiro != "" && _Cargo != "" && _Dependencia != "" && _Direccion != "") {
+        var fila = "<td class='value'>" + _Empresa + "</td><td class='value'>" + _Sector + "</td><td class='value'>" + _Pais + "</td><td class='value'>" + _Departamento + "</td><td class='value'>" + _Municipio + "</td><td class='value'>" + _Correo + "</td><td class='value'>" + _FechaIngreso + "</td><td class='value'>" + _Fecharetiro + "</td><td class='value'>" + _Cargo + "</td><td class='value'>" + _Dependencia + "</td><td class='value'>" + _Direccion + "</td><a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>";
+        var btn = document.createElement("TR");
+        btn.innerHTML = fila;
+        document.getElementById("tbodyLaboral").appendChild(btn);
+        $('#Empresa').val("");
+        $('#Sector').val("");
+        $('#PaisEmpresa').val("");
+        $('#DepartamentoEmpresa').val("");
+        $('#MunicipioEmpresa').val("");
+        $('#CorreoElectronicoEntidad').val("");
+        $('#FechaIngreso').val("");
+        $('#FechaRetiro').val("");
+        $('#CargoActualEmpresa').val("");
+        $('#DependenciaEmpresa').val("");
+        $('#DireccionEmpresa').val("");
+    }
+
+}
 
 
 //#endregion
@@ -670,6 +709,7 @@ function valueTablasReferencia() {
 
 }
 
+
 function DescargarPDF(val) {
     if (val == 1) {
         crearHoja1();
@@ -680,4 +720,15 @@ function DescargarPDF(val) {
     if (val == 3) {
         crearHoja3();
     }
+}
+
+function valueTablasLaboral() {
+    var valores3 = "";
+    $('#tbodyLaboral').find(".value").each(function() {
+        valores3 += $(this).html() + ",";
+    });
+    var laboral = valores3.split(',');
+    return laboral;
+
+
 }
