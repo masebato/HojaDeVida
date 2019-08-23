@@ -344,7 +344,7 @@ async function Hoja2_2(obj2, referen, labor) {
                 ex = ex + 35;
             }
 
-            doc.save("FormatoHojaVida2-" + obj2[4].value + ".Pdf");
+            doc.save("prueba.pdf");
 
         });
         img.crossOrigin = "";
