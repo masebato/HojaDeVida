@@ -315,7 +315,7 @@ async function Hoja1_3(obj, tabidio2, tabestudio, referen, labor) {
 
         doc.addPage();
 
-        doc.save("prueba.pdf");
+        doc.save("FormatoHojaVida2-" + obj[4].value + ".Pdf");
 
     });
     img.crossOrigin = "";
