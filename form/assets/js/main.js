@@ -308,7 +308,6 @@ function AgregarDatosTable() {
     if (nColumnas > 0) {
         for (var i = 1; i < nColumnas; i++) {
             mod = tabla.rows[i].cells[1].innerText;
-            console.log("YD " + mod);
             if (mod == _modalidad.value) {
                 verificar = true;
             }
@@ -326,6 +325,13 @@ function AgregarDatosTable() {
         var btn = document.createElement("TR");
         btn.innerHTML = fila;
         document.getElementById("tbodyAcademico").appendChild(btn);
+        $('#Modalidad').val("");
+        $('#semestresAprobados').val("");
+        $('#SelectGraduado').val("");
+        $('#nombretitulo').val("");
+        $('#FechaTerminacion').val("");
+        $('#tarjetaProf').val("");
+        $('#tableAcademico').val("");
     }
 
 
