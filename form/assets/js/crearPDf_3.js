@@ -22,11 +22,11 @@ async function crearHoja3() {
     var laborales = valueTablasLaboral();
     var data3 = datos();
 
-    await Hoja1(data3, tableidioma, tablestudi, referen, laborales);
+    await Hoja1_3(data3, tableidioma, tablestudi, referen, laborales);
 
 }
 
-async function Hoja1(obj, tabidio2, tabestudio, referen, labor) {
+async function Hoja1_3(obj, tabidio2, tabestudio, referen, labor) {
     var url1 = 'assets/img/hoja3.jpg';
     var img = new Image();
 

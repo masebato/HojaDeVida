@@ -22,13 +22,15 @@ async function crearHoja2() {
     var referencia = valueTablasReferencia();
     var laborales = valueTablasLaboral();
 
-
-    await Hoja1(data2, tableidioma, tablestudi);
-    await Hoja2(data2, referencia, laborales);
+    
+        await Hoja1_2(data2, tableidioma, tablestudi);
+        await Hoja2_2(data2, referencia, laborales);
+    
+ 
 
 }
 
-async function Hoja1(obj, tabidio2, tabestudio2) {
+async function Hoja1_2(obj, tabidio2, tabestudio2) {
     var url1 = 'assets/img/formato2.jpg';
     var img = new Image();
 
@@ -197,7 +199,7 @@ async function Hoja1(obj, tabidio2, tabestudio2) {
 }
 
 
-async function Hoja2(obj2, referen, labor) {
+async function Hoja2_2(obj2, referen, labor) {
 
     var url2 = 'assets/img/formato21.jpg';
     var img = new Image();

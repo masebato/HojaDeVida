@@ -22,17 +22,33 @@ async function crear1() {
     var tableidioma = valueTablasIdiomas();
     var tablestudi = valueTablasFormacion();
     var laborales = valueTablasLaboral();
-
+   
     var hoja1 = await Hoja1(data, tableidioma, tablestudi);
     var hoja2 = await Hoja2(laborales);
     var hoja3 = await Hoja3(data);
-
+   
+        
+    // hoja1 = await Hoja1(data, tableidioma, tablestudi);
+    // if (hoja1) {
+    //     hoja2 = await Hoja2(laborales);
+    //     if (hoja2) {
+    //         hoja3 = await Hoja3(data);
+    //      }
+    // }
+      
 }
 
 function Hoja1(obj, tabidio2, tabestudio2) {
+  
+        
+   
     var url1 = 'assets/img/0001.jpg';
     var img = new Image();
+   
+    
     $(img).on('load', function() {
+        try {
+        
         console.log(1);
         doc.addImage(this, 'JPG', -8, 0, 220, 300);
         doc.setFontSize(12);
@@ -257,10 +273,15 @@ function Hoja1(obj, tabidio2, tabestudio2) {
 
 
         doc.addPage();
-
+    } catch (error) {
+      throw  showNotification('top', 'center');
+      return false;
+        }
     });
+    
     img.crossOrigin = "";
     img.src = url1;
+
 }
 
 
@@ -268,6 +289,7 @@ async function Hoja2(labor) {
 
     var url2 = 'assets/img/0002.jpg';
     var img = new Image();
+    try{
     $(img).on('load', function() {
         console.log(2);
         doc.addImage(this, 'JPG', -8, 0, 220, 300);
@@ -336,6 +358,9 @@ async function Hoja2(labor) {
         doc.addPage();
 
     });
+    } catch (error) {
+    showNotification('top', 'center')
+    }
     img.crossOrigin = "";
     img.src = url2;
 }
@@ -343,9 +368,9 @@ async function Hoja3(obj3) {
     var url3 = 'assets/img/0003.jpg';
     var img = new Image();
     setTimeout(() => {
-
+        try{
         $(img).on('load', function() {
-
+            
             console.log(3);
             doc.addImage(this, 'JPG', -8, 0, 220, 300);
             var totalaños = parseInt(obj3[57].value) + parseInt(obj3[59].value) + parseInt(obj3[61].value);
@@ -364,11 +389,16 @@ async function Hoja3(obj3) {
             // ..........Firma del servicio publico o contratista..........
             doc.addPage();
             doc.save("prueba.pdf");
-
+        
         });
+        
         img.crossOrigin = "";
         img.src = url3;
-
+        } catch (error) {
+            
+        throw showNotification('top', 'center')
+        return false;
+        }
 
     }, 2000);
 }

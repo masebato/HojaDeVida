@@ -480,6 +480,7 @@ function FiltrerCollapse(obj) {
     if ($id == "Formato1") {
         $.each(Formato1, function(i, val) {
             $(val).css("display", "none");
+            valf=1;
         });
         $('#myModal').modal('hide');
     }
@@ -487,12 +488,14 @@ function FiltrerCollapse(obj) {
     if ($id == "Formato2") {
         $.each(Formato2, function(i, val) {
             $(val).css("display", "none");
+            valf=2;
         });
         $('#myModal').modal('hide');
     }
     if ($id == "Formato3") {
         $.each(Formato3, function(i, val) {
             $(val).css("display", "none");
+            valf=3;
         });
         $('#myModal').modal('hide');
     }
@@ -709,15 +712,17 @@ function valueTablasReferencia() {
 
 }
 
+var valf=0;
 
-function DescargarPDF(val) {
-    if (val == 1) {
-        crearHoja1();
+
+function DescargarPDF() {
+    if (valf == 1) {
+        crear1();
     }
-    if (val == 2) {
+    if (valf == 2) {
         crearHoja2();
     }
-    if (val == 3) {
+    if (valf == 3) {
         crearHoja3();
     }
 }
