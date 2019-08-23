@@ -313,14 +313,14 @@ function AgregarDatosTable() {
             }
         }
         if (!verificar) {
-            var fila = "<td class='value'>" + _modalidad.value + "</td><td class='value'>" + _semestres + "</td><td class='value'>" + _graduado.value + "</td><td class='value'>" + _titulo + "</td><td class='value'>" + _fechaGrado + "</td><td class='value'>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>"
+            var fila = "<td class='value'>" + _modalidad.value + "</td><td class='value'>" + _semestres + "</td><td class='value'>" + _graduado.value + "</td><td class='value'>" + _titulo + "</td><td class='value'>" + _fechaGrado + "</td><td class='value'>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>"
 
             var btn = document.createElement("TR");
             btn.innerHTML = fila;
             document.getElementById("tbodyAcademico").appendChild(btn);
         }
     } else {
-        var fila = "<td class='value'>" + _modalidad.value + "</td><td class='value'>" + _semestres + "</td><td class='value'>" + _graduado.value + "</td><td class='value'>" + _titulo + "</td><td class='value'>" + _fechaGrado + "</td><td class='value'>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>"
+        var fila = "<td class='value'>" + _modalidad.value + "</td><td class='value'>" + _semestres + "</td><td class='value'>" + _graduado.value + "</td><td class='value'>" + _titulo + "</td><td class='value'>" + _fechaGrado + "</td><td class='value'>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>"
 
         var btn = document.createElement("TR");
         btn.innerHTML = fila;
