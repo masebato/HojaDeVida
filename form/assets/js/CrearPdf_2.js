@@ -20,10 +20,11 @@ async function crearHoja2() {
     var tableidioma = valueTablasIdiomas();
     var tablestudi = valueTablasFormacion();
     var referencia = valueTablasReferencia();
+    var laborales = valueTablasLaboral();
 
 
     await Hoja1(data2, tableidioma, tablestudi);
-    await Hoja2(data2, referencia);
+    await Hoja2(data2, referencia, laborales);
 
 }
 
@@ -196,7 +197,7 @@ async function Hoja1(obj, tabidio2, tabestudio2) {
 }
 
 
-async function Hoja2(obj2, referen) {
+async function Hoja2(obj2, referen, labor) {
 
     var url2 = 'assets/img/formato21.jpg';
     var img = new Image();
@@ -207,28 +208,41 @@ async function Hoja2(obj2, referen) {
 
             //..............experiencia laboral.............
 
-
-            doc.text(48, 40, obj2[44].value); //nombre emrpesa
-            doc.text(44, 45, "De " + obj2[50].value + " a " + obj2[51].value); //año de estudio
-            doc.text(123, 45, obj2[48].value + " -" + obj2[47].value); // ciudad empresa
-            doc.text(44.5, 50, obj2[45].value); // sector
-            doc.text(43, 55, obj2[52].value); //cargo
-            doc.text(55, 60, obj2[49].value); //e-mail
-            //..............experiencia laboral empresa2 .............
-            doc.text(48, 75, obj2[55].value); //nombre emrpesa
-            doc.text(44, 80, "De " + obj2[61].value + " a " + obj2[62].value); //año de estudio
-            doc.text(123, 80, obj2[59].value + " -" + obj2[58].value); // ciudad empresa
-            doc.text(44.5, 85, obj2[56].value); // sector
-            doc.text(43, 90, obj2[63].value); //cargo
-            doc.text(55, 95, obj2[60].value); //e-mail
-            //..............experiencia laboral empresa3 .............
-            doc.text(48, 110, obj2[66].value); //nombre emrpesa
-            doc.text(44, 115, "De " + obj2[72].value + " a " + obj2[73].value); //año de estudio
-            doc.text(123, 115, obj2[70].value + " -" + obj2[69].value); // ciudad empresa
-            doc.text(44.5, 120, obj2[67].value); // sector
-            doc.text(43, 125, obj2[74].value); //cargo
-            doc.text(55, 130, obj2[71].value); //e-mail
-
+            var la1 = 40;
+            var la2 = 45;
+            var la3 = 50;
+            var la4 = 55;
+            var la5 = 60;
+            var l0 = 0;
+            var l1 = 1;
+            var l3 = 3;
+            var l4 = 4;
+            var l5 = 5;
+            var l6 = 6;
+            var l7 = 7;
+            var l8 = 8;
+            var nfilaslaboral = $("#tableLaboral >tbody >tr").length;
+            for (var i = 0; i <= nfilaslaboral - 1; i++) {
+                doc.text(48, la1, labor[l0]); //nombre emrpesa
+                doc.text(44, la2, "De " + labor[l6] + " a " + labor[l7]); //año de trabajo
+                doc.text(123, la2, labor[l4] + " -" + labor[l3]); // ciudad empresa
+                doc.text(44.5, la3, labor[l1]); // sector
+                doc.text(43, la4, labor[l8]); //cargo
+                doc.text(58, la5, labor[l5]); //e-mail
+                l0 += 11;
+                l1 += 11;
+                l3 += 11;
+                l4 += 11;
+                l5 += 11;
+                l6 += 11;
+                l7 += 11;
+                l8 += 11;
+                la1 += 35;
+                la2 += 35;
+                la3 += 35;
+                la4 += 35;
+                la5 += 35;
+            }
             //..............referencias laboral .........
             var ax = 153;
             var az = 158;
@@ -276,14 +290,7 @@ async function Hoja2(obj2, referen) {
             var cx = 50;
             var dx = 55;
             var ex = 60;
-            var veces = 0; // las veces qe se va hacer el for
-            if (obj2[63].value != "") {
-                veces = 1;
-            }
-            if (obj2[74].value != "") {
-                veces = 2;
-            }
-            for (var i = 0; i <= veces; i++) {
+            for (var i = 0; i <= nfilaslaboral - 1; i++) {
                 doc.setFont("Arial", 'bold');
                 doc.text(28, ax, "Empresa : "); //nombre empresa
                 doc.text(28, bx, "Fecha :"); //fecha de labor
