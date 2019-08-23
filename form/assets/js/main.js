@@ -669,3 +669,15 @@ function valueTablasReferencia() {
     return referencia;
 
 }
+
+function DescargarPDF(val) {
+    if (val == 1) {
+        crearHoja1();
+    }
+    if (val == 2) {
+        crearHoja2();
+    }
+    if (val == 3) {
+        crearHoja3();
+    }
+}
