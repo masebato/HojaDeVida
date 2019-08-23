@@ -14,19 +14,23 @@ async function crearHoja2() {
                 console.log(form.elements[i].value);
                 console.log(i);
             }
+
         });
     });
+
+
+
     var data2 = datos();
     var tableidioma = valueTablasIdiomas();
     var tablestudi = valueTablasFormacion();
     var referencia = valueTablasReferencia();
     var laborales = valueTablasLaboral();
 
-    
-        await Hoja1_2(data2, tableidioma, tablestudi);
-        await Hoja2_2(data2, referencia, laborales);
-    
- 
+
+    await Hoja1_2(data2, tableidioma, tablestudi);
+    await Hoja2_2(data2, referencia, laborales);
+
+
 
 }
 
@@ -55,8 +59,20 @@ async function Hoja1_2(obj, tabidio2, tabestudio2) {
         doc.text(59, 79, obj[21].value); // numero libreta militar
         doc.text(59, 84, obj[22].value); //dsitrito militar
         // ............perfil..........
-
-        doc.text(28, 104, obj[25].value); // descripcion del perfil
+        //doc.text(28, 104, "xxxxxxxxx/xxxxxxxxx/xxxxxxxxx/xxxxxxxxx/xxxxxxxxx/xxxxxxxxx/xxxxxxxxx/xxxxxxxxx/"); // descripcion del perfil 80 caracter
+        // var dato = 'Si deseas empezar a aprender JavaScript, te invitamos a inscribirte a nuestro curso Fundamentos de JavaScript, en el cual te enseñaremos a utilizar este lenguaje desde cero con las actualizaciones que ECMAScript6 ha traído para su sintaxis. También puedes revisar todos nuestros cursos de desarrollo web y móvil en devcode.la/cursos  ';
+        var descriperfil = obj[25].value;
+        var ñ = 0;
+        var x = 84;
+        var xxx = 104;
+        for (var i = 0; i < descriperfil.length; i++) {
+            var dato = descriperfil.substring(ñ, (x));
+            console.log(dato);
+            doc.text(28, xxx, dato); // descripcion del perfil
+            ñ += 85;
+            x += 84;
+            xxx += 6;
+        }
         //..............estudios.............
 
 

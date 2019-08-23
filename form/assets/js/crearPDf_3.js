@@ -51,9 +51,19 @@ async function Hoja1_3(obj, tabidio2, tabestudio, referen, labor) {
         doc.text(10, 145, obj[14].value); // email
 
         // ............perfil..........
+        var descriperfil = obj[25].value;
+        var ñ = 0;
+        var x = 59;
+        var xxx = 60;
+        for (var i = 0; i < descriperfil.length; i++) {
+            var dato = descriperfil.substring(ñ, (x));
 
-        doc.text(84, 60, obj[25].value); // descripcion del perfil
-        doc.text(84, 60, 'jadaaaaaaaaaa\ddddddddfsfsdfsfsfs.'); // descripcion del perfil
+            doc.text(84, xxx, dato); // descripcion del perfil
+            ñ += 60;
+            x += 59;
+            xxx += 6;
+        }
+
         //..............estudios.............
         var a = 110;
         var b = 115;
