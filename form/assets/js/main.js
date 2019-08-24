@@ -15,7 +15,7 @@ $('#btnBack').click(function() {
     $('#btnBack').css('display', 'none'); // this method is for hiden the btn
     $('#btnBack').css('display', 'block');
     $('#btnSubmit').css('display', 'none');
-    $('#btnNext').css('display', 'block');
+    $('#btnNext').css('display', 'block');    
     flag = true; // this flag is used for show the button "btnBack"
 });
 
@@ -485,6 +485,12 @@ function FiltrerCollapse(obj) {
             valf = 1;
         });
         $('#myModal').modal('hide');
+    }else{
+        $.each(Formato1, function(i, val) {
+            $(val).css("display", "block");
+            valf = 1;
+        });
+        $('#myModal').modal('hide');
     }
 
     if ($id == "Formato2") {
@@ -493,10 +499,22 @@ function FiltrerCollapse(obj) {
             valf = 2;
         });
         $('#myModal').modal('hide');
+    }else{
+        $.each(Formato2, function(i, val) {
+            $(val).css("display", "block");
+            valf = 2;
+        });
+        $('#myModal').modal('hide');
     }
     if ($id == "Formato3") {
         $.each(Formato3, function(i, val) {
             $(val).css("display", "none");
+            valf = 3;
+        });
+        $('#myModal').modal('hide');
+    }else{
+        $.each(Formato3, function(i, val) {
+            $(val).css("display", "block");
             valf = 3;
         });
         $('#myModal').modal('hide');
