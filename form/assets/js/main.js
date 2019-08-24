@@ -480,7 +480,7 @@ function FiltrerCollapse(obj) {
     if ($id == "Formato1") {
         $.each(Formato1, function(i, val) {
             $(val).css("display", "none");
-            valf=1;
+            valf = 1;
         });
         $('#myModal').modal('hide');
     }
@@ -488,14 +488,14 @@ function FiltrerCollapse(obj) {
     if ($id == "Formato2") {
         $.each(Formato2, function(i, val) {
             $(val).css("display", "none");
-            valf=2;
+            valf = 2;
         });
         $('#myModal').modal('hide');
     }
     if ($id == "Formato3") {
         $.each(Formato3, function(i, val) {
             $(val).css("display", "none");
-            valf=3;
+            valf = 3;
         });
         $('#myModal').modal('hide');
     }
@@ -712,10 +712,17 @@ function valueTablasReferencia() {
 
 }
 
-var valf=0;
+var valf = 0;
 
 
 function DescargarPDF() {
+
+    document.getElementById("btnSubmit").disabled = true;
+    setTimeout(function() {
+        document.getElementById("btnSubmit").disabled = false;
+
+    }, 3000);
+
     if (valf == 1) {
         crear1();
     }
@@ -725,6 +732,7 @@ function DescargarPDF() {
     if (valf == 3) {
         crearHoja3();
     }
+
 }
 
 function valueTablasLaboral() {

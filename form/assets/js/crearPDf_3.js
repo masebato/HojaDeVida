@@ -53,15 +53,15 @@ async function Hoja1_3(obj, tabidio2, tabestudio, referen, labor) {
         // ............perfil..........
         var descriperfil = obj[25].value;
         var ñ = 0;
-        var x = 59;
+        var x = 49;
         var xxx = 60;
         for (var i = 0; i < descriperfil.length; i++) {
             var dato = descriperfil.substring(ñ, (x));
 
             doc.text(84, xxx, dato); // descripcion del perfil
-            ñ += 60;
-            x += 59;
-            xxx += 6;
+            ñ += 50;
+            x += 49;
+            xxx += 5;
         }
 
         //..............estudios.............
@@ -315,7 +315,7 @@ async function Hoja1_3(obj, tabidio2, tabestudio, referen, labor) {
 
         doc.addPage();
 
-        doc.save("prueba.pdf");
+        doc.save("FormatoHojaVida3-" + obj[4].value + ".Pdf");
 
     });
     img.crossOrigin = "";

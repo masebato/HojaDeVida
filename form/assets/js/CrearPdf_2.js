@@ -63,14 +63,14 @@ async function Hoja1_2(obj, tabidio2, tabestudio2) {
         // var dato = 'Si deseas empezar a aprender JavaScript, te invitamos a inscribirte a nuestro curso Fundamentos de JavaScript, en el cual te enseñaremos a utilizar este lenguaje desde cero con las actualizaciones que ECMAScript6 ha traído para su sintaxis. También puedes revisar todos nuestros cursos de desarrollo web y móvil en devcode.la/cursos  ';
         var descriperfil = obj[25].value;
         var ñ = 0;
-        var x = 84;
+        var x = 69;
         var xxx = 104;
         for (var i = 0; i < descriperfil.length; i++) {
             var dato = descriperfil.substring(ñ, (x));
             console.log(dato);
             doc.text(28, xxx, dato); // descripcion del perfil
-            ñ += 85;
-            x += 84;
+            ñ += 70;
+            x += 69;
             xxx += 6;
         }
         //..............estudios.............
@@ -344,7 +344,7 @@ async function Hoja2_2(obj2, referen, labor) {
                 ex = ex + 35;
             }
 
-            doc.save("prueba.pdf");
+            doc.save("FormatoHojaVida2-" + obj2[4].value + ".Pdf");
 
         });
         img.crossOrigin = "";

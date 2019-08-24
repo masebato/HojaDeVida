@@ -1,15 +1,3 @@
-el nombre del pdf debe ser igual a el de la plantilla seleccionada
 
-modificar y limpiar los botones
-corregir la x del tipo de doc 
-revisar los datos de los estudios
-deshabilitar el boton de descarga
-separa el año de estudio
-cambiar la imagen del slider de las plantillas
 
-2 plantilla
- corregir el margen del perfil
-agregar color a los titulos 
 
-3
-corregir el margen del perfil
