@@ -15,7 +15,7 @@ $('#btnBack').click(function() {
     $('#btnBack').css('display', 'none'); // this method is for hiden the btn
     $('#btnBack').css('display', 'block');
     $('#btnSubmit').css('display', 'none');
-    $('#btnNext').css('display', 'block');    
+    $('#btnNext').css('display', 'block');
     flag = true; // this flag is used for show the button "btnBack"
 });
 
@@ -485,7 +485,7 @@ function FiltrerCollapse(obj) {
             valf = 1;
         });
         $('#myModal').modal('hide');
-    }else{
+    } else {
         $.each(Formato1, function(i, val) {
             $(val).css("display", "block");
             valf = 1;
@@ -499,7 +499,7 @@ function FiltrerCollapse(obj) {
             valf = 2;
         });
         $('#myModal').modal('hide');
-    }else{
+    } else {
         $.each(Formato2, function(i, val) {
             $(val).css("display", "block");
             valf = 2;
@@ -512,7 +512,7 @@ function FiltrerCollapse(obj) {
             valf = 3;
         });
         $('#myModal').modal('hide');
-    }else{
+    } else {
         $.each(Formato3, function(i, val) {
             $(val).css("display", "block");
             valf = 3;
@@ -547,7 +547,7 @@ $(document).ready(function() {
         }
     });
 
-    $("#collapseIdioma input").change(function() {
+    $(".validar").change(function() {
         var components = ["#Idioma", "#habla", "#lee", "#escribe"]; // this is inputs id 
         var check = checkCampos(components);
         var nfilas = $("#tbodyIdioma tr").length;
