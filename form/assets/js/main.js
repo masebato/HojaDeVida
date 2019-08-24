@@ -1,6 +1,6 @@
 window.addEventListener("load", function() {
     numero.addEventListener("keypress", ValidarNumero, false);
-
+    semestresAprobados.addEventListener("keypress", ValidarNumero, false);
 });
 
 /**
@@ -255,6 +255,7 @@ $('#AgregarTrabajo').click(() => {
 
 
 $('#btnNext').click(() => {
+    $('#DatosPersonalesForm').submit(false);
     if (flag) {
         $('#myModal').modal("show"); // with this i can show the modal       
         $('#btnBack').css('display', 'block');
@@ -313,14 +314,14 @@ function AgregarDatosTable() {
             }
         }
         if (!verificar) {
-            var fila = "<td class='value'>" + _modalidad.value + "</td><td class='value'>" + _semestres + "</td><td class='value'>" + _graduado.value + "</td><td class='value'>" + _titulo + "</td><td class='value'>" + _fechaGrado + "</td><td class='value'>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>"
+            var fila = "<td class='value'>" + _modalidad.value + "</td><td class='value'>" + _semestres + "</td><td class='value'>" + _graduado.value + "</td><td class='value'>" + _titulo + "</td><td class='value'>" + _fechaGrado + "</td><td class='value'>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>";
 
             var btn = document.createElement("TR");
             btn.innerHTML = fila;
             document.getElementById("tbodyAcademico").appendChild(btn);
         }
     } else {
-        var fila = "<td class='value'>" + _modalidad.value + "</td><td class='value'>" + _semestres + "</td><td class='value'>" + _graduado.value + "</td><td class='value'>" + _titulo + "</td><td class='value'>" + _fechaGrado + "</td><td class='value'>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>"
+        var fila = "<td class='value'>" + _modalidad.value + "</td><td class='value'>" + _semestres + "</td><td class='value'>" + _graduado.value + "</td><td class='value'>" + _titulo + "</td><td class='value'>" + _fechaGrado + "</td><td class='value'>" + _tarjeta + "</td><td> <a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>";
 
         var btn = document.createElement("TR");
         btn.innerHTML = fila;
@@ -342,6 +343,7 @@ function EliminarFila() {
         event.preventDefault();
         $(this).closest('tr').remove();
     });
+
 }
 
 function AgregarDatosIdioma() {
@@ -350,7 +352,7 @@ function AgregarDatosIdioma() {
     var _escribe = document.getElementById("escribe");
     var _habla = document.getElementById("habla");
     if (_idioma != "" && _lee != "" && _escribe != "" && _habla != "") {
-        var fila = "<tr><td>" + _idioma + "</td><td>" + _habla.value + "</td><td>" + _lee.value + "</td><td>" + _escribe.value + "</td></tr>"
+        var fila = "<tr><td>" + _idioma + "</td><td>" + _habla.value + "</td><td>" + _lee.value + "</td><td>" + _escribe.value + "</td><a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>";
         var btn = document.createElement("TR");
         btn.innerHTML = fila;
         document.getElementById("tbodyIdioma").appendChild(btn);
@@ -373,7 +375,7 @@ function AgregarDatosExperiencia() {
     var _EmailReferencia = document.getElementById('EmailReferencia').value;
 
     if (_NombreReferencia != "" && _EmpresaReferencia != "" && _CargoReferencia != "" && _DireccionReferencia != "" && _TelefonoReferencia != "" && _EmailReferencia != "") {
-        var fila = "<td class='value'>" + _NombreReferencia + "</td><td class='value'>" + _EmpresaReferencia + "</td><td class='value'>" + _CargoReferencia + "</td><td class='value'>" + _DireccionReferencia + "</td><td class='value'>" + _TelefonoReferencia + "</td><td class='value'>" + _EmailReferencia + "</td><a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>";
+        var fila = "<td class='value'>" + _NombreReferencia + "</td><td class='value'>" + _EmpresaReferencia + "</td><td class='value'>" + _CargoReferencia + "</td><td class='value'>" + _DireccionReferencia + "</td><td class='value'>" + _TelefonoReferencia + "</td><td class='value'>" + _EmailReferencia + "</td><a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>";
         var btn = document.createElement("TR");
         btn.innerHTML = fila;
         document.getElementById("tbodyExperiencia").appendChild(btn);
@@ -404,7 +406,7 @@ function AgregarDatosLaboral() {
     var _Direccion = document.getElementById('DireccionEmpresa').value;
 
     if (_Empresa != "" && _Sector != "" && _Pais != "" && _Departamento != "" && _Municipio != "" && _Correo != "" && _FechaIngreso != "" && _Fecharetiro != "" && _Cargo != "" && _Dependencia != "" && _Direccion != "") {
-        var fila = "<td class='value'>" + _Empresa + "</td><td class='value'>" + _Sector + "</td><td class='value'>" + _Pais + "</td><td class='value'>" + _Departamento + "</td><td class='value'>" + _Municipio + "</td><td class='value'>" + _Correo + "</td><td class='value'>" + _FechaIngreso + "</td><td class='value'>" + _Fecharetiro + "</td><td class='value'>" + _Cargo + "</td><td class='value'>" + _Dependencia + "</td><td class='value'>" + _Direccion + "</td><a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-outline-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>";
+        var fila = "<td class='value'>" + _Empresa + "</td><td class='value'>" + _Sector + "</td><td class='value'>" + _Pais + "</td><td class='value'>" + _Departamento + "</td><td class='value'>" + _Municipio + "</td><td class='value'>" + _Correo + "</td><td class='value'>" + _FechaIngreso + "</td><td class='value'>" + _Fecharetiro + "</td><td class='value'>" + _Cargo + "</td><td class='value'>" + _Dependencia + "</td><td class='value'>" + _Direccion + "</td><a style='margin-bottom: 3 px; margin-left: 2px;' type='button' class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='Eliminar' onclick='EliminarFila();'><i class='fa fa-eraser'></i></a>";
         var btn = document.createElement("TR");
         btn.innerHTML = fila;
         document.getElementById("tbodyLaboral").appendChild(btn);
@@ -527,7 +529,7 @@ $(document).ready(function() {
         }
     });
 
-    $("#collapseIdioma input").keyup(function() {
+    $("#collapseIdioma input").change(function() {
         var components = ["#Idioma", "#habla", "#lee", "#escribe"]; // this is inputs id 
         var check = checkCampos(components);
         var nfilas = $("#tbodyIdioma tr").length;

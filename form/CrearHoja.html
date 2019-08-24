@@ -5,22 +5,7 @@
 <head>
 
     <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-T2NB625');
-    </script>
+
     <!-- End Google Tag Manager -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
@@ -159,7 +144,7 @@
                                                         <select name="Municipios" id="Municipios" name="Municipio residencia" class="form-control"></select>
 
                                                         <label>Correo electronico</label>
-                                                        <input type="email" id="CorreoElectronico" class="form-control" name="Correo electronico">
+                                                        <input type="text" id="CorreoElectronico" class="form-control" name="Correo electronico">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
@@ -299,7 +284,7 @@
                                                             <div class="col-md-1">
                                                                 <div class="form-group">
                                                                     <label>Semestres</label>
-                                                                    <input type="text" class="form-control" id="semestresAprobados" name="semestresAprobados">
+                                                                    <input type="text" class="form-control" id="semestresAprobados" maxlength="2" pattern="[1-9]+" name="semestresAprobados">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
@@ -338,7 +323,7 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-12">
-                                                                <table class="table-bordered table-responsive-md" id="tableAcademico">
+                                                                <table class="table-bordered table-responsive-md" id="tableAcademico" style=" background-color: rgba(151, 152, 160, 0.884); border-radius: 15px">
                                                                     <thead>
                                                                         <th>MODALIDAD ACADÉMICA</th>
                                                                         <th>No. SEMESTRES APROBADOS</th>
@@ -386,6 +371,7 @@
                                                                             <option value="R">Regular</option>
                                                                             <option value="B">Bien</option>
                                                                             <option value="MB">Muy bien</option>
+                                                                           
                                                                    </select>
                                                                 </div>
                                                             </div>
@@ -413,13 +399,14 @@
                                                             </div>
                                                         </div>
                                                         <div class="bd">
-                                                            <table class=" table-bordered table-responsive-lg" id="tableIdioma">
+                                                            <table class=" table-bordered table-responsive-lg" id="tableIdioma" style=" background-color: rgba(151, 152, 160, 0.884); border-radius: 15px">
                                                                 <thead>
                                                                     <tr>
                                                                         <th class="col">Idioma</th>
                                                                         <th class="col">Lo habla</th>
                                                                         <th class="col">Lo lee</th>
                                                                         <th class="col">Lo escribe</th>
+                                                                        <th class="col">ACCION</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody id="tbodyIdioma">
@@ -534,7 +521,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="table-responsive " style="height: 300px;">
-                                                                        <table class="table-bordered " id="tableLaboral">
+                                                                        <table class="table-bordered " id="tableLaboral" style=" background-color: rgba(151, 152, 160, 0.884); border-radius: 15px">
                                                                             <thead>
                                                                                 <th style="width: 900px ">EMPRESA O ENTIDAD</th>
                                                                                 <th>SECTOR</th>
@@ -687,7 +674,7 @@
                                                                 </div>
 
                                                                 <div class="bd">
-                                                                    <table class=" table-bordered table-responsive-lg" id="tablereferencia">
+                                                                    <table class=" table-bordered table-responsive-lg" id="tablereferencia" style=" background-color: rgba(151, 152, 160, 0.884); border-radius: 15px">
                                                                         <thead>
                                                                             <tr>
                                                                                 <th class="col">NOMBRES</th>

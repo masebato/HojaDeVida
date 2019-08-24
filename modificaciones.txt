@@ -4,7 +4,7 @@ modificar y limpiar los botones
 corregir la x del tipo de doc 
 revisar los datos de los estudios
 deshabilitar el boton de descarga
-separa el año de estudio
+separa el aï¿½o de estudio
 cambiar la imagen del slider de las plantillas
 
 2 plantilla
@@ -15,9 +15,4 @@ agregar color a los titulos
 corregir el margen del perfil
 
 -----------------------------------------------
-educacion superior semestre : maximo 2
-cambiar style a la as tablas
-cambiar evenbto en los selectores de idioma onchange
-agreagr accion en idiomas para eliminar
-quitar require de el correo electronico en datos personales
-modeificar vistas despues de seleccionar el formato
+
