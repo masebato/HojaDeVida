@@ -9,7 +9,7 @@ window.addEventListener("load", function() {
  * @param {Number} idBloque this variable is used for generate inputs at block 'Trabajo'
  * @param {Number} id2 this variable is used for generate inputs at block 'Referencias'
  */
-
+var valf;
 var flag = true;
 $('#btnBack').click(function() {
     $('#btnBack').css('display', 'none'); // this method is for hiden the btn
@@ -476,45 +476,31 @@ function FiltrerCollapse(obj) {
     var Formato1 = ["#PerfilDIV", "#ReferenciasDIV"];
     var Formato2 = ["#TiempoDIV"]
     var Formato3 = ["#TiempoDIV"];
+    var Collapses=["PerfilDIV", "FormacionDIV", "TiempoDIV", "ReferenciasDIV","IdiomaDIV2"];
+    $.each(Collapses, function(i, val) {
+        valf = 0;
+        $(val).css("display", "block");           
+    });
     var $id = obj.id;
     if ($id == "Formato1") {
         $.each(Formato1, function(i, val) {
-            $(val).css("display", "none");
             valf = 1;
-        });
-        $('#myModal').modal('hide');
-    }else{
-        $.each(Formato1, function(i, val) {
-            $(val).css("display", "block");
-            valf = 1;
+            $(val).css("display", "none");           
         });
         $('#myModal').modal('hide');
     }
-
     if ($id == "Formato2") {
-        $.each(Formato2, function(i, val) {
-            $(val).css("display", "none");
-            valf = 2;
-        });
-        $('#myModal').modal('hide');
-    }else{
-        $.each(Formato2, function(i, val) {
-            $(val).css("display", "block");
-            valf = 2;
+        valf = 2;
+        $.each(Formato2, function(i, val) {            
+            $(val).css("display", "none");           
         });
         $('#myModal').modal('hide');
     }
     if ($id == "Formato3") {
-        $.each(Formato3, function(i, val) {
-            $(val).css("display", "none");
-            valf = 3;
-        });
-        $('#myModal').modal('hide');
-    }else{
-        $.each(Formato3, function(i, val) {
-            $(val).css("display", "block");
-            valf = 3;
-        });
+        valf = 3;
+        $.each(Formato3, function(i, val) {            
+            $(val).css("display", "none");            
+    });
         $('#myModal').modal('hide');
     }
 }
@@ -545,7 +531,7 @@ $(document).ready(function() {
         }
     });
 
-    $("#collapseIdioma input").keyup(function() {
+    $(".validar").change(function() {
         var components = ["#Idioma", "#habla", "#lee", "#escribe"]; // this is inputs id 
         var check = checkCampos(components);
         var nfilas = $("#tbodyIdioma tr").length;
@@ -730,7 +716,7 @@ function valueTablasReferencia() {
 
 }
 
-var valf = 0;
+
 
 
 function DescargarPDF() {

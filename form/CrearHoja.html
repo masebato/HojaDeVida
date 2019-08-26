@@ -46,7 +46,7 @@
     </script>
 </head>
 
-<body background="/form/cta-background.jpg">
+<body background="/form/cta-background.jpg" class="perfect-scrollbar-on">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2NB625"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -359,14 +359,14 @@
                                         </div>
                                     </div>
 
-                                    <div class="row">
+                                    <div class="row" id="IdiomaDIV">
                                         <div class="col-md-12">
                                             <div class="card card-stats">
                                                 <div class="card-header" id="headingThree">
                                                     <h2 class="mb-0">
                                                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseIdioma" aria-expanded="false" aria-controls="collapseIdioma">
-                                <i class="icono-bookmarkEmpty"></i> Idiomas
-                            </button>
+                                                          <i class="icono-bookmarkEmpty"></i> Idiomas
+                                                                 </button>
                                                     </h2>
                                                 </div>
                                                 <div id="collapseIdioma" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
@@ -375,14 +375,14 @@
                                                             <div class="col-md-5">
                                                                 <div class="form-group">
                                                                     <label>Idioma</label>
-                                                                    <input type="text" class="form-control" id="Idioma" name="Idioma">
+                                                                    <input type="text" class="form-control validar" id="Idioma" name="Idioma">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form-group">
                                                                     <label>Lo habla</label>
-                                                                    <select name="lo Habla" id="habla" class="form-control">
-                                                                            <option></option>
+                                                                    <select name="lo Habla" id="habla" class="form-control validar">
+                                                                            <option value=""></option>
                                                                             <option value="R">Regular</option>
                                                                             <option value="B">Bien</option>
                                                                             <option value="MB">Muy bien</option>
@@ -392,19 +392,19 @@
                                                             <div class="col-md-2">
                                                                 <div class="form-group">
                                                                     <label>Lo lee</label>
-                                                                    <select name="lo lee" id="lee" class="form-control">
-                                                                            <option></option>
+                                                                    <select name="lo lee" id="lee" class="form-control validar">
+                                                                        <option value=""></option>
                                                                              <option value="R">Regular</option>
                                                                             <option value="B">Bien</option>
                                                                             <option value="MB">Muy bien</option>
-                                        </select>
+                                                                     </select>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-2">
                                                                 <div class="form-group">
                                                                     <label>Lo escribe</label>
-                                                                    <select name="lo escibe" id="escribe" class="form-control">
-                                                                            <option></option>
+                                                                    <select name="lo escibe" id="escribe" class="form-control validar">
+                                                                        <option value=""></option>
                                                                               <option value="R">Regular</option>
                                                                               <option value="B">Bien</option>
                                                                             <option value="MB">Muy bien</option>
@@ -435,14 +435,16 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+                                        </div>
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="card card-stats">
                                                         <div class="card-header" id="headingThree">
                                                             <h2 class="mb-0">
                                                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        <i class="icono-bookmarkEmpty"></i> Laboral
-                                    </button>
+                                                                   <i class="icono-bookmarkEmpty"></i> Laboral
+                                                              </button>
                                                             </h2>
                                                         </div>
                                                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
@@ -717,8 +719,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                        
+                                  
                                 </div>
                                 <div class="card-footer">
                                     <div class="row">
@@ -808,7 +810,8 @@
                                         <span class="sr-only">Siguiente</span>
                                     </a>
                                 </div>
-                                <button class="btn" id="Formato3" onclick="FiltrerCollapse(this)">Seleccionar</button>
+                                <button class="btn" id="Formato3
+                                " onclick="FiltrerCollapse(this)">Seleccionar</button>
                             </div>
                         </div>
                         <div class="col-md-4">
