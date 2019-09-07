@@ -478,7 +478,7 @@ function FiltrerCollapse(obj) {
     var Formato1 = ["#PerfilDIV", "#ReferenciasDIV"];
     var Formato2 = ["#TiempoDIV"]
     var Formato3 = ["#TiempoDIV"];
-    var Collapses=["PerfilDIV", "FormacionDIV", "TiempoDIV", "ReferenciasDIV","IdiomaDIV2"];
+    var Collapses=["#PerfilDIV", "#FormacionDIV", "#TiempoDIV", "#ReferenciasDIV","#IdiomaDIV"];
     $.each(Collapses, function(i, val) {
         valf = 0;
         $(val).css("display", "block");           
