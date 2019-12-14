@@ -613,7 +613,7 @@ $(document).ready(function init() {
         });
     });
 
-    $('#Departamento').change(
+    $('#Departamento').change( 
         function CargarMunicipios() {
             $('#Municipios').empty();
             var $select = $('#Municipios');
